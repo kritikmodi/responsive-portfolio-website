@@ -196,7 +196,7 @@ body.dark-theme {
     width: 88%;
     left: 0;
     right: 0;
-    bottom: 2rem;
+    bottom: -60%;
     margin: 0 auto;
     background-color: var(--body-color);
     box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
@@ -239,7 +239,9 @@ body.dark-theme {
 }
 
 /* Show menu */
-
+.show-menu{
+  bottom: 2rem;
+}
 
 /* Active link */
 
