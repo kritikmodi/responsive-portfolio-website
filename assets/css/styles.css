@@ -260,7 +260,14 @@ body.dark-theme {
   text-align: center;
   font-size: var(--biggest-font-size);
   letter-spacing: .3px;
-  
+  margin-bottom: .5rem;
+}
+
+.home__blob{
+  position: relative;
+  width: 200px;
+  height: 290px;
+  background-color: var(--body-color);
 }
 
 /*=============== SKILLS ===============*/
