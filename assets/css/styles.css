@@ -344,6 +344,14 @@ body.dark-theme {
   color: var(--title-color);
 }
 
+.home__info-description{
+  padding-right: 4rem;
+}
+
+.home__info-number{
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+}
 /*=============== SKILLS ===============*/
 
 
