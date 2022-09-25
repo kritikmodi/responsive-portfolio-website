@@ -325,6 +325,19 @@ body.dark-theme {
   color: var(--title-color);
 }
 
+.home__info{
+  display: grid;
+  row-gap: 2rem;
+}
+
+.home__info-title{
+  font-family: var(--body-font);
+  font-size: var(--smaller-font-size);
+  font-weight: 400;
+  color: var(--text-color-light);
+  margin-bottom: 1rem;
+}
+
 /*=============== SKILLS ===============*/
 
 
