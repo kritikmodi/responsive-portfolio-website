@@ -309,6 +309,22 @@ body.dark-theme {
   z-index: -1;
 }
 
+.home__social{
+  justify-self: center;
+  display: flex;
+  column-gap: 1.25rem;
+}
+
+.home__social-link{
+  font-size: 1.25rem;
+  color: var(--text-color-light);
+  transition: color .3s;
+}
+
+.home__social-link:hover{
+  color: var(--title-color);
+}
+
 /*=============== SKILLS ===============*/
 
 
