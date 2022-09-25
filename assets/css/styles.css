@@ -247,7 +247,21 @@ body.dark-theme {
 
 
 /*=============== HOME ===============*/
+.home__container{
+  row-gap: 4rem;
+  padding-top: 2rem;
+}
 
+.home__data{
+  row-gap: 1.5rem;
+}
+
+.home__title{
+  text-align: center;
+  font-size: var(--biggest-font-size);
+  letter-spacing: .3px;
+  
+}
 
 /*=============== SKILLS ===============*/
 
