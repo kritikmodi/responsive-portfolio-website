@@ -274,6 +274,41 @@ body.dark-theme {
   place-items: center;
 }
 
+.home__perfil{
+  width: 170px;
+  height: 260px;
+  background: linear-gradient(to bottom, #e6e9f0 0%, #eef1f5 100%);
+  border-radius: 5.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.home__perfil img{
+  width: 150px;
+}
+
+.home__shape-wawes,
+.home__shape-circle{
+  position: absolute;
+  opacity: .2;
+}
+
+.home__shape-wawes{
+  width: 50px;
+  left: -1.5rem;
+  top: 5rem;
+}
+
+.home__shape-circle{
+  width: 150px;
+  bottom: -2rem;
+  right: -3rem;
+  transform: rotate(15deg);
+  z-index: -1;
+}
+
 /*=============== SKILLS ===============*/
 
 
