@@ -338,6 +338,12 @@ body.dark-theme {
   margin-bottom: 1rem;
 }
 
+.home__info-description,
+.home__info-number{
+  font-family: var(--title-font);
+  color: var(--title-color);
+}
+
 /*=============== SKILLS ===============*/
 
 
