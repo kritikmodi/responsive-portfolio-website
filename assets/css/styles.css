@@ -402,6 +402,16 @@ body.dark-theme {
   width: 40px;
 }
 
+.skills__name{
+  font-size: var(--small-font-size);
+  margin-bottom: .25rem;
+}
+
+.skills__subtitle{
+  font-size: var(--tiny-font-size);
+  color: var(--text-color-light);
+}
+
 /* Animation skills */
 
 
