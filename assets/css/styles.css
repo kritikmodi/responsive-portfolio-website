@@ -352,8 +352,26 @@ body.dark-theme {
   font-size: var(--h1-font-size);
   font-weight: var(--font-semi-bold);
 }
-/*=============== SKILLS ===============*/
 
+/*=============== SKILLS ===============*/
+.skills__container{
+  row-gap: 3.5rem;
+}
+
+.skills__title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 2.5rem;
+}
+
+.skills__title i{
+  font-size: 1rem;
+  font-weight: initial;
+}
 
 /* Animation skills */
 
