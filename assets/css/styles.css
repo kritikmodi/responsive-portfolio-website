@@ -384,6 +384,20 @@ body.dark-theme {
   gap: 2.5rem 2rem;
 }
 
+.skills__data{
+  justify-content: center;
+  text-align: center;
+}
+
+.skills__blob{
+  width: 80px;
+  height: 100px;
+  background-color: var(--container-color);
+  border-radius: 3rem;
+  place-items: center;
+  margin-bottom: 1rem;
+}
+
 /* Animation skills */
 
 
