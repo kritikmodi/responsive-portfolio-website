@@ -398,6 +398,10 @@ body.dark-theme {
   margin-bottom: 1rem;
 }
 
+.skills__blob img{
+  width: 40px;
+}
+
 /* Animation skills */
 
 
