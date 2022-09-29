@@ -413,7 +413,9 @@ body.dark-theme {
 }
 
 /* Animation skills */
-
+.skills__blob:hover img{
+  animation: bounce-skills .6s;
+}
 
 /*=============== QUALIFICATION ===============*/
 
