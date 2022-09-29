@@ -417,6 +417,24 @@ body.dark-theme {
   animation: bounce-skills .6s;
 }
 
+@keyframes bounce-skills{
+  0%{
+    transform: translate(0);
+  }
+  20%{
+    transform: translateY(-6px);
+  }
+  40%{
+    transform: translate(0);
+  }
+  60%{
+    transform: translateY(-3px);
+  }
+  80%{
+    transform: translate(0);
+  }
+}
+
 /*=============== QUALIFICATION ===============*/
 
 
