@@ -476,6 +476,10 @@ body.dark-theme {
   color: var(--text-color-light);
 }
 
+.qualification__country{
+  margin-bottom: .75rem;
+}
+
 /*=============== SERVICES ===============*/
 
 
