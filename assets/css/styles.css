@@ -454,6 +454,16 @@ body.dark-theme {
   margin-bottom: 2rem;
 }
 
+.qualification__title i{
+  font-size: 1rem;
+  font-weight: initial;
+}
+
+.qualification__info{
+  display: grid;
+  row-gap: 2rem;
+}
+
 /*=============== SERVICES ===============*/
 
 
