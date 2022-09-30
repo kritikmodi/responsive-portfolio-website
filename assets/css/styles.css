@@ -436,7 +436,13 @@ body.dark-theme {
 }
 
 /*=============== QUALIFICATION ===============*/
+.qualification{
+  position: relative;
+}
 
+.qualification__container{
+  row-gap: 3.5rem;
+}
 
 /*=============== SERVICES ===============*/
 
