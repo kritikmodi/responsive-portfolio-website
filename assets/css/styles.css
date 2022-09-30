@@ -480,6 +480,15 @@ body.dark-theme {
   margin-bottom: .75rem;
 }
 
+.qualification__img{
+  width: 150px;
+  position: absolute;
+  right: -3rem;
+  bottom: 12rem;
+  transform: rotate(15deg);
+  opacity: .1;
+}
+
 /*=============== SERVICES ===============*/
 
 
