@@ -464,6 +464,18 @@ body.dark-theme {
   row-gap: 2rem;
 }
 
+.qualification__name{
+  font-size: var(--normal-font-size);
+  margin-bottom: 1.25rem;
+}
+
+.qualification__country,
+.qualification__year{
+  display: block;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
 /*=============== SERVICES ===============*/
 
 
