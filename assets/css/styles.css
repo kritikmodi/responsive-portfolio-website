@@ -505,6 +505,14 @@ body.dark-theme {
   border-radius: 7.25rem;
 }
 
+.achievements__card i{
+  display: block;
+  font-size: 2rem;
+  color: var(--title-color);
+  margin-bottom: .75rem;
+  transition: transform .8s;
+}
+
 /*=============== PROJECTS ===============*/
 
 
