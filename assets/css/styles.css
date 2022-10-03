@@ -537,6 +537,10 @@ body.dark-theme {
   transform: rotate(360deg);
 }
 
+.achievements__card:hover .achievements__border{
+  opacity: 1;
+}
+
 /*=============== PROJECTS ===============*/
 
 
