@@ -490,7 +490,20 @@ body.dark-theme {
 }
 
 /*=============== ACHIEVEMENTS ===============*/
+.achievements__container{
+  row-gap: 2.5rem;
+  justify-content: center;
+}
 
+.achievements__card{
+  position: relative;
+  width: 228px;
+  height: 322px;
+  background-color: var(--container-color);
+  text-align: center;
+  padding: 3.5rem 1rem;
+  border-radius: 7.25rem;
+}
 
 /*=============== PROJECTS ===============*/
 
