@@ -519,6 +519,17 @@ body.dark-theme {
   margin-bottom: 1.5rem;
 }
 
+.achievements__border{
+  width: 248px;
+  height: 342px;
+  border: 1.8px solid var(--text-color-light);
+  border-radius: 7.75rem;
+  position: absolute;
+  inset: 0;
+  left: -10px;
+  margin: auto;
+}
+
 /*=============== PROJECTS ===============*/
 
 
