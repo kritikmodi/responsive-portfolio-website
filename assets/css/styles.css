@@ -551,6 +551,12 @@ body.dark-theme {
   justify-content: center;
 }
 
+.projects__img{
+  width: 250px;
+  border-radius: .75rem;
+  margin-bottom: 1.25rem;
+}
+
 /* Swiper class */
 
 
