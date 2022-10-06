@@ -557,6 +557,11 @@ body.dark-theme {
   margin-bottom: 1.25rem;
 }
 
+.projects__subtitle{
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
 /* Swiper class */
 
 
