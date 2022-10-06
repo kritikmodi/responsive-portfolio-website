@@ -562,6 +562,12 @@ body.dark-theme {
   color: var(--text-color-light);
 }
 
+.projects__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: 1.25rem;
+  margin: .5rem 0 1.25rem;
+}
+
 /* Swiper class */
 
 
