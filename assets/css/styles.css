@@ -581,6 +581,10 @@ body.dark-theme {
   transition: transform .3s;
 }
 
+.projects__button:hover i{
+  transform: translateX(.25rem);
+}
+
 /* Swiper class */
 
 
