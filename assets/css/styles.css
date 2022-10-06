@@ -568,6 +568,14 @@ body.dark-theme {
   margin: .5rem 0 1.25rem;
 }
 
+.projects__button{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+}
+
 /* Swiper class */
 
 
