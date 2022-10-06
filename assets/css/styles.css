@@ -542,7 +542,14 @@ body.dark-theme {
 }
 
 /*=============== PROJECTS ===============*/
+.projects__container{
+  overflow: initial;
+}
 
+.projects__content{
+  display: grid;
+  justify-content: center;
+}
 
 /* Swiper class */
 
