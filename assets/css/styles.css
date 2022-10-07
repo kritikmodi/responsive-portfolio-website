@@ -618,6 +618,11 @@ body.dark-theme {
   bottom: 0;
 }
 
+.projects__container .swiper-pagination-bullet{
+  background-color: var(--text-color-light);
+  opacity: initial;
+}
+
 /*=============== TESTIMONIAL ===============*/
 
 
