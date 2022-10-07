@@ -614,6 +614,10 @@ body.dark-theme {
   margin-bottom: 4.5rem;
 }
 
+.projects__container .swiper-pagination-bullets{
+  bottom: 0;
+}
+
 /*=============== TESTIMONIAL ===============*/
 
 
