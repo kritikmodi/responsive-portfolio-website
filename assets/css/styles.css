@@ -591,6 +591,15 @@ body.dark-theme {
   content: '';
 }
 
+.projects__container .swiper-button-next,
+.projects__container .swiper-button-prev{
+  width: initial;
+  height: initial;
+  margin: initial;
+  font-size: 2.5rem;
+  color: var(--title-color);
+}
+
 /*=============== TESTIMONIAL ===============*/
 
 
