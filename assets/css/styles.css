@@ -600,6 +600,16 @@ body.dark-theme {
   color: var(--title-color);
 }
 
+.projects__container .swiper-button-next{
+  right: -1rem;
+  top: 4.5rem;
+}
+
+.projects__container .swiper-button-prev{
+  left: -1rem;
+  top: 4.5rem;
+}
+
 /*=============== TESTIMONIAL ===============*/
 
 
