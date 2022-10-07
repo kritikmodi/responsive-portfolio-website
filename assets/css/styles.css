@@ -586,7 +586,10 @@ body.dark-theme {
 }
 
 /* Swiper class */
-
+.projects__container .swiper-button-next::after,
+.projects__container .swiper-button-prev::after{
+  content: '';
+}
 
 /*=============== TESTIMONIAL ===============*/
 
