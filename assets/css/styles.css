@@ -672,6 +672,12 @@ body.dark-theme {
   color: var(--text-color-light);
 }
 
+.contact__data-info{
+  font-size: var(--small-font-size);
+  font-family: var(--title-font);
+  color: var(--title-color);
+}
+
 /* Status color */
 
 
