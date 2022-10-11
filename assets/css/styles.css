@@ -648,6 +648,11 @@ body.dark-theme {
   margin-bottom: 2.5rem;
 }
 
+.contact__title i{
+  font-size: 1rem;
+  font-weight: initial;
+}
+
 /* Status color */
 
 
