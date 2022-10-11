@@ -663,6 +663,10 @@ body.dark-theme {
   row-gap: 2rem;
 }
 
+.contact__data{
+  row-gap: .75rem;
+}
+
 /* Status color */
 
 
