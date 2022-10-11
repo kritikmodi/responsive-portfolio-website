@@ -678,6 +678,15 @@ body.dark-theme {
   color: var(--title-color);
 }
 
+.contact__button{
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+}
+
 /* Status color */
 
 
