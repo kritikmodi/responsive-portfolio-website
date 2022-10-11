@@ -667,6 +667,11 @@ body.dark-theme {
   row-gap: .75rem;
 }
 
+.contact__data-title{
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
 /* Status color */
 
 
