@@ -653,6 +653,12 @@ body.dark-theme {
   font-weight: initial;
 }
 
+.contact__info,
+.contact__data,
+.contact__form{
+  display: grid;
+}
+
 /* Status color */
 
 
