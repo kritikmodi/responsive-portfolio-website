@@ -687,6 +687,11 @@ body.dark-theme {
   font-size: var(--small-font-size);
 }
 
+.contact__button i{
+  font-size: 1rem;
+  transition: transform .3s;
+}
+
 /* Status color */
 
 
