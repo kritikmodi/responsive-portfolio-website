@@ -634,7 +634,9 @@ body.dark-theme {
 
 
 /*=============== CONTACT ===============*/
-
+.contact__container{
+  row-gap: 3.5rem;
+}
 
 /* Status color */
 
