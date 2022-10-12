@@ -715,6 +715,11 @@ body.dark-theme {
   border: 2px solid var(--text-color-light);
   border-radius: 2rem;
   padding: 1.5rem;
+  font-size: var(--normal-font-size);
+  font-family: var(--title-font);
+  color: var(--title-color);
+  background: none;
+  z-index: 1;
 }
 
 /* Status color */
