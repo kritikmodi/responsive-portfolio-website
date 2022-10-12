@@ -692,6 +692,10 @@ body.dark-theme {
   transition: transform .3s;
 }
 
+.contact__button:hover i{
+  transform: translateX(.25rem);
+}
+
 /* Status color */
 
 
