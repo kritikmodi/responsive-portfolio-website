@@ -738,6 +738,10 @@ body.dark-theme {
   height: 10rem;
 }
 
+.contact__form-area textarea{
+  resize: none;
+}
+
 /* Status color */
 
 
