@@ -706,6 +706,14 @@ body.dark-theme {
   height: 4rem;
 }
 
+.contact__form-input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Status color */
 
 
