@@ -701,6 +701,11 @@ body.dark-theme {
   row-gap: 2rem;
 }
 
+.contact__form-div{
+  position: relative;
+  height: 4rem;
+}
+
 /* Status color */
 
 
