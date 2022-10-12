@@ -753,6 +753,11 @@ body.dark-theme {
   margin-top: .75rem;
 }
 
+.contact__form .contact__button i{
+  font-size: 1.5rem;
+  font-weight: initial;
+}
+
 /* Status color */
 
 
