@@ -712,6 +712,9 @@ body.dark-theme {
   left: 0;
   width: 100%;
   height: 100%;
+  border: 2px solid var(--text-color-light);
+  border-radius: 2rem;
+  padding: 1.5rem;
 }
 
 /* Status color */
