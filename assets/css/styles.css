@@ -734,6 +734,10 @@ body.dark-theme {
   padding: .35rem;
 }
 
+.contact__form-area{
+  height: 10rem;
+}
+
 /* Status color */
 
 
