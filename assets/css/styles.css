@@ -696,6 +696,11 @@ body.dark-theme {
   transform: translateX(.25rem);
 }
 
+.contact__form{
+  position: relative;
+  row-gap: 2rem;
+}
+
 /* Status color */
 
 
