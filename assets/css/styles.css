@@ -742,6 +742,15 @@ body.dark-theme {
   resize: none;
 }
 
+.contact__form .contact__button{
+  border: none;
+  background: none;
+  font-size: var(--h2-font-size);
+  font-family: var(--title-font);
+  font-weight: var(--font-semi-bold);
+  cursor: pointer;
+}
+
 /* Status color */
 
 
