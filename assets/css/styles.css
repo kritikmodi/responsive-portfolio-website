@@ -722,6 +722,18 @@ body.dark-theme {
   z-index: 1;
 }
 
+.contact__form-tag{
+  position: absolute;
+  top: -.75rem;
+  left: 1.25rem;
+  z-index: 10;
+  background-color: var(--body-color);
+  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  padding: .35rem;
+}
+
 /* Status color */
 
 
