@@ -750,7 +750,7 @@ body.dark-theme {
   font-weight: var(--font-semi-bold);
   cursor: pointer;
   outline: none;
-  margin-top: .75rem;
+  margin-top: .85rem;
 }
 
 .contact__form .contact__button i{
