@@ -758,6 +758,13 @@ body.dark-theme {
   font-weight: initial;
 }
 
+.contact__message{
+  font-size: var(--small-font-size);
+  position: absolute;
+  bottom: 2.8rem;
+  left: 1.5rem;
+}
+
 /* Status color */
 
 
