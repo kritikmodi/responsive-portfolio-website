@@ -50,7 +50,11 @@ let swiperProjects = new Swiper(".projects__container", {
 
 
 /*=============== EMAIL JS ===============*/
-
+const contactForm = document.getElementById('contact-form'),
+      contactName = document.getElementById('contact-name'),
+      contactEmail = document.getElementById('contact-email'),
+      contactProject = document.getElementById('contact-project'),
+  
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
