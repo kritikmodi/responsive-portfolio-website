@@ -69,15 +69,15 @@ const sendEmail = (e) =>{
     }else{
         // serviceID - templateID - #form - publicKey
         emailjs.sendForm('service_ey8fodo','template_39k37xn','contact-form','CkCxrkrcQUQ25L9tw')
-        .then(() =>{
-            // Show message and add color
-            contactMessage.classList.add('color-blue')
-            contactMessage.textContent='Message sent!'
-            // Remove message after 5 seconds
-            setTimeout(() =>{
-                contactMessage.textContent=''
-            },5000)
-        })
+            .then(() =>{
+                // Show message and add color
+                contactMessage.classList.add('color-blue')
+                contactMessage.textContent='Message sent!'
+                // Remove message after 5 seconds
+                setTimeout(() =>{
+                    contactMessage.textContent=''
+                },5000)
+            })
     }
 
 }
