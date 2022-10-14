@@ -56,6 +56,11 @@ const contactForm = document.getElementById('contact-form'),
       contactProject = document.getElementById('contact-project'),
       contactMessage = document.getElementById('contact-message')
 
+const sendEmail = (e) =>{
+
+}
+contactForm.addEventListener('submit',sendEmail)
+
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 
