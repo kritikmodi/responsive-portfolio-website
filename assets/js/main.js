@@ -61,13 +61,23 @@ const sendEmail = (e) =>{
 
     // Check if the field has a value
     if(contactName.value===''||contactEmail.value===''||contactProject.value===''){
-
         // Remove blue color and add red color
         contactMessage.classList.remove('color-blue')
         contactMessage.classList.add('color-red')
-
         // Show message
-        contactMessage.textContent='Please fill all the input fields'
+        contactMessage.textContent='Please fill all the input fields!'
+    }else{
+        // serviceID - templateID - #form - publicKey
+        emailjs.sendForm('service_ey8fodo','template_39k37xn','contact-form','CkCxrkrcQUQ25L9tw')
+        .then(() =>{
+            // Show message and add color
+            contactMessage.classList.add('color-blue')
+            contactMessage.textContent='Message sent!'
+            // Remove message after 5 seconds
+            setTimeout(() =>{
+                contactMessage.textContent=''
+            },5000)
+        })
     }
 
 }
