@@ -57,6 +57,14 @@ const contactForm = document.getElementById('contact-form'),
       contactMessage = document.getElementById('contact-message')
 
 const sendEmail = (e) =>{
+    e.preventDefault()
+
+    // Check if the field has a value
+    if(contactName.value===''||contactEmail.value===''||contactProject.value===''){
+        // Remove blue color and add red color
+        contactMessage.classList.remove('color-blue')
+        contactMessage.classList.add('color-red')
+    }
 
 }
 contactForm.addEventListener('submit',sendEmail)
