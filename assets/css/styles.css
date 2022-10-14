@@ -766,7 +766,9 @@ body.dark-theme {
 }
 
 /* Status color */
-
+.color-red{
+  color: hsl(4, 71%, 50%);
+}
 
 /*=============== FOOTER ===============*/
 
