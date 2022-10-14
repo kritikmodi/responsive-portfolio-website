@@ -61,9 +61,13 @@ const sendEmail = (e) =>{
 
     // Check if the field has a value
     if(contactName.value===''||contactEmail.value===''||contactProject.value===''){
+
         // Remove blue color and add red color
         contactMessage.classList.remove('color-blue')
         contactMessage.classList.add('color-red')
+
+        // Show message
+        contactMessage.textContent='Please fill all the input fields'
     }
 
 }
