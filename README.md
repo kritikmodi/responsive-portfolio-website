@@ -8,7 +8,7 @@ Steps I follow :
 
 2. Implement a framework in HTML.
 
-3. Decide it's colors and other design features and implement those in CSS.
+3. Decide its colors and other design features and implement those in CSS.
 
 4. Code the backend in Javascript wherever required.
 
