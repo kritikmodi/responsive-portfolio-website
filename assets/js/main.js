@@ -80,6 +80,9 @@ const sendEmail = (e) =>{
                 alert('Oops! Please try again!', error)
             })
         // Clear the input field
+        contactName.value = ''
+        contactEmail.value = ''
+        contactProject.value = ''
     }
 }
 contactForm.addEventListener('submit',sendEmail)
