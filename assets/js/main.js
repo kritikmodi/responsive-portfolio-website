@@ -58,7 +58,6 @@ const contactForm = document.getElementById('contact-form'),
 
 const sendEmail = (e) =>{
     e.preventDefault()
-
     // Check if the field has a value
     if(contactName.value===''||contactEmail.value===''||contactProject.value===''){
         // Remove blue color and add red color
@@ -77,9 +76,11 @@ const sendEmail = (e) =>{
                 setTimeout(() =>{
                     contactMessage.textContent=''
                 },5000)
+            }, (error) => {
+                alert('Oops! Please try again!', error)
             })
+        // Clear the input field
     }
-
 }
 contactForm.addEventListener('submit',sendEmail)
 
