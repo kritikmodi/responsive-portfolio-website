@@ -819,6 +819,13 @@ body.dark-theme {
   transform: translateY(-.15rem);
 }
 
+.footer__copy{
+  display: block;
+  margin-top: 4.5rem;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
 /*=============== SCROLL BAR ===============*/
 
 
