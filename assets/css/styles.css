@@ -809,6 +809,12 @@ body.dark-theme {
   column-gap: 1.25rem;
 }
 
+.footer__social-link{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  transition: transform .3s;
+}
+
 /*=============== SCROLL BAR ===============*/
 
 
