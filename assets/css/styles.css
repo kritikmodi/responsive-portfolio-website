@@ -792,6 +792,11 @@ body.dark-theme {
   justify-content: center;
 }
 
+.footer__list{
+  margin: 2.5rem 0;
+  column-gap: 2.5rem;
+}
+
 /*=============== SCROLL BAR ===============*/
 
 
