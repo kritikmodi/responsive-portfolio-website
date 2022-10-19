@@ -805,6 +805,10 @@ body.dark-theme {
   text-decoration: underline;
 }
 
+.footer__social{
+  column-gap: 1.25rem;
+}
+
 /*=============== SCROLL BAR ===============*/
 
 
