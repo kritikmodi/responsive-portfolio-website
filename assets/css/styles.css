@@ -801,6 +801,10 @@ body.dark-theme {
   color: var(--title-color);
 }
 
+.footer__link:hover{
+  text-decoration: underline;
+}
+
 /*=============== SCROLL BAR ===============*/
 
 
