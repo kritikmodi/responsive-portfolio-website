@@ -775,7 +775,10 @@ body.dark-theme {
 }
 
 /*=============== FOOTER ===============*/
-
+.footer__container{
+  padding: 3rem 0 7rem;
+  text-align: center;
+}
 
 /*=============== SCROLL BAR ===============*/
 
