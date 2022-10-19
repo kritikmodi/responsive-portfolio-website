@@ -815,6 +815,10 @@ body.dark-theme {
   transition: transform .3s;
 }
 
+.footer__social-link:hover{
+  transform: translateY(-.15rem);
+}
+
 /*=============== SCROLL BAR ===============*/
 
 
