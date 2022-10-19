@@ -780,6 +780,12 @@ body.dark-theme {
   text-align: center;
 }
 
+.footer__title{
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1rem;
+}
+
 /*=============== SCROLL BAR ===============*/
 
 
