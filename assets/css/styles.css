@@ -786,6 +786,12 @@ body.dark-theme {
   margin-bottom: 1rem;
 }
 
+.footer__list,
+.footer__social{
+  display: flex;
+  justify-content: center;
+}
+
 /*=============== SCROLL BAR ===============*/
 
 
