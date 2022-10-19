@@ -797,6 +797,10 @@ body.dark-theme {
   column-gap: 2.5rem;
 }
 
+.footer__link{
+  color: var(--title-color);
+}
+
 /*=============== SCROLL BAR ===============*/
 
 
