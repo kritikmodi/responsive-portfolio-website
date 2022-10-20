@@ -827,7 +827,11 @@ body.dark-theme {
 }
 
 /*=============== SCROLL BAR ===============*/
-
+::-webkit-scrollbar{
+  width: 0.6rem;
+  border-radius: .5rem;
+  background-color: hsl(207, 4%, 75%);
+}
 
 /*=============== SCROLL UP ===============*/
 
