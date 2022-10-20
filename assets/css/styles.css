@@ -853,6 +853,11 @@ body.dark-theme {
   box-shadow: 0 4px 12px hsl(207, 24%, 35%, .15);
   display: inline-flex;
   padding: 0.35rem;
+  border-radius: .25rem;
+  font-size: 1.1rem;
+  color: var(--title-color);
+  z-index: var(--z-tooltip);
+  transition: bottom .3s, transform .3s;
 }
 
 /* Show Scroll Up*/
