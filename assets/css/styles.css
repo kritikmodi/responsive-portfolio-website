@@ -838,6 +838,10 @@ body.dark-theme {
   border-radius: .5rem;
 }
 
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(207, 4%, 55%);
+}
+
 /*=============== SCROLL UP ===============*/
 
 
