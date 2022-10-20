@@ -860,6 +860,10 @@ body.dark-theme {
   transition: bottom .3s, transform .3s;
 }
 
+.scrollup:hover{
+  transform: translateY(-.25rem);
+}
+
 /* Show Scroll Up*/
 
 
