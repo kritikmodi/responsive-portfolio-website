@@ -833,6 +833,11 @@ body.dark-theme {
   background-color: hsl(207, 4%, 75%);
 }
 
+::-webkit-scrollbar-thumb{
+  background-color: hsl(207, 4%, 65%);
+  border-radius: .5rem;
+}
+
 /*=============== SCROLL UP ===============*/
 
 
