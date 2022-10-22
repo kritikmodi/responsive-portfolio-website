@@ -128,6 +128,12 @@ body.dark-theme{
   box-shadow: 0 4px 20px hsla(207, 24%, 8%, .4);
 }
 
+.dark-theme .home__shape-wawes,
+.dark-theme .home__shape-circle,
+.dark-theme .qualification__img{
+  filter: invert(1);
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1024px;
