@@ -134,6 +134,10 @@ body.dark-theme{
   filter: invert(1);
 }
 
+.dark-theme .section__border{
+  border-bottom: 1px solid hsl(207, 4%, 32%);
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1024px;
