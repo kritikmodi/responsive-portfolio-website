@@ -210,6 +210,7 @@ body.dark-theme{
   box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
   padding-inline: 1.5rem;
   border-radius: 3rem;
+  transition: background .4s;
 }
 
 .nav__logo,
