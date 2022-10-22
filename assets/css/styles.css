@@ -437,6 +437,7 @@ body.dark-theme{
   border-radius: 3rem;
   place-items: center;
   margin-bottom: 1rem;
+  transition: background .4s;
 }
 
 .skills__blob img{
