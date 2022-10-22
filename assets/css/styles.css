@@ -860,7 +860,7 @@ body.dark-theme{
   right: 1rem;
   bottom: -30%;
   background-color: var(--body-color);
-  box-shadow: 0 4px 12px hsl(207, 24%, 35%, .15);
+  box-shadow: 0 4px 12px hsla(207, 24%, 35%, .15);
   display: inline-flex;
   padding: 0.35rem;
   border-radius: .25rem;
