@@ -102,6 +102,13 @@ img {
   column-gap: 1.5rem;
 }
 
+.change-theme{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color .3s;
+}
+
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
   --title-color: hsl(207, 4%, 95%);
