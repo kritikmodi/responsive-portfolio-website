@@ -312,6 +312,7 @@ body.dark-theme{
   justify-self: center;
   border-radius: 6.25rem;
   place-items: center;
+  transition: background .4s;
 }
 
 .home__perfil{
