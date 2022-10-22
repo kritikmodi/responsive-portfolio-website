@@ -138,6 +138,10 @@ body.dark-theme{
   border-bottom: 1px solid hsl(207, 4%, 32%);
 }
 
+.dark-theme::-webkit-scrollbar{
+  background-color: hsl(207, 4%, 15%);
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1024px;
