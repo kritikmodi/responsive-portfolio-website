@@ -121,7 +121,12 @@ body.dark-theme{
     Color changes in some parts of 
     the website, in light theme
 ==========*/
-
+.dark-theme .nav,
+.dark-theme .nav__menu,
+.dark-theme .scrollup{
+  background-color: var(--container-color);
+  box-shadow: 0 4px 20px hsla(207, 24%, 8%, .4);
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
