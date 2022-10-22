@@ -775,6 +775,7 @@ body.dark-theme{
   font-size: var(--smaller-font-size);
   font-weight: var(--font-medium);
   padding: .35rem;
+  transition: background .4s;
 }
 
 .contact__form-area{
