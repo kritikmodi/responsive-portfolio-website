@@ -96,7 +96,11 @@ img {
 }
 
 /*=============== THEME ===============*/
-
+.nav__buttons{
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
