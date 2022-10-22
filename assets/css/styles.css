@@ -73,7 +73,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: background .4s; /* for dark mode animation */
+  transition: background .4s; /*for dark mode animation*/
 }
 
 h1, h2, h3 {
