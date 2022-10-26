@@ -926,6 +926,10 @@ body.dark-theme{
   .nav__list{
     gap: 1rem 1.25rem;
   }
+
+  .skills__info{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* For medium devices */
