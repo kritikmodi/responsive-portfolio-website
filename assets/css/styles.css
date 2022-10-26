@@ -917,6 +917,10 @@ body.dark-theme{
   .container{
     margin-inline: 1rem;
   }
+
+  .nav__menu{
+    padding-bottom: 4rem;
+  }
 }
 
 /* For medium devices */
