@@ -930,6 +930,11 @@ body.dark-theme{
   .skills__info{
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .projects__img{
+    width: 200px;
+    justify-self: center;
+  }
 }
 
 /* For medium devices */
