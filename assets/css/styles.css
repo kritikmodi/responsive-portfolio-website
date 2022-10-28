@@ -939,7 +939,10 @@ body.dark-theme{
 
 /* For medium devices */
 @media screen and (min-width: 576px){
-  
+  .nav,
+  .nav__menu{
+    width: 380px;
+  }
 }
 
 /* For large devices */
