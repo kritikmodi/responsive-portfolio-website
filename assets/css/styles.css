@@ -970,9 +970,15 @@ body.dark-theme{
 }
 
 @media screen and (min-width: 767px) {
+
   .home__container{
     grid-template-columns: 1fr 2fr 1fr;
   }
+
+  .home__data{
+    order: 2;
+  }
+  
 }
 
 /* For large devices */
