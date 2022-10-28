@@ -948,6 +948,10 @@ body.dark-theme{
   .nav{
     margin: 0 auto;
   }
+
+  .skills__container{
+    justify-content: center;
+  }
 }
 
 /* For large devices */
