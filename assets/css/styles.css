@@ -984,6 +984,10 @@ body.dark-theme{
     text-align: right;
   }
 
+  .home__info{
+    margin-top: 10rem;
+  }
+  
 }
 
 /* For large devices */
