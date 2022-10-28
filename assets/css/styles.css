@@ -978,7 +978,10 @@ body.dark-theme{
   .home__data{
     order: 2;
   }
-  
+
+  .home__info:nth-child(3){
+    order: 3;
+  }
 }
 
 /* For large devices */
