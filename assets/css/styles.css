@@ -956,8 +956,9 @@ body.dark-theme{
 
   .projects__container{
     width: 400px;
+    overflow: hidden;
   }
-  
+
 }
 
 /* For large devices */
