@@ -953,6 +953,10 @@ body.dark-theme{
   .skills__container{
     justify-content: center;
   }
+
+  .projects__container{
+    width: 400px;
+  }
   
 }
 
