@@ -935,6 +935,7 @@ body.dark-theme{
     width: 200px;
     justify-self: center;
   }
+
 }
 
 /* For medium devices */
@@ -952,6 +953,7 @@ body.dark-theme{
   .skills__container{
     justify-content: center;
   }
+  
 }
 
 /* For large devices */
