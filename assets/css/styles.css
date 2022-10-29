@@ -1016,6 +1016,11 @@ body.dark-theme{
   .contact__form{
     width: 360px;
   }
+
+  .contact__container{
+    justify-content: center;
+    column-gap: 8rem;
+  }
   
 }
 
