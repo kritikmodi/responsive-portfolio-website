@@ -987,6 +987,10 @@ body.dark-theme{
   .home__info{
     margin-top: 10rem;
   }
+
+  .home__info-description{
+    padding-right: 0;
+  }
   
 }
 
