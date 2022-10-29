@@ -992,7 +992,8 @@ body.dark-theme{
     padding-right: 0;
   }
 
-  .skills__container{
+  .skills__container,
+  .qualification__container{
     grid-template-columns: repeat(2, max-content);
   }
 
