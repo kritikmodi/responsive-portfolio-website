@@ -995,6 +995,10 @@ body.dark-theme{
   .skills__container{
     grid-template-columns: repeat(2, max-content);
   }
+
+  .skills__container{
+    column-gap: 5rem;
+  }
   
 }
 
