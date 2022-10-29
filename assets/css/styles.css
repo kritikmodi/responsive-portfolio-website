@@ -998,13 +998,18 @@ body.dark-theme{
     grid-template-columns: repeat(2, max-content);
   }
 
-  .skills__container{
+  .skills__container,
+  .achievements__container{
     column-gap: 5rem;
   }
 
   .qualification__container{
     justify-content: center;
     column-gap: 10rem;
+  }
+
+  .projects__container{
+    width: 500px;
   }
   
 }
