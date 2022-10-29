@@ -993,7 +993,8 @@ body.dark-theme{
   }
 
   .skills__container,
-  .qualification__container{
+  .qualification__container,
+  .achievements__container{
     grid-template-columns: repeat(2, max-content);
   }
 
