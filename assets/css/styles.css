@@ -991,6 +991,10 @@ body.dark-theme{
   .home__info-description{
     padding-right: 0;
   }
+
+  .skills__container{
+    grid-template-columns: repeat(2, max-content);
+  }
   
 }
 
