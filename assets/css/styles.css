@@ -1044,4 +1044,10 @@ body.dark-theme{
     padding: 0;
   }
 
+  .nav__link i,
+  .nav__toggle,
+  .nav__close{
+    display: none;
+  }
+
 }
