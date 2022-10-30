@@ -1039,6 +1039,9 @@ body.dark-theme{
     height: calc(var(--header-height)+1.5rem);
     box-shadow: none;
     border-radius: none;
+    column-gap: 3rem;
+    margin-inline: 1.5rem;
+    padding: 0;
   }
 
 }
