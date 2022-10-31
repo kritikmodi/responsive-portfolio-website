@@ -1079,5 +1079,9 @@ body.dark-theme{
   .change-theme:hover{
     color: var(--title-color);
   }
+  
+  .section{
+    padding-block: 8rem 0;
+  }
 
 }
