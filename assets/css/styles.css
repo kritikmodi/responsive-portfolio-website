@@ -1103,4 +1103,8 @@ body.dark-theme{
     box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
   }
 
+  .dark-theme .bg-header{
+    box-shadow: 0 6px 24px hsla(207, 24%, 8%, .6);
+  }
+
 }
