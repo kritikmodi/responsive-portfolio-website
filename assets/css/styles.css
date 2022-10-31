@@ -1088,4 +1088,12 @@ body.dark-theme{
     font-size: 2.25rem;
   }
 
+  .scrollup{
+    right: 3rem;
+  }
+
+  .show-scroll{
+    bottom: 5rem;
+  }
+
 }
