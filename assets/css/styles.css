@@ -1062,4 +1062,8 @@ body.dark-theme{
     column-gap: 3rem;
   }
 
+  .nav__link{
+    font-size: var(--normal-font-size);
+  }
+
 }
