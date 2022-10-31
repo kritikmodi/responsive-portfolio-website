@@ -1050,4 +1050,11 @@ body.dark-theme{
     display: none;
   }
 
+  .nav__menu{
+    width: initial;
+    margin-left: auto;
+    background-color: var(--body-color);
+    transition: background .4s;
+  }
+
 }
