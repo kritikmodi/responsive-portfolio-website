@@ -1057,4 +1057,9 @@ body.dark-theme{
     transition: background .4s;
   }
 
+  .nav__list{
+    display: flex;
+    column-gap: 3rem;
+  }
+
 }
