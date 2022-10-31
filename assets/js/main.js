@@ -48,7 +48,6 @@ let swiperProjects = new Swiper(".projects__container", {
 
 /*=============== SWIPER TESTIMONIAL ===============*/
 
-
 /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById('contact-form'),
       contactName = document.getElementById('contact-name'),
@@ -149,7 +148,13 @@ themeButton.addEventListener('click', () => {
 })
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-
+const scrollHeader = () =>{
+    const header = document.getElementById('header')
+    // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
+    this.scrollY >= 50 ? header.classList.add('bg-header') 
+                       : header.classList.remove('bg-header')
+}
+window.addEventListener('scroll', scrollHeader)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
