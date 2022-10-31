@@ -1066,4 +1066,10 @@ body.dark-theme{
     font-size: var(--normal-font-size);
   }
 
+  .dark-theme .nav,
+  .dark-theme .nav__menu{
+    background-color: var(--body-color);
+    box-shadow: none;
+  }
+
 }
