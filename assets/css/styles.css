@@ -1084,4 +1084,8 @@ body.dark-theme{
     padding-block: 8rem 0;
   }
 
+  .home__title{
+    font-size: 2.25rem;
+  }
+
 }
