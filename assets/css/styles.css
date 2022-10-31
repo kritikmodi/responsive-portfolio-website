@@ -1075,5 +1075,9 @@ body.dark-theme{
   .change-theme{
     color: var(--text-color-light);
   }
-  
+
+  .change-theme:hover{
+    color: var(--title-color);
+  }
+
 }
