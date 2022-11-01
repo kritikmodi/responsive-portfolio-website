@@ -1163,4 +1163,8 @@ body.dark-theme{
     row-gap: 2.5rem;
   }
 
+  .home__social{
+    column-gap: 2rem;
+  }
+
 }
