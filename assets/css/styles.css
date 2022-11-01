@@ -1118,5 +1118,9 @@ body.dark-theme{
 }
 
 @media screen and (min-width: 1200px){
+
+  .section__border{
+    padding-bottom: 6rem;
+  }
   
 }
