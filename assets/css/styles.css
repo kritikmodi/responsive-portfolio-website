@@ -1153,4 +1153,10 @@ body.dark-theme{
     top: 10rem;
   }
 
+  .home__shape-circle{
+    width: 250px;
+    bottom: -1rem;
+    right: -5rem;
+  }
+
 }
