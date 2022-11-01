@@ -1147,4 +1147,10 @@ body.dark-theme{
     width: 300px;
   }
 
+  .home__shape-wawes{
+    width: 100px;
+    left: -4rem;
+    top: 10rem;
+  }
+
 }
