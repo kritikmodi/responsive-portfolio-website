@@ -1111,4 +1111,8 @@ body.dark-theme{
 
 @media screen and (min-width: 1048px){
 
+  .container{
+    margin-inline: auto;
+  }
+
 }
