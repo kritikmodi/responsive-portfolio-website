@@ -1122,5 +1122,9 @@ body.dark-theme{
   .section__border{
     padding-bottom: 6rem;
   }
+
+  .section__subtitle{
+    margin-bottom: 5rem;
+  }
   
 }
