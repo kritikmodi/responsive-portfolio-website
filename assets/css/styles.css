@@ -1159,4 +1159,8 @@ body.dark-theme{
     right: -5rem;
   }
 
+  .home__data{
+    row-gap: 2.5rem;
+  }
+
 }
