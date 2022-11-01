@@ -1136,5 +1136,11 @@ body.dark-theme{
     width: 400px;
     border-radius: 12.5rem;
   }
-  
+
+  .home__perfil{
+    width: 340px;
+    height: 520px;
+    border-radius: 10.6rem;
+  }
+
 }
