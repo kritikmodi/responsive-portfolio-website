@@ -1167,4 +1167,8 @@ body.dark-theme{
     column-gap: 2rem;
   }
 
+  .home__social-link{
+    font-size: 1.5rem;
+  }
+
 }
