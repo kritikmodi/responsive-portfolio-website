@@ -1127,4 +1127,8 @@ body.dark-theme{
     margin-bottom: 5rem;
   }
   
+  .home__title{
+    font-size: var(--biggest-font-size);
+  }
+  
 }
