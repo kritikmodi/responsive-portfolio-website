@@ -1197,4 +1197,8 @@ body.dark-theme{
     gap: 3rem;
   }
 
+  .qualification__container{
+    column-gap: 14rem;
+  }
+
 }
