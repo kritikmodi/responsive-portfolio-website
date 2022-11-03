@@ -1209,4 +1209,8 @@ body.dark-theme{
     font-size: 1.25rem;
   }
 
+  .qualification__name{
+    font-size: var(--h3-font-size);
+  }
+
 }
