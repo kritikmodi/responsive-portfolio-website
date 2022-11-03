@@ -1257,4 +1257,8 @@ body.dark-theme{
     right: -1rem;
   }
 
+  .projects__container .swiper-slide{
+    margin-bottom: 6.5rem;
+  }
+
 }
