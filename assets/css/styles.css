@@ -1303,4 +1303,8 @@ body.dark-theme{
     font-size: 1.5rem;
   }
 
+  .footer__copy{
+    margin-top: 5rem;
+  }
+
 }
