@@ -1278,4 +1278,8 @@ body.dark-theme{
     row-gap: 3rem;
   }
 
+  .contact__data-info{
+    font-size: var(--normal-font-size);
+  }
+
 }
