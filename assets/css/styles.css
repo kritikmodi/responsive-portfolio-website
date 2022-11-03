@@ -1219,4 +1219,8 @@ body.dark-theme{
     bottom: 5rem;
   }
 
+  .achievements__container{
+    grid-template-columns: repeat(3,max-content);
+  }
+
 }
