@@ -1213,4 +1213,10 @@ body.dark-theme{
     font-size: var(--h3-font-size);
   }
 
+  .qualification__img{
+    width: 300px;
+    left: -6rem;
+    bottom: 5rem;
+  }
+
 }
