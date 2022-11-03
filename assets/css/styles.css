@@ -1282,4 +1282,8 @@ body.dark-theme{
     font-size: var(--normal-font-size);
   }
 
+  .contact__form{
+    row-gap: 2.5rem;
+  }
+  
 }
