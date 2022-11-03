@@ -1185,4 +1185,8 @@ body.dark-theme{
     margin-bottom: 3rem;
   }
 
+  .skills__title i{
+    font-size: 1.25rem;
+  }
+
 }
