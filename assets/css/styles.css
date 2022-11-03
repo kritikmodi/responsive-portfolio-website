@@ -1299,4 +1299,8 @@ body.dark-theme{
     column-gap: 2rem;
   }
 
+  .footer__social-link{
+    font-size: 1.5rem;
+  }
+
 }
