@@ -1270,4 +1270,8 @@ body.dark-theme{
     margin-bottom: 3rem;
   }
 
+  .contact__title i{
+    font-size: 1.25rem;
+  }
+
 }
