@@ -1177,4 +1177,8 @@ body.dark-theme{
     margin-top: 16rem;
   }
 
+  .skills__container{
+    column-gap: 10rem;
+  }
+
 }
