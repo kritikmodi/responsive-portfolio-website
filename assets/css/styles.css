@@ -1290,4 +1290,9 @@ body.dark-theme{
     padding: 4rem 0 3rem;
   }
 
+  .footer__list{
+    column-gap: 3rem;
+    margin: 3rem 0;
+  }
+
 }
