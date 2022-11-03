@@ -1285,5 +1285,9 @@ body.dark-theme{
   .contact__form{
     row-gap: 2.5rem;
   }
-  
+
+  .footer__container{
+    padding: 4rem 0 3rem;
+  }
+
 }
