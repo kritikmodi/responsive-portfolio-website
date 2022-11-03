@@ -1171,4 +1171,10 @@ body.dark-theme{
     font-size: 1.5rem;
   }
 
+  .home__info{
+    grid-template-columns: repeat(3,130px);
+    row-gap: 4rem;
+    margin-top: 16rem;
+  }
+
 }
