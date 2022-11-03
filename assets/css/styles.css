@@ -1274,4 +1274,8 @@ body.dark-theme{
     font-size: 1.25rem;
   }
 
+  .contact__info{
+    row-gap: 3rem;
+  }
+
 }
