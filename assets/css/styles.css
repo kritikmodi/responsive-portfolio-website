@@ -1230,4 +1230,8 @@ body.dark-theme{
     padding: 3.5rem 1.5rem;
   }
 
+  .achievements__card i{
+    font-size: 2.5rem;
+  }
+
 }
