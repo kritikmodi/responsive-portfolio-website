@@ -1205,4 +1205,8 @@ body.dark-theme{
     margin-bottom: 3rem;
   }
 
+  .qualification__title i{
+    font-size: 1.25rem;
+  }
+
 }
