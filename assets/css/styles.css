@@ -1249,4 +1249,12 @@ body.dark-theme{
     font-size: 3rem;
   }
 
+  .projects__container .swiper-button-prev{
+    left: -1rem;
+  }
+
+  .projects__container .swiper-button-next{
+    right: -1rem;
+  }
+
 }
