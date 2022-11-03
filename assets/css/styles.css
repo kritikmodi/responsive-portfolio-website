@@ -1189,4 +1189,8 @@ body.dark-theme{
     font-size: 1.25rem;
   }
 
+  .skills__name{
+    font-size: var(--normal-font-size);
+  }
+
 }
