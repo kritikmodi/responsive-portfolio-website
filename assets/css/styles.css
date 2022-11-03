@@ -1181,4 +1181,8 @@ body.dark-theme{
     column-gap: 10rem;
   }
 
+  .skills__title{
+    margin-bottom: 3rem;
+  }
+
 }
