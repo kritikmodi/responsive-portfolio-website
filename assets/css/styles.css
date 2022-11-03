@@ -1261,4 +1261,9 @@ body.dark-theme{
     margin-bottom: 6.5rem;
   }
 
+  .projects__img{
+    width: 320px;
+    margin-bottom: 2rem;
+  }
+
 }
