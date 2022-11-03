@@ -1240,4 +1240,8 @@ body.dark-theme{
     border-radius: 8.25rem;
   }
 
+  .projects__container{
+    width: 900px;
+  }
+
 }
