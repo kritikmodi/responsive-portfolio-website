@@ -1295,4 +1295,8 @@ body.dark-theme{
     margin: 3rem 0;
   }
 
+  .footer__social{
+    column-gap: 2rem;
+  }
+
 }
