@@ -1193,4 +1193,8 @@ body.dark-theme{
     font-size: var(--normal-font-size);
   }
 
+  .skills__info{
+    gap: 3rem;
+  }
+
 }
