@@ -1223,4 +1223,9 @@ body.dark-theme{
     grid-template-columns: repeat(3,max-content);
   }
 
+  .achievements__card{
+    width: 245px;
+    height: 345px;
+  }
+
 }
