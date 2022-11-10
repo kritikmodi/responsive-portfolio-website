@@ -14,4 +14,4 @@ Steps to follow :
 
 5. Redesign each part as per requirement!
 
-Deployed website : [https://kritikmodi.netlify.app](https://kritikmodi.netlify.app)
+Deployed website : https://kritikmodi.netlify.app
