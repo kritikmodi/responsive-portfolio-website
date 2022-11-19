@@ -4,7 +4,7 @@
 
 Steps to follow :
 
-1. Figure out a rough design of what I want to build.
+1. Figure out a rough design of what you want to build.
 
 2. Implement a framework in HTML.
 
