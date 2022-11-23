@@ -2,7 +2,7 @@
 
 ### Built using HTML, CSS & Javascript!
 
-Steps to follow :
+General steps to follow to build a simple website :
 
 1. Figure out a rough design of what you want to build.
 
