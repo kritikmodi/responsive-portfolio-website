@@ -461,6 +461,12 @@ body.dark-theme{
   animation: bounce-skills .6s;
 }
 
+/* Makes the icons white */
+.skills__content:nth-child(2) .skills__blob img {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
 @keyframes bounce-skills{
   0%{
     transform: translate(0);
