@@ -119,7 +119,11 @@ window.addEventListener('scroll', scrollUp)
 
 /*=============== DARK LIGHT THEME ===============*/ 
 const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
+themeButton.style.display = 'none';
+
+// Disabling the light theme for now
+
+/*const darkTheme = 'dark-theme'
 const iconTheme = 'ri-sun-line'
 
 // Previously selected topic (if user selected)
@@ -145,7 +149,7 @@ themeButton.addEventListener('click', () => {
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
-})
+})*/
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 const scrollHeader = () =>{
