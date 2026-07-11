@@ -1,701 +1,447 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <title>Kritik Modi · Software Engineer</title>
+  <meta name="description" content="Kritik Modi is a software engineer building the infrastructure behind fast, reliable systems. Founding engineer at Datatailr. Writing, photography, and a little about the person behind the work." />
+  <meta name="author" content="Kritik Modi" />
 
-        <!--=============== REMIXICONS ===============-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-        
-        <!--=============== SWIPER CSS ===============-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kritik Modi · Software Engineer" />
+  <meta property="og:description" content="Building the infrastructure behind fast, reliable systems. Writing, photography, and a little about the person behind the work." />
+  <meta property="og:url" content="https://kritikmodi.com" />
+  <meta property="og:image" content="https://kritikmodi.com/assets/img/portrait.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="canonical" href="https://kritikmodi.com" />
 
-        <title>Kritik Modi</title>
-    </head>
-    <body class="dark-theme">
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav__logo">
-                    Kritik Modi
-                </a>
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list grid">
-                        <li class="nav__itemm">
-                            <a href="#home" class="nav__link active-link">
-                                <i class="ri-home-line"></i> Home
-                            </a>
-                        </li>
-                        <li class="nav__itemm">
-                            <a href="#skills" class="nav__link">
-                                <i class="ri-code-line"></i> Skills
-                            </a>
-                        </li>
-                        <li class="nav__itemm">
-                            <a href="#qualification" class="nav__link">
-                                <i class="ri-book-line"></i> Qualifications
-                            </a>
-                        </li>
-                        <li class="nav__itemm">
-                            <a href="#achievements" class="nav__link">
-                                <i class="ri-trophy-line"></i> Achievements
-                            </a>
-                        </li>
-                        <li class="nav__itemm">
-                            <a href="#projects" class="nav__link">
-                                <i class="ri-macbook-line"></i> Projects
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="https://drive.google.com/file/d/1N_TV4Udm9lua4Zri8u1tzfICGFp4xSgK/view?usp=sharing" class="nav__link" target="_blank">Resume</a>
-                        </li>
-                        <li class="nav__itemm">
-                            <a href="#contact" class="nav__link">
-                                <i class="ri-chat-4-line"></i> Contact Me
-                            </a>
-                        </li>
-                    </ul>
+  <!-- Favicon: KM monogram -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23100F0D'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23D2A94E' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E" />
 
-                    <!-- Close button -->
-                    <div class="nav__close" id="nav-close"> 
-                        <i class="ri-close-line"></i>
-                    </div>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-                </div>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
 
-                <div class="nav__buttons">
-                    <!-- Theme change button -->
-                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header" id="top">
+    <div class="wrap site-header__inner">
+      <a href="#top" class="brand" aria-label="Kritik Modi, home">
+        <span class="brand__mark">KM</span>
+        <span class="brand__name">Kritik Modi</span>
+      </a>
 
-                    <!-- Toggle button -->
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="ri-menu-line"></i>
-                    </div>
-                </div>
-            </nav>
-        </header>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle menu">
+          <span></span><span></span>
+        </button>
+        <ul class="nav__list" id="navMenu">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#work" class="nav__link">Work</a></li>
+          <li><a href="#writing" class="nav__link">Writing</a></li>
+          <li><a href="#photography" class="nav__link">Photography</a></li>
+          <li><a href="#proud" class="nav__link">Proud of</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+          <li><a href="assets/Kritik_Modi_Resume.pdf" class="nav__link nav__link--cta" target="_blank" rel="noopener">Résumé</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                <div class="home__container container grid section__border">
-                    <div class="home__data grid">
-                        <h1 class="home__title">
-                            Hi, I'm Kritik <br>
-                            Software Developer <br>
-                            Based in Bengaluru <br>
-                        </h1>
-                        <div class="home__blob grid">
-                            <div class="home__perfil">
-                                <img src="assets/img/Kritik.png" alt="home perfil">
-                            </div>
-                            <img src="assets/img/shape-waves.svg" alt="" class="home__shape-waves">
-                            <img src="assets/img/shape-circle.svg" alt="" class="home__shape-circle">
-                        </div>
-                        <ul class="home__social">
-                            <a href="https://www.linkedin.com/in/kritik-modi-2b5415162/" target="_blank" class="home__social-link">
-                                <i class="ri-linkedin-box-line"></i>
-                            </a>
-                            <a href="https://www.github.com/kritikmodi" target="_blank" class="home__social-link">
-                                <i class="ri-github-line"></i>
-                            </a>
-                            <a href="https://www.twitter.com/MuchWowLessOww" target="_blank" class="home__social-link">
-                                <i class="ri-twitter-line"></i>
-                            </a>
-                        </ul>
-                    </div>
-                    <!--==================== HOME INFO 1 ====================-->
-                    <div class="home__info">
-                        <div>
-                            <h3 class="home__info-title">
-                                BIOGRAPHY
-                            </h3>
-                            <p class="home__info-description">
-                                Hi, I'm Kritik, Software Developer based in India.
-                                Passionate about building scalable software and
-                                solving algorithmic problems.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="home__info-title">
-                                CONTACT
-                            </h3>
-                            <p class="home__info-description">
-                                kritikmodi@gmail.com <br>
-                                +91-7019433521 <br>
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="home__info-title">
-                                ACHIEVEMENTS
-                            </h3>
-                            <p class="home__info-description">
-                                - National hackathon winner <br>
-                                - ICPC Regionalist <br>
-                                - Top 0.2% @ Leetcode <br>
-                            </p>
-                        </div>
-                    </div>
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" aria-labelledby="heroName">
+      <div class="wrap hero__grid">
+        <div class="hero__text reveal">
+          <p class="eyebrow">AI Engineer · Infrastructure &amp; Systems</p>
+          <h1 class="hero__name" id="heroName">Kritik&nbsp;Modi</h1>
+          <p class="hero__lede">
+            I build the quiet, load-bearing infrastructure behind fast, reliable
+            systems. Off the clock, I write, take photographs, and chase hard
+            problems for the fun of it.
+          </p>
 
-                    <!--==================== HOME INFO 2 ====================-->
-                    <div class="home__info">
-                        <div>
-                            <h3 class="home__info-title">
-                                YEARS OF EXPERIENCE
-                            </h3>
-                            <p class="home__info-number">
-                                4+
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="home__info-title">
-                                ENTERPRISE PROJECTS
-                            </h3>
-                            <p class="home__info-number">
-                                10+
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="home__info-title">
-                                PERSONAL PROJECTS
-                            </h3>
-                            <p class="home__info-number">
-                                5+
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!--==================== SKILLS ====================-->
-            <section class="skills section" id="skills">
-                <h2 class="section__title">
-                    Skills
-                </h2>
-                <span class="section__subtitle">
-                    My top skills
-                </span>
-                <div class="skills__container container grid section__border">
-                    <!--==================== SKILLS 1 ====================-->
-                    <div class="skills__content">
-                        <h3 class="skills__title">
-                            <i class="ri-braces-line"></i> Software Developer
-                        </h3>
-                        <div class="skills__info">
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-java-120.svg" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    Java
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Advanced
-                                </span>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-android-studio-100.svg" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    Python
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Intermediate
-                                </span>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-flutter-120.svg" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    C++
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Intermediate
-                                </span>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-google-firebase-console-120.svg" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    AWS
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Intermediate
-                                </span>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-google-firebase-console-120.svg" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    Docker
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Intermediate
-                                </span>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/git-icon.svg" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    Git
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Advanced
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--==================== SKILLS 2 ====================-->
-                    <div class="skills__content">
-                        <h3 class="skills__title">
-                            <i class="ri-braces-line"></i> Computer Fundamentals
-                        </h3>
-                        <div class="skills__info">
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-binary-code-100.png" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    DS
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Intermediate
-                                </span>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-plugin-100.png" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    Algo
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Advanced
-                                </span>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-database-100.png" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    DBMS
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Intermediate
-                                </span>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-console-100.png" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    OOPS
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Intermediate
-                                </span>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-multicast-100.png" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    OS
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Advanced
-                                </span>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__blob">
-                                    <img src="assets/img/icons8-multicast-100.png" alt="skills image">
-                                </div>
-                                <h3 class="skills__name">
-                                    CN
-                                </h3>
-                                <span class="skills__subtitle">
-                                    Advanced
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!--==================== QUALIFICATION ====================-->
-            <section class="qualification section" id="qualification">
-                <h2 class="section__title">
-                    Qualifications
-                </h2>
-                <span class="section__subtitle">
-                    Experience and Education
-                </span>
-                <div class="qualification__container container grid section__border">
-                    <!--==================== QUALIFICATION 1 ====================-->
-                    <div class="qualification__content">
-                        <h3 class="qualification__title">
-                            <i class="ri-book-line"></i> Education
-                        </h3>
-                        <div class="qualification__info">
-                            <div>
-                                <h3 class="qualification__name">
-                                    B.E. (Computer Science Engineering)
-                                </h3>
-                                <span class="qualification__country">
-                                    Dayananda Sagar College of Engineering
-                                </span>
-                                <span class="qualification__year">
-                                    2019 - 2023
-                                </span>
-                            </div>
-                            <div>
-                                <h3 class="qualification__name">
-                                    Senior Secondary Education (ISC)
-                                </h3>
-                                <span class="qualification__country">
-                                    Little Flower School
-                                </span>
-                                <span class="qualification__year">
-                                    2016 - 2018
-                                </span>
-                            </div>
-                            <div>
-                                <h3 class="qualification__name">
-                                    High School (ISCE)
-                                </h3>
-                                <span class="qualification__country">
-                                    H.P. Children's Academy
-                                </span>
-                                <span class="qualification__year">
-                                    2003 - 2016
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--==================== QUALIFICATION 2 ====================-->
-                    <div class="qualification__content">
-                        <h3 class="qualification__title">
-                            <i class="ri-building-line"></i> Experience
-                        </h3>
-                        <div class="qualification__info">
-                            <div>
-                                <h3 class="qualification__name">
-                                    GitHub Extern (SDE)
-                                </h3>
-                                <span class="qualification__country">
-                                    Suborbital - Canada
-                                </span>
-                                <span class="qualification__year">
-                                    Feb 2022 - May 2022
-                                </span>
-                            </div>
-                            <div>
-                                <h3 class="qualification__name">
-                                    SDE Intern
-                                </h3>
-                                <span class="qualification__country">
-                                    Brane Enterprises - Bangalore
-                                </span>
-                                <span class="qualification__year">
-                                    Oct 2021 - Mar 2022
-                                </span>
-                            </div>
-                            <div>
-                                <h3 class="qualification__name">
-                                    SDE Intern
-                                </h3>
-                                <span class="qualification__country">
-                                    Surya Software Systems - Bangalore
-                                </span>
-                                <span class="qualification__year">
-                                    Sep 2021 - Dec 2021
-                                </span>
-                            </div>
-                            <div>
-                                <h3 class="qualification__name">
-                                    UI/UX Designer
-                                </h3>
-                                <span class="qualification__country">
-                                    Seegate Corporation - Mumbai
-                                </span>
-                                <span class="qualification__year">
-                                    May 2021 - Jul 2021
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <img src="assets/img/shape-circle.svg" alt="qualification image" class="qualification__img">
-            </section>
-
-            <!--==================== ACHIEVEMENTS ====================-->
-            <section class="achievements section" id="achievements">
-                <h2 class="section__title">
-                    Achievements
-                </h2>
-                <span class="section__subtitle">
-                    What makes me stand out
-                </span>
-                <div class="achievements__container container grid section__border">
-                    <div class="achievements__card">
-                        <i class="ri-trophy-line"></i>
-                        <h2 class="achievements__title">
-                            Winner <br>
-                            Smart India Hackathon 2022
-                        </h2>
-                        <p class="achievements__description">
-                            Won India's biggest hackathon, awarded by the Govt. of India.
-                        </p>
-                        <div class="achievements__border">
-                        </div>
-                    </div>
-                    <div class="achievements__card">
-                        <i class="ri-code-line"></i>
-                        <h2 class="achievements__title">
-                            Extern <br>
-                            GitHub Externship 2022
-                        </h2>
-                        <p class="achievements__description">
-                            Selected as a GitHub Extern with a selection rate of 0.006%.
-                        </p>
-                        <div class="achievements__border">
-                        </div>
-                    </div>
-                    <div class="achievements__card">
-                        <i class="ri-trophy-line"></i>
-                        <h2 class="achievements__title">
-                            6⭐ @ Codechef <br>
-                            Top 0.2% @ Leetcode
-                        </h2>
-                        <p class="achievements__description">
-                            Among the top 0.2% competitive programmers in India.
-                        </p>
-                        <div class="achievements__border">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!--==================== PROJECTS ====================-->
-            <section class="projects section" id="projects">
-                <h2 class="section__title">
-                    Projects
-                </h2>
-                <span class="section__subtitle">
-                    My personal projects
-                </span>
-                <div class="container section__border">
-                    <div class="projects__container swiper">
-                        <div class="swiper-wrapper">
-                            <!--==================== PROJECT 1 ====================-->
-                            <div class="projects__content swiper-slide">
-                                <img src="assets/img/project1.jpg" alt="projects image" class="projects__img">
-                                <div>
-                                    <span class="projects__subtitle">
-                                        Android, fullstack
-                                    </span>
-                                    <h1 class="projects__title">
-                                        CollegeLink
-                                    </h1>
-                                    <a href="https://www.youtube.com/watch?v=puaD4Zb_2Yo" class="projects__button">
-                                        Demo <i class="ri-arrow-right-line"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!--==================== PROJECT 2 ====================-->
-                            <div class="projects__content swiper-slide">
-                                <img src="assets/img/project2.jpg" alt="projects image" class="projects__img">
-                                <div>
-                                    <span class="projects__subtitle">
-                                        Android, front-end
-                                    </span>
-                                    <h1 class="projects__title">
-                                        EtherX
-                                    </h1>
-                                    <a href="https://github.com/kritikmodi/EtherX" class="projects__button">
-                                        Demo <i class="ri-arrow-right-line"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!--==================== PROJECT 3 ====================-->
-                            <div class="projects__content swiper-slide">
-                                <img src="assets/img/project3.jpg" alt="projects image" class="projects__img">
-                                <div>
-                                    <span class="projects__subtitle">
-                                        Flutter, front-end
-                                    </span>
-                                    <h1 class="projects__title">
-                                        Smart Parking App
-                                    </h1>
-                                    <a href="https://www.youtube.com/watch?v=qzlBGnAuPHw" class="projects__button">
-                                        Demo <i class="ri-arrow-right-line"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Swiper arrows -->
-                        <div class="swiper-button-next">
-                            <i class="ri-arrow-right-s-line"></i>
-                        </div>
-                        <div class="swiper-button-prev">
-                            <i class="ri-arrow-left-s-line"></i>
-                        </div>
-                        <!-- Swiper pagination -->
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-
-            <!--==================== TESTIMONIAL ====================-->
-            <!-- <section class="testimonial section"></section> -->
-
-            <!--==================== CONTACT ====================-->
-            <section class="contact section" id="contact">
-                <h2 class="section__title">
-                    Contact Me
-                </h2>
-                <span class="section__subtitle">
-                    Get in touch
-                </span>
-                <div class="contact__container container grid section__border">
-                    <div class="contact__content">
-                        <h3 class="contact__title">
-                            <i class="ri-chat-3-line"></i>
-                            Text me
-                        </h3>
-                        <div class="contact__info">
-                            <div class="contact__data">
-                                <span class="contact__data-title">
-                                    Email
-                                </span>
-                                <span class="contact__data-info">
-                                    kritikmodi@gmail.com
-                                </span>
-                            </div>
-                            <div class="contact__data">
-                                <span class="contact__data-title">
-                                    WhatsApp
-                                </span>
-                                <span class="contact__data-info">
-                                    xxxxxxxxxx
-                                </span>
-                                <a href="https://api.whatsapp.com/send?phone=xxxxxxxxxxxx&text=Hello, more information!" target="_blank" class="contact__button">
-                                    Text me <i class="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                            <div class="contact__data">
-                                <span class="contact__data-title">
-                                    Telegram
-                                </span>
-                                <span class="contact__data-info">
-                                    https://t.me/kritikmodi
-                                </span>
-                                <a href="https://t.me/kritikmodi" target="_blank" class="contact__button">
-                                    Text me <i class="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact__content">
-                        <h3 class="contact__title">
-                            <i class="ri-send-plane-line"></i> Have a query for me?
-                        </h3>
-                        <form action="" class="contact__form" id="contact-form">
-                            <div class="contact__form-div">
-                                <label class="contact__form-tag">
-                                    Name
-                                </label>
-                                <input type="text" name="user_name" required placeholder="Your name" class="contact__form-input" id="contact-name">
-                            </div>
-                            <div class="contact__form-div">
-                                <label class="contact__form-tag">
-                                    Email
-                                </label>
-                                <input type="email" name="user_email" required placeholder="Your email" class="contact__form-input" id="contact-email">
-                            </div>
-                            <div class="contact__form-div contact__form-area">
-                                <label class="contact__form-tag">
-                                    Text
-                                </label>
-                                <textarea name="user_project" placeholder="Ask me something?" id="contact-project" class="contact__form-input"></textarea>
-                            </div>
-                            <p class="contact__message" id="contact-message"></p>
-                            <button type="submit" class="contact__button">
-                                Send <i class="ri-arrow-right-up-line"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!--==================== FOOTER ====================-->
-        <footer class="footer">
-            <div class="footer__container container">
-                <h1 class="footer__title">
-                    Kritik
-                </h1>
-                <p>
-                    Software Developer
-                </p>
-                <ul class="footer__list">
-                    <li>
-                        <a href="#home" class="footer__link">Home</a>
-                    </li>
-                    <li>
-                        <a href="#skills" class="footer__link">Skills</a>
-                    </li>
-                    <li>
-                        <a href="#projects" class="footer__link">Projects</a>
-                    </li>
-                </ul>
-                <ul class="footer__social">
-                    <a href="https://www.linkedin.com/in/kritik-modi-2b5415162/" target="_blank" class="footer__social-link">
-                        <i class="ri-linkedin-box-line"></i>
-                    </a>
-                    <a href="https://www.github.com/kritikmodi" target="_blank" class="footer__social-link">
-                        <i class="ri-github-line"></i>
-                    </a>
-                    <a href="https://www.twitter.com/MuchWowLessOww" target="_blank" class="footer__social-link">
-                        <i class="ri-twitter-line"></i>
-                    </a>
-                </ul>
-                <span class="footer__copy">
-                    &#169; Copyright Kritik. All rights reserved.
-                </span>
+          <dl class="readout" aria-label="Quick facts">
+            <div class="readout__row">
+              <dt>Based</dt>
+              <dd>New Delhi, India</dd>
             </div>
-        </footer>
+            <div class="readout__row">
+              <dt>Local</dt>
+              <dd><span id="localClock">··:··</span> IST</dd>
+            </div>
+            <div class="readout__row">
+              <dt>Now</dt>
+              <dd>Founding Engineer, Datatailr</dd>
+            </div>
+          </dl>
 
+          <div class="hero__links">
+            <a href="mailto:kritikmodi@gmail.com" class="link-btn link-btn--primary">Get in touch</a>
+            <a href="https://github.com/kritikmodi" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/kritikmodi" class="link-btn" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
 
-        <!--========== SCROLL UP ==========-->
-        <a href="#" class="scrollup" id="scroll-up">
-            <i class="ri-arrow-up-line"></i>
-        </a>
+        <figure class="hero__portrait reveal">
+          <div class="portrait__frame">
+            <img src="assets/img/portrait.png" alt="Illustrated portrait of Kritik Modi" loading="eager" />
+          </div>
+          <figcaption class="portrait__caption">
+            <span>Kritik Modi</span>
+            <span>28.61° N, 77.20° E</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src="assets/js/scrollreveal.min.js"></script>
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section" id="about" aria-labelledby="aboutTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">About</span>
+          <h2 class="section-title" id="aboutTitle">A little about me</h2>
+        </div>
+        <div class="prose reveal">
+          <p>
+            I'm a software engineer based in India, currently on the founding
+            team at <strong>Datatailr</strong>, where we build high-performance
+            computing tools for hedge funds and high-frequency traders. My work
+            lives in the parts of software you only notice when they break:
+            cloud infrastructure, private networking, orchestration, and the
+            systems that quietly hold everything up.
+          </p>
+          <p>
+            Before that I wrote Rust for a payments engine at <strong>Juspay</strong>,
+            automated supply-chain workflows at <strong>IBM</strong>, and spent a
+            GitHub Externship building WebAssembly tooling. Somewhere along the
+            way I fell hard for competitive programming and never really stopped.
+          </p>
+          <p>
+            This site is the version of me that a résumé can't hold: the
+            writing, the photographs, and the long habit of picking up whatever
+            problem looks most interesting. Have a look around.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <!--=============== SWIPER JS ===============-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        
-        <!--=============== EMAIL JS ===============-->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- ==================== WORK ==================== -->
+    <section class="section" id="work" aria-labelledby="workTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Work</span>
+          <h2 class="section-title" id="workTitle">Full-time experience</h2>
+        </div>
 
-        <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
-    </body>
+        <ol class="cv">
+          <li class="cv__item reveal">
+            <span class="cv__year">2023 &ndash; Now</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Founding Engineer <span class="cv__at">· Datatailr</span></h3>
+              <p class="cv__desc">
+                Multi-cloud infrastructure-as-code across AWS, Azure, GCP and
+                Hetzner. Designed private networking on Azure, a Trino federated
+                SQL layer over 100K+ tables, and DAG-based batch orchestration,
+                cutting query times ~90% and compute costs ~75%.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2023</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Software Engineer <span class="cv__at">· Juspay</span></h3>
+              <p class="cv__desc">
+                Shipped Rust features for Hyperswitch, an open-source payment
+                orchestrator (idempotency, retries and validation for
+                high-concurrency traffic), plus backend SDKs across five stacks.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="section-head reveal">
+          <h2 class="section-title">Internships &amp; Freelance</h2>
+        </div>
+
+        <ol class="cv">
+          <li class="cv__item reveal">
+            <span class="cv__year">2023</span>
+            <div class="cv__body">
+              <h3 class="cv__role">SDE Intern <span class="cv__at">· Datatailr</span></h3>
+              <p class="cv__desc">
+                Early work on the platform before joining the founding team full
+                time.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2023</span>
+            <div class="cv__body">
+              <h3 class="cv__role">SDE Intern <span class="cv__at">· IBM</span></h3>
+              <p class="cv__desc">
+                Built RPA bots for supply-chain workflows, automating 10+ tasks a
+                week with scheduling, retries and monitoring.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2022</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Freelance Software Developer <span class="cv__at">· Bflashy</span></h3>
+              <p class="cv__desc">
+                Built a Web3 Android app (Firebase auth and Firestore with
+                Ethereum workflows), with POAP-style tokens for blockchain-based
+                identity.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2022</span>
+            <div class="cv__body">
+              <h3 class="cv__role">SDE Intern, GitHub Externship <span class="cv__at">· Suborbital</span></h3>
+              <p class="cv__desc">
+                Selected among 14,000+ applicants (~0.6%). Built 20+ WebAssembly
+                runnables in Rust, Swift, TinyGo and JavaScript, and extended the
+                <code>subo</code> CLI.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2021 &ndash; 22</span>
+            <div class="cv__body">
+              <h3 class="cv__role">SDE Intern <span class="cv__at">· Brane Enterprises</span></h3>
+              <p class="cv__desc">
+                Added features and fixed bugs in a cloud-computing app using
+                Flutter, building 10+ UI components with the BLoC pattern.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2021</span>
+            <div class="cv__body">
+              <h3 class="cv__role">SDE Intern <span class="cv__at">· Surya Software Systems</span></h3>
+              <p class="cv__desc">
+                Worked on Surya's RPC server and CLI, adding automatic generation
+                of Postman collections from YAML files.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2021</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Freelance Software Developer <span class="cv__at">· TradeX</span></h3>
+              <p class="cv__desc">
+                Integrated multiple stock APIs into an Android app for automated
+                stock calls.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2021</span>
+            <div class="cv__body">
+              <h3 class="cv__role">UI/UX Developer <span class="cv__at">· Kewl Motors</span></h3>
+              <p class="cv__desc">
+                Designed and improved web UI/UX for a next-generation EV brand,
+                plus posters and brand collateral in Illustrator and XD.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2021</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Graphic Designer <span class="cv__at">· Neurotech Designs</span></h3>
+              <p class="cv__desc">
+                Designed 50+ social posters, logos and covers, plus 10+ UI
+                elements for a wellness-tech company.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2020</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Graphic Designer &amp; Content Writer <span class="cv__at">· ShubhChintak Technology</span></h3>
+              <p class="cv__desc">
+                Designed 50+ social posters and wrote 50+ technical blogs for a
+                web, SEO and DevOps services company.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2020</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Technical Content Writer <span class="cv__at">· Intellify</span></h3>
+              <p class="cv__desc">
+                Wrote 30+ technical blogs for an IIT-Delhi education startup under
+                the SOLVE Foundation.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="cv__more reveal">
+          <a href="assets/Kritik_Modi_Resume.pdf" target="_blank" rel="noopener">Full résumé <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== WRITING ==================== -->
+    <section class="section" id="writing" aria-labelledby="writingTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Writing</span>
+          <h2 class="section-title" id="writingTitle">Notes &amp; essays</h2>
+        </div>
+
+        <div class="writing reveal">
+          <p class="writing__intro">
+            I'm starting to write more: mostly working notes on systems,
+            performance, and the occasional detour into whatever I'm figuring
+            out. The first posts are on their way.
+          </p>
+          <div class="writing__soon">
+            <span class="tag">First posts coming soon</span>
+          </div>
+          <ul class="writing__topics">
+            <li><span class="writing__topic-label">On the list</span> Designing private networks that stay invisible until you need them</li>
+            <li><span class="writing__topic-label">On the list</span> What ~90% query speedups actually look like up close</li>
+            <li><span class="writing__topic-label">On the list</span> Ten years of competitive programming, and what it taught me about real code</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PHOTOGRAPHY ==================== -->
+    <section class="section" id="photography" aria-labelledby="photoTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Photography</span>
+          <h2 class="section-title" id="photoTitle">Through the lens</h2>
+        </div>
+        <p class="prose prose--tight reveal">
+          A slower hobby than the day job. I'm curating a set to put here, but
+          for now the frames below are placeholders waiting for the real thing.
+        </p>
+
+        <div class="gallery reveal">
+          <figure class="frame frame--a">
+            <div class="frame__img"></div>
+            <figcaption><span>Untitled</span><span>n.d.</span></figcaption>
+          </figure>
+          <figure class="frame frame--b">
+            <div class="frame__img"></div>
+            <figcaption><span>Untitled</span><span>n.d.</span></figcaption>
+          </figure>
+          <figure class="frame frame--c">
+            <div class="frame__img"></div>
+            <figcaption><span>Untitled</span><span>n.d.</span></figcaption>
+          </figure>
+          <figure class="frame frame--d">
+            <div class="frame__img"></div>
+            <figcaption><span>Untitled</span><span>n.d.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROUD OF ==================== -->
+    <section class="section" id="proud" aria-labelledby="proudTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Proud of</span>
+          <h2 class="section-title" id="proudTitle">Things I'm proud of</h2>
+        </div>
+
+        <div class="honors reveal">
+          <div class="honor">
+            <h3 class="honor__title">Smart India Hackathon</h3>
+            <p class="honor__note">Winner, 2022. A fake-news detection system, awarded by the Government of India.</p>
+          </div>
+          <div class="honor">
+            <h3 class="honor__title">ACM-ICPC Regionalist</h3>
+            <p class="honor__note">2022. Qualified for the Kanpur&ndash;Mathura regionals, top ~80 teams onsite.</p>
+          </div>
+          <div class="honor">
+            <h3 class="honor__title">GitHub Externship</h3>
+            <p class="honor__note">2022. Selected among 14,000+ applicants, a ~0.6% acceptance rate.</p>
+          </div>
+        </div>
+
+        <div class="section-head section-head--sub reveal">
+          <span class="section-label">Competitive programming</span>
+        </div>
+        <dl class="stats reveal">
+          <div class="stat">
+            <dt class="stat__label">LeetCode · Guardian</dt>
+            <dd class="stat__value">2488</dd>
+            <p class="stat__sub">Peak · Top 0.2% global</p>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">CodeChef · 6★</dt>
+            <dd class="stat__value">2222</dd>
+            <p class="stat__sub">Peak · best rank 11 / 3000+</p>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">Codeforces · Expert</dt>
+            <dd class="stat__value">1790</dd>
+            <p class="stat__sub">Peak · Top 0.5% global</p>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">Meta Hacker Cup '24</dt>
+            <dd class="stat__value">85</dd>
+            <p class="stat__sub">India rank · Round 2</p>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section section--contact" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title" id="contactTitle">Say hello</h2>
+        </div>
+        <div class="contact reveal">
+          <p class="contact__lede">
+            Building something interesting, want to talk shop, or just have a
+            good problem to share? My inbox is open.
+          </p>
+          <a href="mailto:kritikmodi@gmail.com" class="contact__mail">kritikmodi@gmail.com</a>
+
+          <ul class="contact__links">
+            <li><a href="https://github.com/kritikmodi" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/kritikmodi" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://codeforces.com/profile/kritikmodi" target="_blank" rel="noopener">Codeforces</a></li>
+            <li><a href="https://www.codechef.com/users/kritikmodi" target="_blank" rel="noopener">CodeChef</a></li>
+            <li><a href="https://leetcode.com/u/kritikmodi" target="_blank" rel="noopener">LeetCode</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p class="colophon">
+        Set in Newsreader, Hanken Grotesk &amp; IBM&nbsp;Plex&nbsp;Mono.
+        Built by hand in New Delhi.
+      </p>
+      <p class="colophon colophon--right">
+        © <span id="year">2026</span> Kritik Modi
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
 </html>
