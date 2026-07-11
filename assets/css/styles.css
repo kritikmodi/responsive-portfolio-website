@@ -65,6 +65,21 @@ body::before {
     radial-gradient(120% 80% at 82% -10%, rgba(210, 169, 78, 0.06), transparent 60%),
     radial-gradient(90% 60% at 0% 105%, rgba(210, 169, 78, 0.04), transparent 55%);
   z-index: 0;
+  animation: ambientDrift 25s ease-in-out infinite;
+}
+
+@keyframes ambientDrift {
+  0%, 100% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.05) translate(2%, 2%); }
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main {
+  animation: pageEnter 0.6s var(--ease) forwards;
 }
 
 .wrap {
