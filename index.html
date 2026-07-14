@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="/about">Skip to content</a>
+  <a class="skip-link" href="/#about">Skip to content</a>
 
   <!-- ==================== HEADER ==================== -->
   <header class="site-header" id="top">
@@ -44,17 +44,19 @@
           <span></span><span></span>
         </button>
         <ul class="nav__list" id="navMenu">
-          <li><a href="/about" class="nav__link">About</a></li>
-          <li><a href="/work" class="nav__link">Work</a></li>
+          <li><a href="/#about" class="nav__link">About</a></li>
+          <li><a href="/#work" class="nav__link">Work</a></li>
           <li><a href="/writing" class="nav__link">Writing</a></li>
           <li><a href="/photography" class="nav__link">Photography</a></li>
-          <li><a href="/proud" class="nav__link">Proud of</a></li>
-          <li><a href="/contact" class="nav__link">Contact</a></li>
+          <li><a href="/#proud" class="nav__link">Proud of</a></li>
+          <li><a href="/#contact" class="nav__link">Contact</a></li>
           <li><a href="/assets/Kritik_Modi_Resume.pdf" class="nav__link nav__link--cta" target="_blank" rel="noopener">Résumé</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
+  
 
   <main>
     <!-- ==================== HERO ==================== -->
@@ -103,7 +105,272 @@
       </div>
     </section>
 
-  </main>
+  
+
+<section class="section" id="about" aria-labelledby="aboutTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">About</span>
+          <h2 class="section-title" id="aboutTitle">A little about me</h2>
+        </div>
+        <div class="prose reveal">
+          <p>
+            I'm an AI and systems engineer based in India, currently on the founding
+            team at <strong>Datatailr</strong>, where we build high-performance
+            computing tools for hedge funds and high-frequency traders. My expertise
+            lies in bridging AI with robust infrastructure, working extensively with
+            vector databases, RAG, and MCP. My work lives in the parts of software you
+            only notice when they break: cloud infrastructure, private networking,
+            orchestration, and the systems that quietly hold everything up.
+          </p>
+          <p>
+            Before that I wrote Rust for a payments engine at <strong>Juspay</strong>,
+            automated supply-chain workflows at <strong>IBM</strong>, and spent a
+            GitHub Externship building WebAssembly tooling. Somewhere along the
+            way I fell hard for competitive programming and never really stopped.
+          </p>
+          <p>
+            This site is the version of me that a résumé can't hold: the
+            writing, the photographs, and the long habit of picking up whatever
+            problem looks most interesting. Have a look around.
+          </p>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="work" aria-labelledby="workTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Work</span>
+          <h2 class="section-title" id="workTitle">Full-time experience</h2>
+        </div>
+
+        <ol class="cv">
+          <li class="cv__item reveal">
+            <span class="cv__year">2023 &ndash; Now</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Founding Engineer <span class="cv__at">· Datatailr</span></h3>
+              <p class="cv__desc">
+                Multi-cloud infrastructure-as-code across AWS, Azure, GCP and
+                Hetzner. Designed private networking on Azure, a Trino federated
+                SQL layer over 100K+ tables, and DAG-based batch orchestration,
+                cutting query times ~90% and compute costs ~75%.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2023</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Software Engineer <span class="cv__at">· Juspay</span></h3>
+              <p class="cv__desc">
+                Shipped Rust features for Hyperswitch, an open-source payment
+                orchestrator (idempotency, retries and validation for
+                high-concurrency traffic), plus backend SDKs across five stacks.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="section-head reveal">
+          <h2 class="section-title">Internships &amp; Freelance</h2>
+        </div>
+
+        <ol class="cv">
+          <li class="cv__item reveal">
+            <span class="cv__year">2023</span>
+            <div class="cv__body">
+              <h3 class="cv__role">SDE Intern <span class="cv__at">· Datatailr</span></h3>
+              <p class="cv__desc">
+                Early work on the platform before joining the founding team full
+                time.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2023</span>
+            <div class="cv__body">
+              <h3 class="cv__role">SDE Intern <span class="cv__at">· IBM</span></h3>
+              <p class="cv__desc">
+                Built RPA bots for supply-chain workflows, automating 10+ tasks a
+                week with scheduling, retries and monitoring.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2022</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Freelance Software Developer <span class="cv__at">· Bflashy</span></h3>
+              <p class="cv__desc">
+                Built a Web3 Android app (Firebase auth and Firestore with
+                Ethereum workflows), with POAP-style tokens for blockchain-based
+                identity.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2022</span>
+            <div class="cv__body">
+              <h3 class="cv__role">SDE Intern, GitHub Externship <span class="cv__at">· Suborbital</span></h3>
+              <p class="cv__desc">
+                Selected among 14,000+ applicants (~0.6%). Built 20+ WebAssembly
+                runnables in Rust, Swift, TinyGo and JavaScript, and extended the
+                <code>subo</code> CLI.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2022</span>
+            <div class="cv__body">
+              <h3 class="cv__role">SDE Intern <span class="cv__at">· Brane Enterprises</span></h3>
+              <p class="cv__desc">
+                Added features and fixed bugs in a cloud-computing app using
+                Flutter, building 10+ UI components with the BLoC pattern.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2021</span>
+            <div class="cv__body">
+              <h3 class="cv__role">SDE Intern <span class="cv__at">· Surya Software Systems</span></h3>
+              <p class="cv__desc">
+                Worked on Surya's RPC server and CLI, adding automatic generation
+                of Postman collections from YAML files.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2021</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Freelance Software Developer <span class="cv__at">· TradeX</span></h3>
+              <p class="cv__desc">
+                Integrated multiple stock APIs into an Android app for automated
+                stock calls.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2021</span>
+            <div class="cv__body">
+              <h3 class="cv__role">UI/UX Developer <span class="cv__at">· Kewl Motors</span></h3>
+              <p class="cv__desc">
+                Designed and improved web UI/UX for a next-generation EV brand,
+                plus posters and brand collateral in Illustrator and XD.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2021</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Graphic Designer <span class="cv__at">· Neurotech Designs</span></h3>
+              <p class="cv__desc">
+                Designed 50+ social posters, logos and covers, plus 10+ UI
+                elements for a wellness-tech company.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2020</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Graphic Designer &amp; Content Writer <span class="cv__at">· ShubhChintak Technology</span></h3>
+              <p class="cv__desc">
+                Designed 50+ social posters and wrote 50+ technical blogs for a
+                web, SEO and DevOps services company.
+              </p>
+            </div>
+          </li>
+          <li class="cv__item reveal">
+            <span class="cv__year">2020</span>
+            <div class="cv__body">
+              <h3 class="cv__role">Technical Content Writer <span class="cv__at">· Intellify</span></h3>
+              <p class="cv__desc">
+                Wrote 30+ technical blogs for an IIT-Delhi education startup under
+                the SOLVE Foundation.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="cv__more reveal">
+          <a href="/assets/Kritik_Modi_Resume.pdf" target="_blank" rel="noopener">Full résumé <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </section>
+
+<section class="section" id="proud" aria-labelledby="proudTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Proud of</span>
+          <h2 class="section-title" id="proudTitle">Things I'm proud of</h2>
+        </div>
+
+        <div class="honors reveal">
+          <div class="honor">
+            <h3 class="honor__title">Smart India Hackathon</h3>
+            <p class="honor__note">Winner, 2022. A fake-news detection system, awarded by the Government of India.</p>
+          </div>
+          <div class="honor">
+            <h3 class="honor__title">ACM-ICPC Regionalist</h3>
+            <p class="honor__note">2022. Qualified for the Kanpur&ndash;Mathura regionals, top ~80 teams onsite.</p>
+          </div>
+          <div class="honor">
+            <h3 class="honor__title">GitHub Externship</h3>
+            <p class="honor__note">2022. Selected among 14,000+ applicants, a ~0.6% acceptance rate.</p>
+          </div>
+        </div>
+
+        <div class="section-head section-head--sub reveal">
+          <span class="section-label">Competitive programming</span>
+        </div>
+        <dl class="stats reveal">
+          <div class="stat">
+            <dt class="stat__label">LeetCode · Guardian</dt>
+            <dd class="stat__value">2488</dd>
+            <p class="stat__sub">Peak · Top 0.2% global</p>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">CodeChef · 6★</dt>
+            <dd class="stat__value">2222</dd>
+            <p class="stat__sub">Peak · best rank 11 / 3000+</p>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">Codeforces · Expert</dt>
+            <dd class="stat__value">1790</dd>
+            <p class="stat__sub">Peak · Top 0.5% global</p>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">Meta Hacker Cup '24</dt>
+            <dd class="stat__value">85</dd>
+            <p class="stat__sub">India rank · Round 2</p>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+<section class="section section--contact" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title" id="contactTitle">Say hello</h2>
+        </div>
+        <div class="contact reveal">
+          <p class="contact__lede">
+            Building something interesting, want to talk shop, or just have a
+            good problem to share? My inbox is open.
+          </p>
+          <a href="mailto:kritikmodi@gmail.com" class="contact__mail">kritikmodi@gmail.com</a>
+
+          <ul class="contact__links">
+            <li><a href="https://github.com/kritikmodi" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/kritikmodi" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://codeforces.com/profile/kritikmodi" target="_blank" rel="noopener">Codeforces</a></li>
+            <li><a href="https://www.codechef.com/users/kritikmodi" target="_blank" rel="noopener">CodeChef</a></li>
+            <li><a href="https://leetcode.com/u/kritikmodi" target="_blank" rel="noopener">LeetCode</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+</main>
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="site-footer">
