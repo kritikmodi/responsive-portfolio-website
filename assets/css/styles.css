@@ -26,6 +26,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   --graphite:    #6B767C;
   --rule:        rgba(17, 22, 26, 0.13);
   --rule-2:      rgba(17, 22, 26, 0.32);
+  --panel:       #EFF1F0;
   --signal:      #2B45F0;
   --signal-lift: #8298FF;
 
@@ -254,8 +255,7 @@ body {
 
 .schematic__frame {
   border: 1px solid var(--rule);
-  background:
-    linear-gradient(color-mix(in srgb, var(--paper) 70%, #fff), color-mix(in srgb, var(--paper) 70%, #fff));
+  background: var(--panel);
   overflow-x: auto;
   overscroll-behavior-x: contain;
 }
@@ -280,9 +280,22 @@ body {
   letter-spacing: .08em;
   text-transform: uppercase;
   transition: fill .2s var(--ease);
+  /* Knock the panel colour out behind the glyphs so a label never has to
+     compete with an edge passing under it. */
+  paint-order: stroke fill;
+  stroke: var(--panel);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
 }
 .node:hover .node__dot,
 .node.is-lit .node__dot { fill: var(--signal); stroke: var(--signal); }
+
+/* The query engine is the biggest piece of the work, so it is the biggest
+   node: the size carries information, it isn't decoration. */
+.node--hub .node__dot { stroke-width: 2; }
+.node--hub .node__label { fill: var(--ink); font-weight: 700; }
+.node--hub:hover .node__label,
+.node--hub.is-lit .node__label { fill: var(--signal); }
 .node:hover .node__label,
 .node.is-lit .node__label { fill: var(--signal); }
 

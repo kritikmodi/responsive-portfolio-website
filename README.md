@@ -15,10 +15,12 @@ rather than a portfolio template.
 - **Type** — Martian Mono for display (set large, lowercase, tightly tracked),
   Instrument Sans for prose, JetBrains Mono for labels and figures.
 - **Signature** — the hero is an interactive diagram of the platform the work
-  actually describes: edge → private network → orchestrator / compute →
-  federated query → storage / signals. Edges draw themselves in on load, a
-  single packet crosses one hop every few seconds, and picking a node lights
-  its path and writes a line about that layer.
+  actually describes: clouds → private network → orchestrator / compute →
+  **query engine** → retrieval / signals / storage. The query engine is drawn
+  larger because it is the largest piece of the job, so the size carries
+  information. Edges draw themselves in on load, a single packet crosses one
+  hop every few seconds, and picking a node lights its path and writes a line
+  about that layer.
 
 ## Run it locally
 

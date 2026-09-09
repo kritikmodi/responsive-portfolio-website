@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Kritik Modi — Infrastructure &amp; Systems Engineer</title>
-  <meta name="description" content="Kritik Modi is an infrastructure engineer in New Delhi, on the founding team at Datatailr. Multi-cloud networking, batch orchestration and query performance." />
+  <title>Kritik Modi — Query Engines, Infrastructure &amp; AI</title>
+  <meta name="description" content="Kritik Modi is an engineer in New Delhi, on the founding team at Datatailr. Query engines, infrastructure and DevOps, and AI systems: RAG, vector search, retrieval." />
   <meta name="author" content="Kritik Modi" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Kritik Modi — Infrastructure &amp; Systems Engineer" />
-  <meta property="og:description" content="Infrastructure engineer in New Delhi. Multi-cloud networking, batch orchestration and query performance." />
+  <meta property="og:title" content="Kritik Modi — Query Engines, Infrastructure &amp; AI" />
+  <meta property="og:description" content="Engineer in New Delhi. Query engines, infrastructure and DevOps, and AI systems: RAG, vector search, retrieval." />
   <meta property="og:url" content="https://kritikmodi.com" />
   <meta name="twitter:card" content="summary" />
 
@@ -66,11 +66,11 @@
         </h1>
 
         <p class="hero__lede">
-          I'm on the founding team at <strong>Datatailr</strong>, building
-          computing tools for hedge funds and high-frequency traders. Day to
-          day that's multi-cloud networking, batch orchestration and making
-          queries faster. Lately a fair amount of retrieval and vector search
-          on top of it.
+          I'm on the founding team at <strong>Datatailr</strong>. Most of my
+          time goes to our <strong>query engine</strong>, a high-speed
+          federation engine that reads across everything at once. The rest is
+          split between the infrastructure and DevOps underneath it, and the AI
+          side on top: RAG, vector search, retrieval.
         </p>
 
         <div class="hero__actions">
@@ -89,74 +89,83 @@
 
           <div class="schematic__frame">
             <svg class="schematic__svg" viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
-              <title>The platform Kritik works on: traffic enters at the edge, crosses a private network, splits between a DAG orchestrator and a compute pool, reaches a federated query layer, and ends at storage and monitoring.</title>
+              <title>The platform Kritik works on at Datatailr: four clouds defined as code, a private network, a DAG orchestrator and a compute pool feeding the query engine, which serves retrieval, storage and monitoring.</title>
 
               <g>
-                <line class="edge" data-from="edge"  data-to="net"     x1="70"  y1="130" x2="210" y2="130" />
-                <line class="edge" data-from="net"   data-to="orch"    x1="210" y1="130" x2="360" y2="68"  />
-                <line class="edge" data-from="net"   data-to="pool"    x1="210" y1="130" x2="360" y2="192" />
-                <line class="edge" data-from="orch"  data-to="query"   x1="360" y1="68"  x2="520" y2="130" />
-                <line class="edge" data-from="pool"  data-to="query"   x1="360" y1="192" x2="520" y2="130" />
-                <line class="edge" data-from="query" data-to="store"   x1="520" y1="130" x2="670" y2="68"  />
-                <line class="edge" data-from="query" data-to="signals" x1="520" y1="130" x2="670" y2="192" />
+                <line class="edge" data-from="clouds" data-to="network"   x1="58"  y1="130" x2="180" y2="130" />
+                <line class="edge" data-from="network" data-to="orch"     x1="180" y1="130" x2="312" y2="58"  />
+                <line class="edge" data-from="network" data-to="pool"     x1="180" y1="130" x2="312" y2="202" />
+                <line class="edge" data-from="orch"   data-to="query"     x1="312" y1="58"  x2="452" y2="130" />
+                <line class="edge" data-from="pool"   data-to="query"     x1="312" y1="202" x2="452" y2="130" />
+                <line class="edge" data-from="query"  data-to="retrieval" x1="452" y1="130" x2="610" y2="58"  />
+                <line class="edge" data-from="query"  data-to="signals"   x1="452" y1="130" x2="610" y2="130" />
+                <line class="edge" data-from="query"  data-to="storage"   x1="452" y1="130" x2="610" y2="202" />
               </g>
 
               <circle class="packet" r="3" cx="-20" cy="-20" opacity="0" />
 
-              <g class="node" data-node="edge" tabindex="0" role="button"
-                 aria-label="Edge. Infrastructure-as-code across four clouds: AWS, Azure, GCP and Hetzner."
-                 data-caption="Edge. Infrastructure-as-code across four clouds: AWS, Azure, GCP and Hetzner.">
-                <circle class="node__hit" cx="70" cy="130" r="30" />
-                <circle class="node__dot" cx="70" cy="130" r="5.5" />
-                <text class="node__label" x="70" y="156" text-anchor="middle">edge</text>
+              <g class="node" data-node="clouds" tabindex="0" role="button"
+                 aria-label="Clouds. Infrastructure-as-code across AWS, Azure, GCP and Hetzner."
+                 data-caption="Clouds. Infrastructure-as-code across AWS, Azure, GCP and Hetzner.">
+                <circle class="node__hit" cx="58" cy="130" r="30" />
+                <circle class="node__dot" cx="58" cy="130" r="5.5" />
+                <text class="node__label" x="58" y="156" text-anchor="middle">clouds</text>
               </g>
 
-              <g class="node" data-node="net" tabindex="0" role="button"
-                 aria-label="Private network. The Azure networking layer, which I designed and still own."
-                 data-caption="Private network. The Azure networking layer, which I designed and still own.">
-                <circle class="node__hit" cx="210" cy="130" r="30" />
-                <circle class="node__dot" cx="210" cy="130" r="5.5" />
-                <text class="node__label" x="210" y="156" text-anchor="middle">network</text>
+              <g class="node" data-node="network" tabindex="0" role="button"
+                 aria-label="Network. The private networking on Azure, which I designed and still own."
+                 data-caption="Network. The private networking on Azure, which I designed and still own.">
+                <circle class="node__hit" cx="180" cy="130" r="30" />
+                <circle class="node__dot" cx="180" cy="130" r="5.5" />
+                <text class="node__label" x="180" y="156" text-anchor="middle">network</text>
               </g>
 
               <g class="node" data-node="orch" tabindex="0" role="button"
                  aria-label="Orchestrator. Batch work modelled as DAGs: scheduling, dependencies, retries."
                  data-caption="Orchestrator. Batch work modelled as DAGs: scheduling, dependencies, retries.">
-                <circle class="node__hit" cx="360" cy="68" r="30" />
-                <circle class="node__dot" cx="360" cy="68" r="5.5" />
-                <text class="node__label" x="360" y="46" text-anchor="middle">orchestrator</text>
+                <circle class="node__hit" cx="312" cy="58" r="30" />
+                <circle class="node__dot" cx="312" cy="58" r="5.5" />
+                <text class="node__label" x="312" y="36" text-anchor="middle">orchestrator</text>
               </g>
 
               <g class="node" data-node="pool" tabindex="0" role="button"
                  aria-label="Compute. Autoscaled workers. Sizing and scheduling changes took the bill down about 75 percent."
                  data-caption="Compute. Autoscaled workers. Sizing and scheduling changes took the bill down about 75%.">
-                <circle class="node__hit" cx="360" cy="192" r="30" />
-                <circle class="node__dot" cx="360" cy="192" r="5.5" />
-                <text class="node__label" x="360" y="218" text-anchor="middle">compute</text>
+                <circle class="node__hit" cx="312" cy="202" r="30" />
+                <circle class="node__dot" cx="312" cy="202" r="5.5" />
+                <text class="node__label" x="312" y="228" text-anchor="middle">compute</text>
               </g>
 
-              <g class="node" data-node="query" tabindex="0" role="button"
-                 aria-label="Query. A Trino layer federating more than 100,000 tables. Query times came down about 90 percent."
-                 data-caption="Query. A Trino layer federating 100,000+ tables. Query times came down about 90%.">
-                <circle class="node__hit" cx="520" cy="130" r="30" />
-                <circle class="node__dot" cx="520" cy="130" r="5.5" />
-                <text class="node__label" x="520" y="156" text-anchor="middle">query</text>
+              <g class="node node--hub" data-node="query" tabindex="0" role="button"
+                 aria-label="Query engine. A high-speed federation engine and the piece I spend most of my time in. It answers across more than 100,000 tables without moving any of them, and took query times down about 90 percent."
+                 data-caption="Query engine. A high-speed federation engine, and where most of my time goes. Answers across 100,000+ tables without moving any of them; query times came down about 90%.">
+                <circle class="node__hit" cx="452" cy="130" r="34" />
+                <circle class="node__dot" cx="452" cy="130" r="8" />
+                <text class="node__label" x="452" y="158" text-anchor="middle">query engine</text>
               </g>
 
-              <g class="node" data-node="store" tabindex="0" role="button"
-                 aria-label="Storage. Where the data sits, across whichever cloud wrote it."
-                 data-caption="Storage. Where the data sits, across whichever cloud wrote it.">
-                <circle class="node__hit" cx="670" cy="68" r="30" />
-                <circle class="node__dot" cx="670" cy="68" r="5.5" />
-                <text class="node__label" x="670" y="46" text-anchor="middle">storage</text>
+              <g class="node" data-node="retrieval" tabindex="0" role="button"
+                 aria-label="Retrieval. RAG and vector search over the same data: embeddings, indexes, and the MCP servers that expose them."
+                 data-caption="Retrieval. RAG and vector search over the same data: embeddings, indexes, and the MCP servers that expose them.">
+                <circle class="node__hit" cx="610" cy="58" r="30" />
+                <circle class="node__dot" cx="610" cy="58" r="5.5" />
+                <text class="node__label" x="610" y="36" text-anchor="middle">retrieval</text>
               </g>
 
               <g class="node" data-node="signals" tabindex="0" role="button"
-                 aria-label="Signals. Metrics, logs and traces for everything above."
-                 data-caption="Signals. Metrics, logs and traces for everything above.">
-                <circle class="node__hit" cx="670" cy="192" r="30" />
-                <circle class="node__dot" cx="670" cy="192" r="5.5" />
-                <text class="node__label" x="670" y="218" text-anchor="middle">signals</text>
+                 aria-label="Signals. Metrics, logs and traces, plus the CI and deploy pipelines around all of it."
+                 data-caption="Signals. Metrics, logs and traces, plus the CI and deploy pipelines around all of it.">
+                <circle class="node__hit" cx="610" cy="130" r="30" />
+                <circle class="node__dot" cx="610" cy="130" r="5.5" />
+                <text class="node__label" x="610" y="156" text-anchor="middle">signals</text>
+              </g>
+
+              <g class="node" data-node="storage" tabindex="0" role="button"
+                 aria-label="Storage. Where the data sits, across whichever cloud wrote it."
+                 data-caption="Storage. Where the data sits, across whichever cloud wrote it.">
+                <circle class="node__hit" cx="610" cy="202" r="30" />
+                <circle class="node__dot" cx="610" cy="202" r="5.5" />
+                <text class="node__label" x="610" y="228" text-anchor="middle">storage</text>
               </g>
             </svg>
           </div>
@@ -174,14 +183,24 @@
         </div>
 
         <div class="prose rise">
-          <h2 class="title" style="margin-bottom:1.5rem">Mostly infrastructure.</h2>
+          <h2 class="title" style="margin-bottom:1.5rem">Query engines, infra, and a lot of AI.</h2>
           <p>
             I've been at <strong>Datatailr</strong> since 2023, on the founding
-            team. The product is a computing platform for finance, and I own a
-            good part of what runs underneath it:
-            infrastructure-as-code across four clouds, the private networking on
-            Azure, a Trino layer over roughly 100,000 tables, and the DAG
-            scheduler that runs batch work.
+            team. The product is a computing platform for finance. My main piece
+            of it is the <strong>query engine</strong>, a high-speed federation
+            engine that answers across more than 100,000 tables without moving
+            any of them.
+          </p>
+          <p>
+            Around that I do the infrastructure and DevOps: infrastructure-as-code
+            across four clouds, the private networking on Azure, the DAG
+            scheduler that runs batch work, and the deploy pipelines and
+            monitoring around all of it.
+          </p>
+          <p>
+            A good chunk of my week is AI work, and it keeps growing. Retrieval
+            pipelines, vector search, embeddings and MCP servers, mostly so
+            people can ask questions of data the models have never seen.
           </p>
           <p>
             Before that I wrote Rust at <strong>Juspay</strong> on Hyperswitch,
@@ -214,11 +233,12 @@
             <div>
               <h3 class="ledger__role">Founding Engineer <span class="ledger__org">Datatailr</span></h3>
               <p class="ledger__desc">
-                Multi-cloud infrastructure-as-code across AWS, Azure, GCP and
-                Hetzner. Designed the private networking on Azure, a Trino
-                federated SQL layer over 100K+ tables, and DAG-based batch
-                orchestration. Query times came down about 90% and compute spend
-                about 75%.
+                Build the query engine, a federated SQL layer over 100K+ tables
+                that took query times down about 90%. Around it: multi-cloud
+                infrastructure-as-code across AWS, Azure, GCP and Hetzner, the
+                private networking on Azure, and DAG-based batch orchestration,
+                which took compute spend down about 75%. More recently the RAG
+                and vector search stack on top.
               </p>
             </div>
           </li>
