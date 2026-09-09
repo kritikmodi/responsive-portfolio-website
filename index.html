@@ -4,384 +4,437 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Kritik Modi · Software Engineer</title>
-  <meta name="description" content="Kritik Modi is a software engineer building the infrastructure behind fast, reliable systems. Founding engineer at Datatailr. Writing, photography, and a little about the person behind the work." />
+  <title>Kritik Modi — Infrastructure &amp; Systems Engineer</title>
+  <meta name="description" content="Kritik Modi is an infrastructure engineer in New Delhi, on the founding team at Datatailr. Multi-cloud networking, batch orchestration and query performance." />
   <meta name="author" content="Kritik Modi" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Kritik Modi · Software Engineer" />
-  <meta property="og:description" content="Building the infrastructure behind fast, reliable systems. Writing, photography, and a little about the person behind the work." />
+  <meta property="og:title" content="Kritik Modi — Infrastructure &amp; Systems Engineer" />
+  <meta property="og:description" content="Infrastructure engineer in New Delhi. Multi-cloud networking, batch orchestration and query performance." />
   <meta property="og:url" content="https://kritikmodi.com" />
-  <meta property="og:image" content="https://kritikmodi.com/assets/img/portrait_blurred.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content="summary" />
 
   <link rel="canonical" href="https://kritikmodi.com" />
 
-  <!-- Favicon: KM monogram -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23100F0D'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23D2A94E' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2311161A'/%3E%3Ccircle cx='16' cy='16' r='5.5' fill='%232B45F0'/%3E%3C/svg%3E" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&family=Martian+Mono:wght@400;500;600;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="/#about">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ==================== HEADER ==================== -->
-  <header class="site-header" id="top">
-    <div class="wrap site-header__inner">
-      <a href="/" class="brand" aria-label="Kritik Modi, home">
-        <span class="brand__mark">KM</span>
-        <span class="brand__name">Kritik Modi</span>
+  <header class="masthead" id="top">
+    <div class="wrap masthead__inner">
+      <a href="/" class="mark" aria-label="Kritik Modi, home">
+        <span class="mark__dot" aria-hidden="true"></span>
+        <span class="mark__name">kritik modi</span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle menu">
-          <span></span><span></span>
-        </button>
-        <ul class="nav__list" id="navMenu">
-          <li><a href="/#about" class="nav__link">About</a></li>
-          <li><a href="/#work" class="nav__link">Work</a></li>
-          <li><a href="/writing" class="nav__link">Writing</a></li>
-          <li><a href="/photography" class="nav__link">Photography</a></li>
-          <li><a href="/#proud" class="nav__link">Proud of</a></li>
-          <li><a href="/#contact" class="nav__link">Contact</a></li>
-          <li><a href="/assets/Kritik_Modi_Resume.pdf" class="nav__link nav__link--cta" target="_blank" rel="noopener">Résumé</a></li>
+      <nav class="menu" aria-label="Primary">
+        <button class="menu__toggle" id="menuToggle" aria-expanded="false" aria-controls="menuList">Menu</button>
+        <ul class="menu__list" id="menuList">
+          <li><a href="/#about" class="menu__link">about</a></li>
+          <li><a href="/#work" class="menu__link">work</a></li>
+          <li><a href="/#record" class="menu__link">record</a></li>
+          <li><a href="/writing" class="menu__link">writing</a></li>
+          <li><a href="/photography" class="menu__link">photos</a></li>
+          <li><a href="/#contact" class="menu__link">contact</a></li>
+          <li><a href="/assets/Kritik_Modi_Resume.pdf" class="menu__link menu__link--cta" target="_blank" rel="noopener">Résumé</a></li>
         </ul>
       </nav>
+      <span class="progress" id="progress" aria-hidden="true"></span>
     </div>
   </header>
 
-  
+  <main id="main">
 
-  <main>
-    <!-- ==================== HERO ==================== -->
-    <section class="hero" aria-labelledby="heroName">
-      <div class="wrap hero__grid">
-        <div class="hero__text reveal">
-          <p class="eyebrow">AI Engineer · Infrastructure &amp; Systems</p>
-          <h1 class="hero__name" id="heroName">Kritik&nbsp;Modi</h1>
-          <p class="hero__lede">
-            I build the quiet, load-bearing infrastructure behind fast, reliable systems,
-            specializing at the intersection of AI, infrastructure, and systems. I work extensively
-            with vector databases, RAG, and MCP to scale intelligent applications.
-          </p>
-
-          <dl class="readout" aria-label="Quick facts">
-            <div class="readout__row">
-              <dt>Based</dt>
-              <dd>New Delhi, India</dd>
-            </div>
-            <div class="readout__row">
-              <dt>Local</dt>
-              <dd><span id="localClock">··:··</span> IST</dd>
-            </div>
-            <div class="readout__row">
-              <dt>Now</dt>
-              <dd>Founding Engineer, Datatailr</dd>
-            </div>
-          </dl>
-
-          <div class="hero__links">
-            <a href="mailto:kritikmodi@gmail.com" class="link-btn link-btn--primary">Get in touch</a>
-            <a href="https://github.com/kritikmodi" class="link-btn" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://www.linkedin.com/in/kritikmodi" class="link-btn" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-
-        <figure class="hero__portrait reveal">
-          <div class="portrait__frame">
-            <img src="/assets/img/portrait_blurred.jpg" alt="Photograph of Kritik Modi" loading="eager" />
-          </div>
-          <figcaption class="portrait__caption">
-            <span>Kritik Modi</span>
-            <span>28.61° N, 77.20° E</span>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-  
-
-<section class="section" id="about" aria-labelledby="aboutTitle">
+    <!-- ============ hero ============ -->
+    <section class="band band--first">
       <div class="wrap">
-        <div class="section-head reveal">
-          <span class="section-label">About</span>
-          <h2 class="section-title" id="aboutTitle">A little about me</h2>
-        </div>
-        <div class="prose reveal">
-          <p>
-            I'm an AI and systems engineer based in India, currently on the founding
-            team at <strong>Datatailr</strong>, where we build high-performance
-            computing tools for hedge funds and high-frequency traders. My expertise
-            lies in bridging AI with robust infrastructure, working extensively with
-            vector databases, RAG, and MCP. My work lives in the parts of software you
-            only notice when they break: cloud infrastructure, private networking,
-            orchestration, and the systems that quietly hold everything up.
-          </p>
-          <p>
-            Before that I wrote Rust for a payments engine at <strong>Juspay</strong>,
-            automated supply-chain workflows at <strong>IBM</strong>, and spent a
-            GitHub Externship building WebAssembly tooling. Somewhere along the
-            way I fell hard for competitive programming and never really stopped.
-          </p>
-          <p>
-            This site is the version of me that a résumé can't hold: the
-            writing, the photographs, and the long habit of picking up whatever
-            problem looks most interesting. Have a look around.
-          </p>
-        </div>
-      </div>
-    </section>
-
-<section class="section" id="work" aria-labelledby="workTitle">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="section-label">Work</span>
-          <h2 class="section-title" id="workTitle">Full-time experience</h2>
-        </div>
-
-        <ol class="cv">
-          <li class="cv__item reveal">
-            <span class="cv__year">2023 &ndash; Now</span>
-            <div class="cv__body">
-              <h3 class="cv__role">Founding Engineer <span class="cv__at">· Datatailr</span></h3>
-              <p class="cv__desc">
-                Multi-cloud infrastructure-as-code across AWS, Azure, GCP and
-                Hetzner. Designed private networking on Azure, a Trino federated
-                SQL layer over 100K+ tables, and DAG-based batch orchestration,
-                cutting query times ~90% and compute costs ~75%.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2023</span>
-            <div class="cv__body">
-              <h3 class="cv__role">Software Engineer <span class="cv__at">· Juspay</span></h3>
-              <p class="cv__desc">
-                Shipped Rust features for Hyperswitch, an open-source payment
-                orchestrator (idempotency, retries and validation for
-                high-concurrency traffic), plus backend SDKs across five stacks.
-              </p>
-            </div>
-          </li>
-        </ol>
-
-        <div class="section-head reveal">
-          <h2 class="section-title">Internships &amp; Freelance</h2>
-        </div>
-
-        <ol class="cv">
-          <li class="cv__item reveal">
-            <span class="cv__year">2023</span>
-            <div class="cv__body">
-              <h3 class="cv__role">SDE Intern <span class="cv__at">· Datatailr</span></h3>
-              <p class="cv__desc">
-                Early work on the platform before joining the founding team full
-                time.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2023</span>
-            <div class="cv__body">
-              <h3 class="cv__role">SDE Intern <span class="cv__at">· IBM</span></h3>
-              <p class="cv__desc">
-                Built RPA bots for supply-chain workflows, automating 10+ tasks a
-                week with scheduling, retries and monitoring.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2022</span>
-            <div class="cv__body">
-              <h3 class="cv__role">Freelance Software Developer <span class="cv__at">· Bflashy</span></h3>
-              <p class="cv__desc">
-                Built a Web3 Android app (Firebase auth and Firestore with
-                Ethereum workflows), with POAP-style tokens for blockchain-based
-                identity.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2022</span>
-            <div class="cv__body">
-              <h3 class="cv__role">SDE Intern, GitHub Externship <span class="cv__at">· Suborbital</span></h3>
-              <p class="cv__desc">
-                Selected among 14,000+ applicants (~0.6%). Built 20+ WebAssembly
-                runnables in Rust, Swift, TinyGo and JavaScript, and extended the
-                <code>subo</code> CLI.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2022</span>
-            <div class="cv__body">
-              <h3 class="cv__role">SDE Intern <span class="cv__at">· Brane Enterprises</span></h3>
-              <p class="cv__desc">
-                Added features and fixed bugs in a cloud-computing app using
-                Flutter, building 10+ UI components with the BLoC pattern.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2021</span>
-            <div class="cv__body">
-              <h3 class="cv__role">SDE Intern <span class="cv__at">· Surya Software Systems</span></h3>
-              <p class="cv__desc">
-                Worked on Surya's RPC server and CLI, adding automatic generation
-                of Postman collections from YAML files.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2021</span>
-            <div class="cv__body">
-              <h3 class="cv__role">Freelance Software Developer <span class="cv__at">· TradeX</span></h3>
-              <p class="cv__desc">
-                Integrated multiple stock APIs into an Android app for automated
-                stock calls.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2021</span>
-            <div class="cv__body">
-              <h3 class="cv__role">UI/UX Developer <span class="cv__at">· Kewl Motors</span></h3>
-              <p class="cv__desc">
-                Designed and improved web UI/UX for a next-generation EV brand,
-                plus posters and brand collateral in Illustrator and XD.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2021</span>
-            <div class="cv__body">
-              <h3 class="cv__role">Graphic Designer <span class="cv__at">· Neurotech Designs</span></h3>
-              <p class="cv__desc">
-                Designed 50+ social posters, logos and covers, plus 10+ UI
-                elements for a wellness-tech company.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2020</span>
-            <div class="cv__body">
-              <h3 class="cv__role">Graphic Designer &amp; Content Writer <span class="cv__at">· ShubhChintak Technology</span></h3>
-              <p class="cv__desc">
-                Designed 50+ social posters and wrote 50+ technical blogs for a
-                web, SEO and DevOps services company.
-              </p>
-            </div>
-          </li>
-          <li class="cv__item reveal">
-            <span class="cv__year">2020</span>
-            <div class="cv__body">
-              <h3 class="cv__role">Technical Content Writer <span class="cv__at">· Intellify</span></h3>
-              <p class="cv__desc">
-                Wrote 30+ technical blogs for an IIT-Delhi education startup under
-                the SOLVE Foundation.
-              </p>
-            </div>
-          </li>
-        </ol>
-
-        <p class="cv__more reveal">
-          <a href="/assets/Kritik_Modi_Resume.pdf" target="_blank" rel="noopener">Full résumé <span aria-hidden="true">→</span></a>
+        <p class="hero__meta">
+          <span>founding engineer <i>·</i> <b>datatailr</b></span>
+          <span>new delhi <i>·</i> <span id="clock">··:··</span> IST</span>
         </p>
+
+        <h1 class="hero__name">
+          <span>kritik</span>
+          <span>modi<em>.</em></span>
+        </h1>
+
+        <p class="hero__lede">
+          I'm on the founding team at <strong>Datatailr</strong>, building
+          computing tools for hedge funds and high-frequency traders. Day to
+          day that's multi-cloud networking, batch orchestration and making
+          queries faster. Lately a fair amount of retrieval and vector search
+          on top of it.
+        </p>
+
+        <div class="hero__actions">
+          <a class="chip chip--primary" href="mailto:kritikmodi@gmail.com">Email me <span class="chip__arrow" aria-hidden="true">→</span></a>
+          <a class="chip" href="https://github.com/kritikmodi" target="_blank" rel="noopener">GitHub</a>
+          <a class="chip" href="https://www.linkedin.com/in/kritikmodi" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="chip" href="/assets/Kritik_Modi_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        </div>
+
+        <!-- ============ signature: the platform, drawn ============ -->
+        <div class="schematic" id="schematic">
+          <div class="axis">
+            <span class="axis__label">the platform</span>
+            <span class="axis__note">pick a layer<span class="axis__note-sm"> · scroll to pan</span></span>
+          </div>
+
+          <div class="schematic__frame">
+            <svg class="schematic__svg" viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
+              <title>The platform Kritik works on: traffic enters at the edge, crosses a private network, splits between a DAG orchestrator and a compute pool, reaches a federated query layer, and ends at storage and monitoring.</title>
+
+              <g>
+                <line class="edge" data-from="edge"  data-to="net"     x1="70"  y1="130" x2="210" y2="130" />
+                <line class="edge" data-from="net"   data-to="orch"    x1="210" y1="130" x2="360" y2="68"  />
+                <line class="edge" data-from="net"   data-to="pool"    x1="210" y1="130" x2="360" y2="192" />
+                <line class="edge" data-from="orch"  data-to="query"   x1="360" y1="68"  x2="520" y2="130" />
+                <line class="edge" data-from="pool"  data-to="query"   x1="360" y1="192" x2="520" y2="130" />
+                <line class="edge" data-from="query" data-to="store"   x1="520" y1="130" x2="670" y2="68"  />
+                <line class="edge" data-from="query" data-to="signals" x1="520" y1="130" x2="670" y2="192" />
+              </g>
+
+              <circle class="packet" r="3" cx="-20" cy="-20" opacity="0" />
+
+              <g class="node" data-node="edge" tabindex="0" role="button"
+                 aria-label="Edge. Infrastructure-as-code across four clouds: AWS, Azure, GCP and Hetzner."
+                 data-caption="Edge. Infrastructure-as-code across four clouds: AWS, Azure, GCP and Hetzner.">
+                <circle class="node__hit" cx="70" cy="130" r="30" />
+                <circle class="node__dot" cx="70" cy="130" r="5.5" />
+                <text class="node__label" x="70" y="156" text-anchor="middle">edge</text>
+              </g>
+
+              <g class="node" data-node="net" tabindex="0" role="button"
+                 aria-label="Private network. The Azure networking layer, which I designed and still own."
+                 data-caption="Private network. The Azure networking layer, which I designed and still own.">
+                <circle class="node__hit" cx="210" cy="130" r="30" />
+                <circle class="node__dot" cx="210" cy="130" r="5.5" />
+                <text class="node__label" x="210" y="156" text-anchor="middle">network</text>
+              </g>
+
+              <g class="node" data-node="orch" tabindex="0" role="button"
+                 aria-label="Orchestrator. Batch work modelled as DAGs: scheduling, dependencies, retries."
+                 data-caption="Orchestrator. Batch work modelled as DAGs: scheduling, dependencies, retries.">
+                <circle class="node__hit" cx="360" cy="68" r="30" />
+                <circle class="node__dot" cx="360" cy="68" r="5.5" />
+                <text class="node__label" x="360" y="46" text-anchor="middle">orchestrator</text>
+              </g>
+
+              <g class="node" data-node="pool" tabindex="0" role="button"
+                 aria-label="Compute. Autoscaled workers. Sizing and scheduling changes took the bill down about 75 percent."
+                 data-caption="Compute. Autoscaled workers. Sizing and scheduling changes took the bill down about 75%.">
+                <circle class="node__hit" cx="360" cy="192" r="30" />
+                <circle class="node__dot" cx="360" cy="192" r="5.5" />
+                <text class="node__label" x="360" y="218" text-anchor="middle">compute</text>
+              </g>
+
+              <g class="node" data-node="query" tabindex="0" role="button"
+                 aria-label="Query. A Trino layer federating more than 100,000 tables. Query times came down about 90 percent."
+                 data-caption="Query. A Trino layer federating 100,000+ tables. Query times came down about 90%.">
+                <circle class="node__hit" cx="520" cy="130" r="30" />
+                <circle class="node__dot" cx="520" cy="130" r="5.5" />
+                <text class="node__label" x="520" y="156" text-anchor="middle">query</text>
+              </g>
+
+              <g class="node" data-node="store" tabindex="0" role="button"
+                 aria-label="Storage. Where the data sits, across whichever cloud wrote it."
+                 data-caption="Storage. Where the data sits, across whichever cloud wrote it.">
+                <circle class="node__hit" cx="670" cy="68" r="30" />
+                <circle class="node__dot" cx="670" cy="68" r="5.5" />
+                <text class="node__label" x="670" y="46" text-anchor="middle">storage</text>
+              </g>
+
+              <g class="node" data-node="signals" tabindex="0" role="button"
+                 aria-label="Signals. Metrics, logs and traces for everything above."
+                 data-caption="Signals. Metrics, logs and traces for everything above.">
+                <circle class="node__hit" cx="670" cy="192" r="30" />
+                <circle class="node__dot" cx="670" cy="192" r="5.5" />
+                <text class="node__label" x="670" y="218" text-anchor="middle">signals</text>
+              </g>
+            </svg>
+          </div>
+
+          <p class="schematic__caption" id="schematicCaption" aria-live="polite">Rough shape of the platform. Pick a node to see what it is.</p>
+        </div>
       </div>
     </section>
 
-<section class="section" id="proud" aria-labelledby="proudTitle">
+    <!-- ============ about ============ -->
+    <section class="band" id="about">
       <div class="wrap">
-        <div class="section-head reveal">
-          <span class="section-label">Proud of</span>
-          <h2 class="section-title" id="proudTitle">Things I'm proud of</h2>
+        <div class="axis rise">
+          <span class="axis__label">about</span>
         </div>
 
-        <div class="honors reveal">
-          <div class="honor">
-            <h3 class="honor__title">Smart India Hackathon</h3>
-            <p class="honor__note">Winner, 2022. A fake-news detection system, awarded by the Government of India.</p>
-          </div>
-          <div class="honor">
-            <h3 class="honor__title">ACM-ICPC Regionalist</h3>
-            <p class="honor__note">2022. Qualified for the Kanpur&ndash;Mathura regionals, top ~80 teams onsite.</p>
-          </div>
-          <div class="honor">
-            <h3 class="honor__title">GitHub Externship</h3>
-            <p class="honor__note">2022. Selected among 14,000+ applicants, a ~0.6% acceptance rate.</p>
-          </div>
-        </div>
-
-        <div class="section-head section-head--sub reveal">
-          <span class="section-label">Competitive programming</span>
-        </div>
-        <dl class="stats reveal">
-          <div class="stat">
-            <dt class="stat__label">LeetCode · Guardian</dt>
-            <dd class="stat__value">2488</dd>
-            <p class="stat__sub">Peak · Top 0.2% global</p>
-          </div>
-          <div class="stat">
-            <dt class="stat__label">CodeChef · 6★</dt>
-            <dd class="stat__value">2222</dd>
-            <p class="stat__sub">Peak · best rank 11 / 3000+</p>
-          </div>
-          <div class="stat">
-            <dt class="stat__label">Codeforces · Expert</dt>
-            <dd class="stat__value">1790</dd>
-            <p class="stat__sub">Peak · Top 0.5% global</p>
-          </div>
-          <div class="stat">
-            <dt class="stat__label">Meta Hacker Cup '24</dt>
-            <dd class="stat__value">85</dd>
-            <p class="stat__sub">India rank · Round 2</p>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-<section class="section section--contact" id="contact" aria-labelledby="contactTitle">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="section-label">Contact</span>
-          <h2 class="section-title" id="contactTitle">Say hello</h2>
-        </div>
-        <div class="contact reveal">
-          <p class="contact__lede">
-            Building something interesting, want to talk shop, or just have a
-            good problem to share? My inbox is open.
+        <div class="prose rise">
+          <h2 class="title" style="margin-bottom:1.5rem">Mostly infrastructure.</h2>
+          <p>
+            I've been at <strong>Datatailr</strong> since 2023, on the founding
+            team. The product is a computing platform for finance, and I own a
+            good part of what runs underneath it:
+            infrastructure-as-code across four clouds, the private networking on
+            Azure, a Trino layer over roughly 100,000 tables, and the DAG
+            scheduler that runs batch work.
           </p>
-          <a href="mailto:kritikmodi@gmail.com" class="contact__mail">kritikmodi@gmail.com</a>
-
-          <ul class="contact__links">
-            <li><a href="https://github.com/kritikmodi" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/kritikmodi" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://codeforces.com/profile/kritikmodi" target="_blank" rel="noopener">Codeforces</a></li>
-            <li><a href="https://www.codechef.com/users/kritikmodi" target="_blank" rel="noopener">CodeChef</a></li>
-            <li><a href="https://leetcode.com/u/kritikmodi" target="_blank" rel="noopener">LeetCode</a></li>
-          </ul>
+          <p>
+            Before that I wrote Rust at <strong>Juspay</strong> on Hyperswitch,
+            their open-source payment orchestrator. Before that, internships at
+            <strong>IBM</strong> and Brane, and a GitHub Externship with
+            Suborbital where I spent a few months writing WebAssembly runnables.
+          </p>
+          <p>
+            I didn't start in engineering. Most of my first paid work was
+            posters, logos and UI for small companies, and I still take the
+            visual side of a project when it needs one. I've also been doing
+            competitive programming since school, which is where most of my
+            problem-solving habits come from.
+          </p>
         </div>
       </div>
     </section>
 
-</main>
+    <!-- ============ work ============ -->
+    <section class="band" id="work">
+      <div class="wrap">
+        <div class="axis rise">
+          <span class="axis__label">work</span>
+          <span class="axis__note">2020 — now</span>
+        </div>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="site-footer">
-    <div class="wrap site-footer__inner">
-      <p class="colophon">
-        Set in Newsreader, Hanken Grotesk &amp; IBM&nbsp;Plex&nbsp;Mono.
-        Built by hand in New Delhi.
-      </p>
-      <p class="colophon colophon--right">
-        © <span id="year">2026</span> Kritik Modi
-      </p>
+        <ol class="ledger">
+          <li class="ledger__row rise">
+            <span class="ledger__year">2023 — now</span>
+            <div>
+              <h3 class="ledger__role">Founding Engineer <span class="ledger__org">Datatailr</span></h3>
+              <p class="ledger__desc">
+                Multi-cloud infrastructure-as-code across AWS, Azure, GCP and
+                Hetzner. Designed the private networking on Azure, a Trino
+                federated SQL layer over 100K+ tables, and DAG-based batch
+                orchestration. Query times came down about 90% and compute spend
+                about 75%.
+              </p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2023</span>
+            <div>
+              <h3 class="ledger__role">Software Engineer <span class="ledger__org">Juspay</span></h3>
+              <p class="ledger__desc">
+                Rust work on Hyperswitch, their open-source payment
+                orchestrator: idempotency, retries and validation under high
+                concurrency. Also built backend SDKs in five languages.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="subhead rise">Earlier: internships and freelance</h3>
+
+        <ol class="ledger">
+          <li class="ledger__row rise">
+            <span class="ledger__year">2023</span>
+            <div>
+              <h3 class="ledger__role">SDE Intern <span class="ledger__org">Datatailr</span></h3>
+              <p class="ledger__desc">Early work on the platform, before joining full time.</p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2023</span>
+            <div>
+              <h3 class="ledger__role">SDE Intern <span class="ledger__org">IBM</span></h3>
+              <p class="ledger__desc">RPA bots for supply-chain workflows. Automated 10+ tasks a week, with scheduling, retries and monitoring.</p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2022</span>
+            <div>
+              <h3 class="ledger__role">Freelance Developer <span class="ledger__org">Bflashy</span></h3>
+              <p class="ledger__desc">A Web3 Android app. Firebase auth and Firestore wired to Ethereum workflows, with POAP-style tokens for on-chain identity.</p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2022</span>
+            <div>
+              <h3 class="ledger__role">SDE Intern, GitHub Externship <span class="ledger__org">Suborbital</span></h3>
+              <p class="ledger__desc">20+ WebAssembly runnables in Rust, Swift, TinyGo and JavaScript, plus additions to the <code>subo</code> CLI.</p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2022</span>
+            <div>
+              <h3 class="ledger__role">SDE Intern <span class="ledger__org">Brane Enterprises</span></h3>
+              <p class="ledger__desc">Features and bug fixes in a cloud-computing app built in Flutter. 10+ UI components on the BLoC pattern.</p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2021</span>
+            <div>
+              <h3 class="ledger__role">SDE Intern <span class="ledger__org">Surya Software Systems</span></h3>
+              <p class="ledger__desc">Worked on Surya's RPC server and CLI, adding automatic generation of Postman collections from YAML.</p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2021</span>
+            <div>
+              <h3 class="ledger__role">Freelance Developer <span class="ledger__org">TradeX</span></h3>
+              <p class="ledger__desc">Integrated several stock APIs into an Android app for automated stock calls.</p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2021</span>
+            <div>
+              <h3 class="ledger__role">UI/UX Developer <span class="ledger__org">Kewl Motors</span></h3>
+              <p class="ledger__desc">Web UI for an EV brand, plus posters and brand collateral in Illustrator and XD.</p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2021</span>
+            <div>
+              <h3 class="ledger__role">Graphic Designer <span class="ledger__org">Neurotech Designs</span></h3>
+              <p class="ledger__desc">50+ social posters, logos and covers, plus 10+ UI elements for a wellness-tech company.</p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2020</span>
+            <div>
+              <h3 class="ledger__role">Designer &amp; Content Writer <span class="ledger__org">ShubhChintak Technology</span></h3>
+              <p class="ledger__desc">50+ social posters and 50+ technical blogs for a web, SEO and DevOps agency.</p>
+            </div>
+          </li>
+          <li class="ledger__row rise">
+            <span class="ledger__year">2020</span>
+            <div>
+              <h3 class="ledger__role">Technical Content Writer <span class="ledger__org">Intellify</span></h3>
+              <p class="ledger__desc">30+ technical blogs for an IIT-Delhi education startup under the SOLVE Foundation.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="more rise"><a href="/assets/Kritik_Modi_Resume.pdf" target="_blank" rel="noopener">Read the full résumé →</a></p>
+      </div>
+    </section>
+
+    <!-- ============ record ============ -->
+    <section class="band band--invert" id="record">
+      <div class="wrap">
+        <div class="axis rise">
+          <span class="axis__label">record</span>
+          <span class="axis__note">peak ratings</span>
+        </div>
+
+        <div class="awards rise">
+          <div class="award">
+            <p class="award__year">2022</p>
+            <h3 class="award__title">Smart India Hackathon</h3>
+            <p class="award__note">Won the 2022 edition with a fake-news detection system. Awarded by the Government of India.</p>
+          </div>
+          <div class="award">
+            <p class="award__year">2022</p>
+            <h3 class="award__title">ACM-ICPC Regionalist</h3>
+            <p class="award__note">Qualified for the Kanpur–Mathura regionals, among the top 80 or so teams onsite.</p>
+          </div>
+          <div class="award">
+            <p class="award__year">2022</p>
+            <h3 class="award__title">GitHub Externship</h3>
+            <p class="award__note">Selected from 14,000+ applicants, about a 0.6% acceptance rate.</p>
+          </div>
+        </div>
+
+        <h3 class="subhead rise">Competitive programming</h3>
+
+        <div class="rise">
+          <table class="sheet">
+            <thead>
+              <tr>
+                <th scope="col">Platform</th>
+                <th scope="col">Standing</th>
+                <th scope="col">Peak</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cell--site"><a href="https://leetcode.com/u/kritikmodi" target="_blank" rel="noopener">LeetCode</a></td>
+                <td>Guardian · top 0.2% global</td>
+                <td class="cell--rating">2488</td>
+              </tr>
+              <tr>
+                <td class="cell--site"><a href="https://www.codechef.com/users/kritikmodi" target="_blank" rel="noopener">CodeChef</a></td>
+                <td>6★ · best contest rank 11 of 3,000+</td>
+                <td class="cell--rating">2222</td>
+              </tr>
+              <tr>
+                <td class="cell--site"><a href="https://codeforces.com/profile/kritikmodi" target="_blank" rel="noopener">Codeforces</a></td>
+                <td>Expert · top 0.5% global</td>
+                <td class="cell--rating">1790</td>
+              </tr>
+              <tr>
+                <td class="cell--site">Meta Hacker Cup</td>
+                <td>Round 2, 2024 · India rank</td>
+                <td class="cell--rating">#85</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ elsewhere ============ -->
+    <section class="band" id="elsewhere">
+      <div class="wrap">
+        <div class="axis rise">
+          <span class="axis__label">elsewhere</span>
+        </div>
+
+        <div class="doors rise">
+          <a class="door" href="/writing">
+            <span class="door__kicker">Writing</span>
+            <span class="door__title">Notes on systems <span class="door__arrow" aria-hidden="true">→</span></span>
+            <span class="door__note">Working notes on performance and networks. Nothing published yet, but here is what I have started.</span>
+          </a>
+          <a class="door" href="/photography">
+            <span class="door__kicker">Photography</span>
+            <span class="door__title">Photographs <span class="door__arrow" aria-hidden="true">→</span></span>
+            <span class="door__note">Mostly Delhi. Nothing up yet either, but the sheet is waiting.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ contact ============ -->
+    <section class="band" id="contact">
+      <div class="wrap">
+        <div class="axis rise">
+          <span class="axis__label">contact</span>
+        </div>
+
+        <div class="rise">
+          <h2 class="title" style="margin-bottom:1.75rem">Email is the best way to reach me.</h2>
+          <a class="mailto" href="mailto:kritikmodi@gmail.com">kritikmodi@gmail.com</a>
+
+          <div class="profiles">
+            <a href="https://github.com/kritikmodi" target="_blank" rel="noopener">github</a>
+            <a href="https://www.linkedin.com/in/kritikmodi" target="_blank" rel="noopener">linkedin</a>
+            <a href="https://codeforces.com/profile/kritikmodi" target="_blank" rel="noopener">codeforces</a>
+            <a href="https://www.codechef.com/users/kritikmodi" target="_blank" rel="noopener">codechef</a>
+            <a href="https://leetcode.com/u/kritikmodi" target="_blank" rel="noopener">leetcode</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <p>Set in Martian Mono, Instrument Sans and JetBrains Mono. Built by hand in New Delhi, no framework.</p>
+      <p>© <span id="year">2026</span> Kritik Modi</p>
     </div>
   </footer>
 

@@ -4,99 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Kritik Modi · Software Engineer</title>
-  <meta name="description" content="Kritik Modi is a software engineer building the infrastructure behind fast, reliable systems. Founding engineer at Datatailr. Writing, photography, and a little about the person behind the work." />
+  <title>Writing — Kritik Modi</title>
+  <meta name="description" content="Working notes on systems, performance and networks by Kritik Modi, infrastructure engineer in New Delhi. Nothing published yet." />
   <meta name="author" content="Kritik Modi" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Kritik Modi · Software Engineer" />
-  <meta property="og:description" content="Building the infrastructure behind fast, reliable systems. Writing, photography, and a little about the person behind the work." />
-  <meta property="og:url" content="https://kritikmodi.com" />
-  <meta property="og:image" content="https://kritikmodi.com/assets/img/portrait.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:title" content="Writing — Kritik Modi" />
+  <meta property="og:description" content="Working notes on systems, performance and networks." />
+  <meta property="og:url" content="https://kritikmodi.com/writing" />
+  <meta name="twitter:card" content="summary" />
 
-  <link rel="canonical" href="https://kritikmodi.com" />
+  <link rel="canonical" href="https://kritikmodi.com/writing" />
 
-  <!-- Favicon: KM monogram -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23100F0D'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23D2A94E' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2311161A'/%3E%3Ccircle cx='16' cy='16' r='5.5' fill='%232B45F0'/%3E%3C/svg%3E" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&family=Martian+Mono:wght@400;500;600;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="/#about">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ==================== HEADER ==================== -->
-  <header class="site-header" id="top">
-    <div class="wrap site-header__inner">
-      <a href="/" class="brand" aria-label="Kritik Modi, home">
-        <span class="brand__mark">KM</span>
-        <span class="brand__name">Kritik Modi</span>
+  <header class="masthead" id="top">
+    <div class="wrap masthead__inner">
+      <a href="/" class="mark" aria-label="Kritik Modi, home">
+        <span class="mark__dot" aria-hidden="true"></span>
+        <span class="mark__name">kritik modi</span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle menu">
-          <span></span><span></span>
-        </button>
-        <ul class="nav__list" id="navMenu">
-          <li><a href="/#about" class="nav__link">About</a></li>
-          <li><a href="/#work" class="nav__link">Work</a></li>
-          <li><a href="/writing" class="nav__link">Writing</a></li>
-          <li><a href="/photography" class="nav__link">Photography</a></li>
-          <li><a href="/#proud" class="nav__link">Proud of</a></li>
-          <li><a href="/#contact" class="nav__link">Contact</a></li>
-          <li><a href="/assets/Kritik_Modi_Resume.pdf" class="nav__link nav__link--cta" target="_blank" rel="noopener">Résumé</a></li>
+      <nav class="menu" aria-label="Primary">
+        <button class="menu__toggle" id="menuToggle" aria-expanded="false" aria-controls="menuList">Menu</button>
+        <ul class="menu__list" id="menuList">
+          <li><a href="/#about" class="menu__link">about</a></li>
+          <li><a href="/#work" class="menu__link">work</a></li>
+          <li><a href="/#record" class="menu__link">record</a></li>
+          <li><a href="/writing" class="menu__link" aria-current="page">writing</a></li>
+          <li><a href="/photography" class="menu__link">photos</a></li>
+          <li><a href="/#contact" class="menu__link">contact</a></li>
+          <li><a href="/assets/Kritik_Modi_Resume.pdf" class="menu__link menu__link--cta" target="_blank" rel="noopener">Résumé</a></li>
         </ul>
       </nav>
+      <span class="progress" id="progress" aria-hidden="true"></span>
     </div>
   </header>
 
-  
-
-  <main>
-    <!-- ==================== WRITING ==================== -->
-    <section class="section" id="writing" aria-labelledby="writingTitle">
+  <main id="main">
+    <section class="band band--first">
       <div class="wrap">
-        <div class="section-head reveal">
-          <span class="section-label">Writing</span>
-          <h2 class="section-title" id="writingTitle">Notes &amp; essays</h2>
+        <div class="axis">
+          <span class="axis__label">writing</span>
+          <span class="axis__note">nothing published yet</span>
         </div>
 
-        <div class="writing reveal">
-          <p class="writing__intro">
-            I'm starting to write more: mostly working notes on systems,
-            performance, and the occasional detour into whatever I'm figuring
-            out. The first posts are on their way.
-          </p>
-          <div class="writing__soon">
-            <span class="tag">First posts coming soon</span>
-          </div>
-          <ul class="writing__topics">
-            <li><span class="writing__topic-label">On the list</span> Designing private networks that stay invisible until you need them</li>
-            <li><span class="writing__topic-label">On the list</span> What ~90% query speedups actually look like up close</li>
-            <li><span class="writing__topic-label">On the list</span> Ten years of competitive programming, and what it taught me about real code</li>
-          </ul>
+        <h1 class="title" style="max-width:16ch;font-size:clamp(2rem,1.2rem+3.4vw,3.6rem)">Notes on systems.</h1>
+
+        <p class="prose" style="margin-top:1.75rem">
+          Nothing's published yet. These are the four I've actually started,
+          and roughly where each one is. They'll show up here as they go up.
+        </p>
+
+        <div style="margin-top:clamp(2.5rem,5vw,3.5rem)">
+          <ol class="queue">
+            <li class="queue__item rise">
+              <span class="queue__status queue__status--live">Drafting</span>
+              <h2 class="queue__title">How the private networking on Azure is put together</h2>
+            </li>
+            <li class="queue__item rise">
+              <span class="queue__status">Outlined</span>
+              <h2 class="queue__title">Where the 90% came from: notes on the Trino migration</h2>
+            </li>
+            <li class="queue__item rise">
+              <span class="queue__status">Outlined</span>
+              <h2 class="queue__title">Retrieval, from the infrastructure side</h2>
+            </li>
+            <li class="queue__item rise">
+              <span class="queue__status">Idea</span>
+              <h2 class="queue__title">Competitive programming, ten years later</h2>
+            </li>
+          </ol>
         </div>
+
+        <p class="aside rise">
+          If you want a ping when the first one's up, email me.
+          <br />
+          <a href="mailto:kritikmodi@gmail.com" style="color:var(--signal)">kritikmodi@gmail.com</a>
+        </p>
       </div>
     </section>
-
   </main>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="site-footer">
-    <div class="wrap site-footer__inner">
-      <p class="colophon">
-        Set in Newsreader, Hanken Grotesk &amp; IBM&nbsp;Plex&nbsp;Mono.
-        Built by hand in New Delhi.
-      </p>
-      <p class="colophon colophon--right">
-        © <span id="year">2026</span> Kritik Modi
-      </p>
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <p>Set in Martian Mono, Instrument Sans and JetBrains Mono. Built by hand in New Delhi, no framework.</p>
+      <p>© <span id="year">2026</span> Kritik Modi</p>
     </div>
   </footer>
 
