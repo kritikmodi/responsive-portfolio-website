@@ -114,8 +114,8 @@
               </g>
 
               <g class="node" data-node="infra" tabindex="0" role="button"
-                 aria-label="Infrastructure. Four clouds as code — AWS, Azure, GCP and Hetzner — private networking on Azure, autoscaled compute and the deploy pipelines. This part is mine."
-                 data-caption="Infrastructure. Four clouds as code: AWS, Azure, GCP and Hetzner. Private networking on Azure, autoscaled compute, batch orchestration and the deploy pipelines. This part is mine.">
+                 aria-label="Infrastructure. Terraform across AWS, Azure, GCP and Hetzner. A private network cluster on Azure, autoscaled compute on Nomad and Kubernetes, and the GitHub Actions pipelines that provision it. This part is mine."
+                 data-caption="Infrastructure. Terraform across AWS, Azure, GCP and Hetzner. A private network cluster on Azure, autoscaled compute on Nomad and Kubernetes, and the GitHub Actions pipelines that provision it all. This part is mine.">
                 <circle class="node__hit" cx="75" cy="190" r="30" />
                 <circle class="node__dot" cx="75" cy="190" r="5.5" />
                 <text class="node__label" x="75" y="216" text-anchor="middle">infrastructure</text>
@@ -123,12 +123,12 @@
               </g>
 
               <g class="node node--hub" data-node="platform" tabindex="0" role="button"
-                 aria-label="Platform. Datatailr itself. I own the infrastructure and DevOps under it; right-sizing that stack took compute spend down about 75 percent."
-                 data-caption="Platform. Datatailr itself, and about half my time. I own the infrastructure and DevOps under it — right-sizing that stack took compute spend down about 75%.">
+                 aria-label="Platform. Datatailr itself. I own the infrastructure and DevOps under it. Right-sizing that stack took compute spend down about 75 percent, and the deployments it unlocked drove 250 percent ARR growth and a 500 thousand dollar pipeline."
+                 data-caption="Platform. Datatailr itself, and about half my time. I own the infrastructure and DevOps under it: right-sizing that stack took compute spend down about 75%, and the deployments it unlocked drove +250% ARR and a $500k pipeline.">
                 <circle class="node__hit" cx="190" cy="190" r="34" />
                 <circle class="node__dot" cx="190" cy="190" r="8" />
                 <text class="node__label" x="190" y="216" text-anchor="middle">platform</text>
-                <text class="node__figure" x="190" y="232" text-anchor="middle">-75% spend</text>
+                <text class="node__figure" x="190" y="232" text-anchor="middle">+250% arr</text>
               </g>
 
               <g class="node" data-node="strategies" tabindex="0" role="button"
@@ -141,8 +141,8 @@
               </g>
 
               <g class="node" data-node="sources" tabindex="0" role="button"
-                 aria-label="Sources. More than 100,000 tables, wherever they already live."
-                 data-caption="Sources. More than 100,000 tables, wherever they already live, in whatever system already holds them.">
+                 aria-label="Sources. Postgres, Snowflake, BigQuery, Redshift, Hive, S3 and MySQL. More than 100,000 tables, read where they already live."
+                 data-caption="Sources. Postgres, Snowflake, BigQuery, Redshift, Hive, S3 and MySQL. More than 100,000 tables, read where they already live.">
                 <circle class="node__hit" cx="465" cy="190" r="30" />
                 <circle class="node__dot" cx="465" cy="190" r="5.5" />
                 <text class="node__label" x="465" y="216" text-anchor="middle">sources</text>
@@ -150,8 +150,8 @@
               </g>
 
               <g class="node node--hub" data-node="query" tabindex="0" role="button"
-                 aria-label="Query engine. A high-speed federation engine. The second of the two products I work on, and about half my week. It answers around 90 percent faster than the setup it replaced."
-                 data-caption="Query engine. A high-speed federation engine. The second of the two products I work on, and about half my week. It answers around 90% faster than the setup it replaced.">
+                 aria-label="Query engine. A Trino layer unifying every catalog behind one SQL surface. The second of the two products I work on, and about half my week. Heavy query runtimes came down around 90 percent."
+                 data-caption="Query engine. A Trino layer unifying every catalog behind one SQL surface. The second of the two products I work on, and about half my week. Heavy query runtimes came down around 90%.">
                 <circle class="node__hit" cx="585" cy="190" r="34" />
                 <circle class="node__dot" cx="585" cy="190" r="8" />
                 <text class="node__label" x="585" y="216" text-anchor="middle">query engine</text>
@@ -159,8 +159,8 @@
               </g>
 
               <g class="node" data-node="answers" tabindex="0" role="button"
-                 aria-label="Answers. Every source resolved in one query, with none of the data copied anywhere first."
-                 data-caption="Answers. Every source resolved in a single query, with none of the data copied anywhere first.">
+                 aria-label="Answers. Every source resolved in a single query. Quants join across systems with zero ETL, nothing copied first."
+                 data-caption="Answers. Every source resolved in a single query. Quants join across systems with zero ETL, nothing copied anywhere first.">
                 <circle class="node__hit" cx="700" cy="190" r="30" />
                 <circle class="node__dot" cx="700" cy="190" r="5.5" />
                 <text class="node__label" x="700" y="216" text-anchor="middle">answers</text>
@@ -233,12 +233,15 @@
               <p class="ledger__desc">
                 Lead the AI work: retrieval, vector search, embeddings and MCP
                 servers. Own the infrastructure and DevOps on the Datatailr
-                platform: multi-cloud infrastructure-as-code across AWS, Azure,
-                GCP and Hetzner, private networking on Azure, and DAG-based
-                batch orchestration, which took compute spend down about 75%.
-                Also work on the query engine, a federated SQL layer over 100K+
-                tables that answers about 90% faster than the setup it
-                replaced.
+                platform: Terraform across AWS, Azure, GCP and Hetzner, a
+                private network cluster on Azure, DAG-based batch orchestration
+                and the CI/CD behind it, which took compute spend down about
+                75%. Also work on the query engine, a Trino layer unifying 100K+
+                tables across Postgres, Snowflake, BigQuery, Redshift, Hive, S3
+                and MySQL, cutting heavy query runtimes about 90% and letting
+                quants join across sources with zero ETL. Enabled 10+ business
+                deployments, driving +250% ARR and a $500k pipeline, and work
+                directly with enterprise clients on production rollouts.
               </p>
             </div>
           </li>
@@ -337,6 +340,18 @@
           </li>
         </ol>
 
+        <h3 class="subhead rise">Education</h3>
+
+        <ol class="ledger">
+          <li class="ledger__row rise">
+            <span class="ledger__year">2019 — 2023</span>
+            <div>
+              <h3 class="ledger__role">B.E. Computer Science <span class="ledger__org">Dayananda Sagar College of Engineering</span></h3>
+              <p class="ledger__desc">Bangalore. Graduated with a CGPA of 9.10.</p>
+            </div>
+          </li>
+        </ol>
+
         <p class="more rise"><a href="/assets/Kritik_Modi_Resume.pdf" target="_blank" rel="noopener">Read the full résumé →</a></p>
       </div>
     </section>
@@ -346,7 +361,7 @@
       <div class="wrap">
         <div class="axis rise">
           <span class="axis__label">record</span>
-          <span class="axis__note">peak ratings</span>
+          <span class="axis__note">peak ratings · 2,000+ problems solved</span>
         </div>
 
         <div class="awards rise">
@@ -365,6 +380,11 @@
             <h3 class="award__title">GitHub Externship</h3>
             <p class="award__note">Selected from 14,000+ applicants, about a 0.6% acceptance rate.</p>
           </div>
+          <div class="award">
+            <p class="award__year">Published</p>
+            <h3 class="award__title">Misinformation flagging</h3>
+            <p class="award__note">A literature survey of the AI and NLP behind content moderation: text classification, feature extraction, network signals.</p>
+          </div>
         </div>
 
         <h3 class="subhead rise">Competitive programming</h3>
@@ -381,12 +401,12 @@
             <tbody>
               <tr>
                 <td class="cell--site"><a href="https://leetcode.com/u/kritikmodi" target="_blank" rel="noopener">LeetCode</a></td>
-                <td>Guardian · top 0.2% global</td>
+                <td>Guardian · top 0.03% in India · best rank 32 of 30,000+</td>
                 <td class="cell--rating">2488</td>
               </tr>
               <tr>
                 <td class="cell--site"><a href="https://www.codechef.com/users/kritikmodi" target="_blank" rel="noopener">CodeChef</a></td>
-                <td>6★ · best contest rank 11 of 3,000+</td>
+                <td>6★ · top 0.05% in India · best rank 11 of 3,000+</td>
                 <td class="cell--rating">2222</td>
               </tr>
               <tr>
@@ -396,8 +416,13 @@
               </tr>
               <tr>
                 <td class="cell--site">Meta Hacker Cup</td>
-                <td>Round 2, 2024 · India rank</td>
+                <td>2024 · India rank, round 2</td>
                 <td class="cell--rating">#85</td>
+              </tr>
+              <tr>
+                <td class="cell--site">Google Code Jam</td>
+                <td>2023 · India rank, farewell round C</td>
+                <td class="cell--rating">#43</td>
               </tr>
             </tbody>
           </table>
@@ -444,6 +469,7 @@
             <a href="https://codeforces.com/profile/kritikmodi" target="_blank" rel="noopener">codeforces</a>
             <a href="https://www.codechef.com/users/kritikmodi" target="_blank" rel="noopener">codechef</a>
             <a href="https://leetcode.com/u/kritikmodi" target="_blank" rel="noopener">leetcode</a>
+            <a href="https://atcoder.jp/users/kritikmodi" target="_blank" rel="noopener">atcoder</a>
           </div>
         </div>
       </div>
