@@ -297,11 +297,12 @@ body {
 .node--hub:hover .node__label,
 .node--hub.is-lit .node__label { fill: var(--signal); }
 
-/* How much of the week each one takes. */
-.node__share {
+/* One hard figure per node, so the diagram reads as a readout at a glance
+   instead of only rewarding a hover. */
+.node__figure {
   font: 500 8.5px/1 var(--data);
   fill: var(--signal);
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   paint-order: stroke fill;
   stroke: var(--panel);

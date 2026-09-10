@@ -15,15 +15,15 @@ rather than a portfolio template.
 - **Type** — Martian Mono for display (set large, lowercase, tightly tracked),
   Instrument Sans for prose, JetBrains Mono for labels and figures.
 - **Signature** — the hero is an interactive diagram of the work rather than of
-  one system, because the job is two separate products. The AI work sits on
-  top, then the Datatailr platform (infrastructure → platform → strategies),
+  one system, because the job is three things, not one stack. The AI work sits
+  on top, then the Datatailr platform (infrastructure → platform → strategies),
   then the query engine (sources → engine → answers); the layout follows the
-  same order the bio does. Every structural
-  choice carries information: the two products get the larger nodes and a `50%`
-  badge because the time really is split evenly, and the AI edges are dashed
-  because those features are still being built. Solid edges draw themselves in
-  on load, a packet crosses one built hop every few seconds, and picking a node
-  lights its path and writes a line about it.
+  same order the bio does. Every structural choice carries information: the two
+  products get the larger nodes, every node carries one hard figure so the row
+  reads as a readout without hovering, and the AI edges are dashed because
+  those features are still being built. Solid edges draw themselves in on load,
+  a packet crosses one built hop every few seconds, and picking a node lights
+  its path and writes a line about it.
 
 ## Run it locally
 
@@ -56,7 +56,7 @@ assets/Kritik_Modi_Resume.pdf
 - **The schematic** — nodes carry their own copy in `data-caption` and their
   wiring in the edges' `data-from` / `data-to`. Move a node's `cx`/`cy` and the
   lines re-trim themselves at runtime. `node--hub` marks a node as one of the
-  big pieces; `edge--new` marks a connection as not built yet, which draws it
+  big pieces, `node__figure` is its one-line readout; `edge--new` marks a connection as not built yet, which draws it
   dashed and keeps the packet off it.
 
 Motion is skipped entirely under `prefers-reduced-motion`, and the diagram's
