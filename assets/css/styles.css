@@ -30,6 +30,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   --signal:      #2B45F0;
   --signal-lift: #8298FF;
 
+  --wordmark: "Instrument Serif", "Times New Roman", Times, serif;
   --display: "Martian Mono", ui-monospace, monospace;
   --body:    "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --data:    "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
@@ -202,13 +203,13 @@ body {
 .hero__meta i { font-style: normal; color: var(--rule-2); padding-inline: .1em; }
 
 .hero__name {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(3.1rem, 12.5vw, 9rem);
-  line-height: .86;
-  letter-spacing: -.055em;
+  font-family: var(--wordmark);
+  font-weight: 400;
+  font-size: clamp(3.9rem, 15.5vw, 11rem);
+  line-height: .84;
+  letter-spacing: -.025em;
   margin-block: clamp(1.5rem, 4vw, 2.5rem) 0;
-  text-indent: -.045em;
+  text-indent: -.02em;
 }
 .hero__name span { display: block; }
 .hero__name em {
