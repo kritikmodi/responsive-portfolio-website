@@ -453,67 +453,85 @@ p.prose,
 .band--invert .axis__note { color: rgba(234, 237, 235, .45); }
 .band--invert .subhead { color: rgba(234, 237, 235, .45); }
 
-.awards {
+/* The ratings are the strongest numbers on the page, so they get set like a
+   readout rather than buried in a table column. */
+.ratings {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 1px;
   background: rgba(234, 237, 235, .16);
   border: 1px solid rgba(234, 237, 235, .16);
 }
-.award { background: var(--ink); padding: 1.5rem 1.4rem; }
-.award__year {
-  font: 400 .72rem/1 var(--data);
-  color: var(--signal-lift);
-  letter-spacing: .1em;
+
+.rating {
+  display: block;
+  background: var(--ink);
+  padding: 1.5rem 1.4rem 1.65rem;
+  transition: background .25s var(--ease);
 }
-.award__title {
-  margin-top: .75rem;
+.rating:hover { background: #171D22; }
+
+.rating__site {
+  display: block;
+  font: 500 .68rem/1 var(--data);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(234, 237, 235, .45);
+}
+.rating__value {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 1.5rem + 2.1vw, 3rem);
+  line-height: 1;
+  letter-spacing: -.06em;
+  font-variant-numeric: tabular-nums;
+}
+.rating__tier {
+  display: block;
+  margin-top: .85rem;
+  font: 500 .76rem/1 var(--data);
+  color: var(--signal-lift);
+}
+.rating__note {
+  display: block;
+  margin-top: .5rem;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: rgba(234, 237, 235, .55);
+}
+.rating:hover .rating__site { color: rgba(234, 237, 235, .7); }
+
+/* One-off results share the ledger's grammar, inverted. */
+.results { border-top: 1px solid rgba(234, 237, 235, .16); }
+
+.result {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr) auto;
+  gap: .35rem clamp(1rem, 3vw, 2rem);
+  align-items: baseline;
+  padding-block: 1.15rem;
+  border-bottom: 1px solid rgba(234, 237, 235, .1);
+}
+.result__name {
   font-family: var(--display);
   font-weight: 600;
-  font-size: .98rem;
+  font-size: .95rem;
   letter-spacing: -.04em;
 }
-.award__note {
-  margin-top: .55rem;
+.result__note {
   font-size: .9rem;
   line-height: 1.55;
   color: rgba(234, 237, 235, .6);
 }
-
-/* ratings sheet */
-.sheet { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
-.sheet caption { text-align: left; }
-.sheet th {
-  text-align: left;
-  font: 500 .68rem/1 var(--data);
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(234, 237, 235, .4);
-  padding-bottom: .85rem;
-  border-bottom: 1px solid rgba(234, 237, 235, .16);
-  font-weight: 500;
-}
-.sheet th:last-child, .sheet td:last-child { text-align: right; }
-.sheet td {
-  padding-block: 1.05rem;
-  border-bottom: 1px solid rgba(234, 237, 235, .1);
-  font-size: .92rem;
-  color: rgba(234, 237, 235, .62);
-  vertical-align: baseline;
-}
-.sheet tr:last-child td { border-bottom: 0; }
-.sheet .cell--site {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: .92rem;
-  letter-spacing: -.04em;
-  color: var(--paper);
-}
-.sheet .cell--rating {
-  font: 500 1.15rem/1 var(--data);
+.result__mark {
+  font: 500 .95rem/1.5 var(--data);
   color: var(--signal-lift);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
 }
-.sheet a:hover { color: var(--paper); }
 
 /* ---------- elsewhere ---------- */
 .doors {
@@ -725,6 +743,8 @@ p.prose,
 
 @media (max-width: 620px) {
   .ledger__row, .queue__item { grid-template-columns: 1fr; gap: .5rem; }
+  .result { grid-template-columns: minmax(0, 1fr) auto; }
+  .result__note { grid-column: 1 / -1; }
   .ledger__year, .queue__status { line-height: 1.4; }
   .hero__meta { font-size: .7rem; }
 }
