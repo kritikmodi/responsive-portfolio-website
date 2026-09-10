@@ -14,13 +14,15 @@ rather than a portfolio template.
   Nothing else is coloured.
 - **Type** — Martian Mono for display (set large, lowercase, tightly tracked),
   Instrument Sans for prose, JetBrains Mono for labels and figures.
-- **Signature** — the hero is an interactive diagram of the platform the work
-  actually describes: clouds → private network → orchestrator / compute →
-  **query engine** → retrieval / signals / storage. The query engine is drawn
-  larger because it is the largest piece of the job, so the size carries
-  information. Edges draw themselves in on load, a single packet crosses one
-  hop every few seconds, and picking a node lights its path and writes a line
-  about that layer.
+- **Signature** — the hero is an interactive diagram of the work rather than of
+  one system, because the job is two separate products: a query engine
+  (sources → engine → answers) and the Datatailr platform (infrastructure →
+  platform → strategies), with the AI work drawn above both. Every structural
+  choice carries information: the two products get the larger nodes and a `50%`
+  badge because the time really is split evenly, and the AI edges are dashed
+  because those features are still being built. Solid edges draw themselves in
+  on load, a packet crosses one built hop every few seconds, and picking a node
+  lights its path and writes a line about it.
 
 ## Run it locally
 
@@ -52,7 +54,9 @@ assets/Kritik_Modi_Resume.pdf
   drop the status label.
 - **The schematic** — nodes carry their own copy in `data-caption` and their
   wiring in the edges' `data-from` / `data-to`. Move a node's `cx`/`cy` and the
-  lines re-trim themselves at runtime.
+  lines re-trim themselves at runtime. `node--hub` marks a node as one of the
+  big pieces; `edge--new` marks a connection as not built yet, which draws it
+  dashed and keeps the packet off it.
 
 Motion is skipped entirely under `prefers-reduced-motion`, and the diagram's
 resting state is the finished drawing, so nothing depends on JavaScript to be

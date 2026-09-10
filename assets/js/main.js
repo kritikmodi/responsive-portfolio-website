@@ -126,8 +126,10 @@
   if (!reduce) {
     nodes.forEach(function (node, i) { node.style.setProperty("--i", i); });
     edges.forEach(function (line, i) {
-      var len = line.getTotalLength();
       line.style.setProperty("--i", i);
+      /* Dashed edges keep their own dash pattern, so they fade in instead. */
+      if (line.classList.contains("edge--new")) return;
+      var len = line.getTotalLength();
       line.style.setProperty("--len", len);
       line.style.strokeDasharray = len;
     });
@@ -165,14 +167,16 @@
 
   /* A single packet crosses one hop every few seconds — a status light,
      not a light show. */
-  if (!reduce && packet && edges.length) {
+  var built = edges.filter(function (e) { return !e.classList.contains("edge--new"); });
+
+  if (!reduce && packet && built.length) {
     var DUR = 900;
     var start = null;
     var hop = null;
     var waiting = 1800;
 
     var pick = function () {
-      hop = edges[Math.floor(Math.random() * edges.length)];
+      hop = built[Math.floor(Math.random() * built.length)];
       start = null;
     };
 

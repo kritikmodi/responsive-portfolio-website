@@ -262,7 +262,7 @@ body {
 .schematic__svg {
   display: block;
   width: 100%;
-  min-width: 640px;
+  min-width: 690px;
   height: auto;
 }
 
@@ -290,12 +290,24 @@ body {
 .node:hover .node__dot,
 .node.is-lit .node__dot { fill: var(--signal); stroke: var(--signal); }
 
-/* The query engine is the biggest piece of the work, so it is the biggest
-   node: the size carries information, it isn't decoration. */
+/* The two products and the AI work are the pieces of the job, so they get the
+   bigger nodes: the size carries information, it isn't decoration. */
 .node--hub .node__dot { stroke-width: 2; }
 .node--hub .node__label { fill: var(--ink); font-weight: 700; }
 .node--hub:hover .node__label,
 .node--hub.is-lit .node__label { fill: var(--signal); }
+
+/* How much of the week each one takes. */
+.node__share {
+  font: 500 8.5px/1 var(--data);
+  fill: var(--signal);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  paint-order: stroke fill;
+  stroke: var(--panel);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+}
 .node:hover .node__label,
 .node.is-lit .node__label { fill: var(--signal); }
 
@@ -306,6 +318,9 @@ body {
   transition: stroke .2s var(--ease);
 }
 .edge.is-lit { stroke: var(--signal); stroke-width: 1.75; }
+
+/* Dashed because these features are still being built. */
+.edge--new { stroke-dasharray: 3 5; stroke: rgba(17, 22, 26, .3); }
 
 .packet { fill: var(--signal); }
 
@@ -319,6 +334,10 @@ body {
   stroke-dashoffset: 0;
   animation: edgeIn .55s var(--ease) both;
   animation-delay: calc(.45s + var(--i, 0) * .09s);
+}
+.schematic.is-armed .edge--new {
+  animation: nodeIn .6s var(--ease) both;
+  animation-delay: calc(.9s + var(--i, 0) * .09s);
 }
 @keyframes nodeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes edgeIn {
