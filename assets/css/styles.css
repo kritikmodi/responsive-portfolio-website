@@ -30,7 +30,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   --signal:      #2B45F0;
   --signal-lift: #8298FF;
 
-  --wordmark: "Bodoni Moda", Didot, "Times New Roman", serif;
   --display: "Martian Mono", ui-monospace, monospace;
   --body:    "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --data:    "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
@@ -203,19 +202,18 @@ body {
 .hero__meta i { font-style: normal; color: var(--rule-2); padding-inline: .1em; }
 
 .hero__name {
-  font-family: var(--wordmark);
+  font-family: var(--display);
   font-weight: 700;
-  font-style: italic;
-  /* opsz is on, so the display cut thins the hairlines as this scales up */
-  font-optical-sizing: auto;
-  font-size: clamp(3.5rem, 13.5vw, 9.75rem);
-  line-height: .86;
-  letter-spacing: -.02em;
+  font-size: clamp(3.1rem, 12vw, 8.5rem);
+  line-height: .92;
+  /* A monospace face already carries its own sidebearings. Tracking it in hard
+     collides the glyphs, so this stays light and lets the counters breathe. */
+  letter-spacing: -.025em;
   margin-block: clamp(1.5rem, 4vw, 2.5rem) 0;
 }
 .hero__name span { display: block; }
 .hero__name em {
-  font-style: inherit;
+  font-style: normal;
   color: var(--signal);
 }
 

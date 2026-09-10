@@ -12,11 +12,10 @@ rather than a portfolio template.
   one inverted ink band for the record section.
 - **Signal** — a single electric ultramarine (`#2B45F0`) carries every accent.
   Nothing else is coloured.
-- **Type** — Bodoni Moda bold italic for the name alone, so the wordmark is the
-  one thing on the page that isn't set in a technical face; Martian Mono for
-  display, Instrument Sans for prose, JetBrains Mono for labels and figures.
-  Optical sizing is left on for the wordmark, so the hairlines thin out as it
-  scales up.
+- **Type** — Martian Mono for display, including the name, which is set large
+  and lowercase at 700 with only light negative tracking; a monospace face
+  carries its own sidebearings, so tracking it in hard collides the glyphs.
+  Instrument Sans for prose, JetBrains Mono for labels and figures.
 - **Signature** — the hero is an interactive diagram of the work rather than of
   one system, because the job is three things, not one stack. The AI work sits
   on top, then the Datatailr platform (infrastructure → platform → strategies),
