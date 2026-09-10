@@ -15,9 +15,10 @@ rather than a portfolio template.
 - **Type** — Martian Mono for display (set large, lowercase, tightly tracked),
   Instrument Sans for prose, JetBrains Mono for labels and figures.
 - **Signature** — the hero is an interactive diagram of the work rather than of
-  one system, because the job is two separate products: a query engine
-  (sources → engine → answers) and the Datatailr platform (infrastructure →
-  platform → strategies), with the AI work drawn above both. Every structural
+  one system, because the job is two separate products. The AI work sits on
+  top, then the Datatailr platform (infrastructure → platform → strategies),
+  then the query engine (sources → engine → answers); the layout follows the
+  same order the bio does. Every structural
   choice carries information: the two products get the larger nodes and a `50%`
   badge because the time really is split evenly, and the AI edges are dashed
   because those features are still being built. Solid edges draw themselves in

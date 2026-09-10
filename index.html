@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Kritik Modi — Query Engines, Infrastructure &amp; AI</title>
-  <meta name="description" content="Kritik Modi is a founding engineer and the lead AI engineer at Datatailr, in New Delhi. Half his time on a high-speed query federation engine, half on the platform infrastructure quants and HFT traders run strategies on." />
+  <title>Kritik Modi — AI, Infrastructure &amp; Query Engines</title>
+  <meta name="description" content="Kritik Modi is the lead AI engineer at Datatailr, in New Delhi, and on its founding team. Retrieval and vector search, the platform infrastructure and DevOps under them, and a high-speed query federation engine." />
   <meta name="author" content="Kritik Modi" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Kritik Modi — Query Engines, Infrastructure &amp; AI" />
-  <meta property="og:description" content="Founding engineer and lead AI engineer at Datatailr. A query federation engine, the platform infrastructure under it, and the AI features on top." />
+  <meta property="og:title" content="Kritik Modi — AI, Infrastructure &amp; Query Engines" />
+  <meta property="og:description" content="Lead AI engineer at Datatailr and on its founding team. Retrieval and vector search, platform infrastructure and DevOps, and a query federation engine." />
   <meta property="og:url" content="https://kritikmodi.com" />
   <meta name="twitter:card" content="summary" />
 
@@ -56,7 +56,7 @@
     <section class="band band--first">
       <div class="wrap">
         <p class="hero__meta">
-          <span>founding engineer <i>·</i> lead ai <i>·</i> <b>datatailr</b></span>
+          <span>lead ai engineer <i>·</i> founding team <i>·</i> <b>datatailr</b></span>
           <span>new delhi <i>·</i> <span id="clock">··:··</span> IST</span>
         </p>
 
@@ -66,13 +66,13 @@
         </h1>
 
         <p class="hero__lede">
-          I'm on the founding team at <strong>Datatailr</strong>, split about
-          evenly between two products. Half my time goes to our
-          <strong>query engine</strong>, a high-speed federation engine that
-          reads across everything at once. The other half goes to the platform
-          quants and HFT traders run their strategies on, where I own the
-          infrastructure and DevOps. I'm also the lead AI engineer here, so I
-          run the AI features we're adding.
+          I'm the <strong>lead AI engineer</strong> at
+          <strong>Datatailr</strong>, on the founding team. I run the AI work
+          we're building out: retrieval, vector search and MCP servers. I also
+          own the infrastructure and DevOps behind the platform that quants and
+          HFT traders run their strategies on, which takes about half my time.
+          The other half goes to our query engine, a high-speed federation
+          engine that reads across everything at once.
         </p>
 
         <div class="hero__actions">
@@ -91,81 +91,81 @@
 
           <div class="schematic__frame">
             <svg class="schematic__svg" viewBox="0 0 760 270" xmlns="http://www.w3.org/2000/svg">
-              <title>Two products at Datatailr, split about evenly: a query engine that federates over its sources, and the Datatailr platform, where the infrastructure Kritik owns supports the strategies quants and traders run on it. Above both, the AI features he leads, drawn dashed because they are still being added.</title>
+              <title>The AI work Kritik leads, drawn above the two products it goes into and dashed because it is still being built. Below it, the Datatailr platform, where the infrastructure he owns supports the strategies quants and traders run, and the query engine, which federates over its sources to answer a query in one pass.</title>
 
               <g>
-                <line class="edge" data-from="sources" data-to="query"     x1="60"  y1="190" x2="175" y2="190" />
-                <line class="edge" data-from="query"   data-to="answers"   x1="175" y1="190" x2="290" y2="190" />
-                <line class="edge" data-from="infra"   data-to="platform"  x1="470" y1="190" x2="590" y2="190" />
-                <line class="edge" data-from="platform" data-to="strategies" x1="590" y1="190" x2="710" y2="190" />
-                <line class="edge edge--new" data-from="ai" data-to="query"    x1="380" y1="50" x2="175" y2="190" />
-                <line class="edge edge--new" data-from="ai" data-to="platform" x1="380" y1="50" x2="590" y2="190" />
+                <line class="edge" data-from="infra"    data-to="platform"   x1="75"  y1="190" x2="190" y2="190" />
+                <line class="edge" data-from="platform" data-to="strategies" x1="190" y1="190" x2="305" y2="190" />
+                <line class="edge" data-from="sources"  data-to="query"      x1="465" y1="190" x2="585" y2="190" />
+                <line class="edge" data-from="query"    data-to="answers"    x1="585" y1="190" x2="700" y2="190" />
+                <line class="edge edge--new" data-from="ai" data-to="platform" x1="385" y1="50" x2="190" y2="190" />
+                <line class="edge edge--new" data-from="ai" data-to="query"    x1="385" y1="50" x2="585" y2="190" />
               </g>
 
               <circle class="packet" r="3" cx="-20" cy="-20" opacity="0" />
 
               <g class="node node--hub" data-node="ai" tabindex="0" role="button"
-                 aria-label="AI features. New AI work across both products: retrieval, vector search, embeddings and MCP servers. I am the lead AI engineer and I run this."
-                 data-caption="AI features. New work across both products: retrieval, vector search, embeddings and MCP servers. I'm the lead AI engineer here, so this one is mine to run. Dashed because we're still building it.">
-                <circle class="node__hit" cx="380" cy="50" r="34" />
-                <circle class="node__dot" cx="380" cy="50" r="8" />
-                <text class="node__share" x="380" y="16" text-anchor="middle">lead</text>
-                <text class="node__label" x="380" y="32" text-anchor="middle">ai features</text>
-              </g>
-
-              <g class="node" data-node="sources" tabindex="0" role="button"
-                 aria-label="Sources. More than 100,000 tables, wherever they already live. The engine reads them in place."
-                 data-caption="Sources. 100,000+ tables, wherever they already live. The engine reads them in place instead of copying them somewhere new.">
-                <circle class="node__hit" cx="60" cy="190" r="30" />
-                <circle class="node__dot" cx="60" cy="190" r="5.5" />
-                <text class="node__label" x="60" y="216" text-anchor="middle">sources</text>
-              </g>
-
-              <g class="node node--hub" data-node="query" tabindex="0" role="button"
-                 aria-label="Query engine. A high-speed federation engine, and one of the two products I split my time between."
-                 data-caption="Query engine. A high-speed federation engine, and one of the two products I split my time between.">
-                <circle class="node__hit" cx="175" cy="190" r="34" />
-                <circle class="node__dot" cx="175" cy="190" r="8" />
-                <text class="node__label" x="175" y="216" text-anchor="middle">query engine</text>
-                <text class="node__share" x="175" y="232" text-anchor="middle">50%</text>
-              </g>
-
-              <g class="node" data-node="answers" tabindex="0" role="button"
-                 aria-label="Answers. One query, resolved across every source, about 90 percent faster than what it replaced."
-                 data-caption="Answers. One query, resolved across every source at once, about 90% faster than what it replaced.">
-                <circle class="node__hit" cx="290" cy="190" r="30" />
-                <circle class="node__dot" cx="290" cy="190" r="5.5" />
-                <text class="node__label" x="290" y="216" text-anchor="middle">answers</text>
+                 aria-label="AI features. New AI work going into both products: retrieval, vector search, embeddings and MCP servers. I am the lead AI engineer here and I run this."
+                 data-caption="AI features. New work going into both products: retrieval, vector search, embeddings and MCP servers. I'm the lead AI engineer here, so this one is mine. Dashed because we're still building it.">
+                <circle class="node__hit" cx="385" cy="50" r="34" />
+                <circle class="node__dot" cx="385" cy="50" r="8" />
+                <text class="node__share" x="385" y="16" text-anchor="middle">lead</text>
+                <text class="node__label" x="385" y="32" text-anchor="middle">ai features</text>
               </g>
 
               <g class="node" data-node="infra" tabindex="0" role="button"
                  aria-label="Infrastructure. Four clouds as code, private networking on Azure, autoscaled compute, batch orchestration and the deploy pipelines. This part is mine."
                  data-caption="Infrastructure. Four clouds as code, private networking on Azure, autoscaled compute, batch orchestration and the deploy pipelines. This part is mine.">
-                <circle class="node__hit" cx="470" cy="190" r="30" />
-                <circle class="node__dot" cx="470" cy="190" r="5.5" />
-                <text class="node__label" x="470" y="216" text-anchor="middle">infrastructure</text>
+                <circle class="node__hit" cx="75" cy="190" r="30" />
+                <circle class="node__dot" cx="75" cy="190" r="5.5" />
+                <text class="node__label" x="75" y="216" text-anchor="middle">infrastructure</text>
               </g>
 
               <g class="node node--hub" data-node="platform" tabindex="0" role="button"
-                 aria-label="Platform. Datatailr itself, the other product. I work on the infrastructure and DevOps side of it."
-                 data-caption="Platform. Datatailr itself, the other product. I work on the infrastructure and DevOps side of it.">
-                <circle class="node__hit" cx="590" cy="190" r="34" />
-                <circle class="node__dot" cx="590" cy="190" r="8" />
-                <text class="node__label" x="590" y="216" text-anchor="middle">platform</text>
-                <text class="node__share" x="590" y="232" text-anchor="middle">50%</text>
+                 aria-label="Platform. Datatailr itself. I work on the infrastructure and DevOps side of it, about half my time."
+                 data-caption="Platform. Datatailr itself. I work on the infrastructure and DevOps side of it, which takes about half my time.">
+                <circle class="node__hit" cx="190" cy="190" r="34" />
+                <circle class="node__dot" cx="190" cy="190" r="8" />
+                <text class="node__label" x="190" y="216" text-anchor="middle">platform</text>
+                <text class="node__share" x="190" y="232" text-anchor="middle">50%</text>
               </g>
 
               <g class="node" data-node="strategies" tabindex="0" role="button"
                  aria-label="Strategies. What quants and HFT traders come here to run. They write the strategy and never have to touch what is underneath it."
                  data-caption="Strategies. What quants and HFT traders come here to run. They write the strategy and never have to touch what's underneath it.">
-                <circle class="node__hit" cx="710" cy="190" r="30" />
-                <circle class="node__dot" cx="710" cy="190" r="5.5" />
-                <text class="node__label" x="710" y="216" text-anchor="middle">strategies</text>
+                <circle class="node__hit" cx="305" cy="190" r="30" />
+                <circle class="node__dot" cx="305" cy="190" r="5.5" />
+                <text class="node__label" x="305" y="216" text-anchor="middle">strategies</text>
+              </g>
+
+              <g class="node" data-node="sources" tabindex="0" role="button"
+                 aria-label="Sources. More than 100,000 tables, wherever they already live. The engine reads them in place."
+                 data-caption="Sources. 100,000+ tables, wherever they already live. The engine reads them in place instead of copying them somewhere new.">
+                <circle class="node__hit" cx="465" cy="190" r="30" />
+                <circle class="node__dot" cx="465" cy="190" r="5.5" />
+                <text class="node__label" x="465" y="216" text-anchor="middle">sources</text>
+              </g>
+
+              <g class="node node--hub" data-node="query" tabindex="0" role="button"
+                 aria-label="Query engine. A high-speed federation engine, and the other half of my time."
+                 data-caption="Query engine. A high-speed federation engine, and the other half of my time.">
+                <circle class="node__hit" cx="585" cy="190" r="34" />
+                <circle class="node__dot" cx="585" cy="190" r="8" />
+                <text class="node__label" x="585" y="216" text-anchor="middle">query engine</text>
+                <text class="node__share" x="585" y="232" text-anchor="middle">50%</text>
+              </g>
+
+              <g class="node" data-node="answers" tabindex="0" role="button"
+                 aria-label="Answers. One query, resolved across every source, about 90 percent faster than what it replaced."
+                 data-caption="Answers. One query, resolved across every source at once, about 90% faster than what it replaced.">
+                <circle class="node__hit" cx="700" cy="190" r="30" />
+                <circle class="node__dot" cx="700" cy="190" r="5.5" />
+                <text class="node__label" x="700" y="216" text-anchor="middle">answers</text>
               </g>
             </svg>
           </div>
 
-          <p class="schematic__caption" id="schematicCaption" aria-live="polite">Two products, split about evenly, and the AI work sitting over both. Pick a node.</p>
+          <p class="schematic__caption" id="schematicCaption" aria-live="polite">The AI work sits over two products, split about evenly between them. Pick a node.</p>
         </div>
       </div>
     </section>
@@ -178,26 +178,26 @@
         </div>
 
         <div class="prose rise">
-          <h2 class="title" style="margin-bottom:1.5rem">Two products, and the AI over both.</h2>
+          <h2 class="title" style="margin-bottom:1.5rem">AI, infrastructure, and a query engine.</h2>
           <p>
             I've been at <strong>Datatailr</strong> since 2023, on the founding
-            team, and my time splits about evenly between two products. The
-            first is our <strong>query engine</strong>: a high-speed federation
-            engine that answers across more than 100,000 tables without moving
-            any of them.
+            team, and I'm the <strong>lead AI engineer</strong> here. We're
+            adding AI features across the product and I run that work: retrieval
+            pipelines, vector search, embeddings and MCP servers.
           </p>
           <p>
-            The second is the <strong>Datatailr platform</strong> itself, which
-            quants and HFT traders use to run their strategies without having to
-            think about what's underneath. I work on the infrastructure and
-            DevOps side of it: infrastructure-as-code across four clouds, the
-            private networking on Azure, the DAG scheduler that runs batch work,
-            and the deploy pipelines and monitoring around all of it.
+            The rest of my week splits about evenly between two products. One is
+            the <strong>Datatailr platform</strong> itself, which quants and HFT
+            traders use to run their strategies without having to think about
+            what's underneath. I work on the infrastructure and DevOps side of
+            it: infrastructure-as-code across four clouds, the private
+            networking on Azure, the DAG scheduler that runs batch work, and the
+            deploy pipelines and monitoring around all of it.
           </p>
           <p>
-            I'm also the <strong>lead AI engineer</strong> here. We're adding AI
-            features across the product and I run that work: retrieval, vector
-            search, embeddings and MCP servers.
+            The other is our <strong>query engine</strong>: a high-speed
+            federation engine that answers across more than 100,000 tables
+            without moving any of them.
           </p>
           <p>
             Before that I wrote Rust at <strong>Juspay</strong> on Hyperswitch,
@@ -228,16 +228,15 @@
           <li class="ledger__row rise">
             <span class="ledger__year">2023 — now</span>
             <div>
-              <h3 class="ledger__role">Founding Engineer, Lead AI <span class="ledger__org">Datatailr</span></h3>
+              <h3 class="ledger__role">Lead AI &amp; Founding Engineer <span class="ledger__org">Datatailr</span></h3>
               <p class="ledger__desc">
-                Split across two products. Build the query engine, a federated
-                SQL layer over 100K+ tables that took query times down about
-                90%. On the Datatailr platform itself, own the infrastructure
-                and DevOps: multi-cloud infrastructure-as-code across AWS,
-                Azure, GCP and Hetzner, private networking on Azure, and
-                DAG-based batch orchestration, which took compute spend down
-                about 75%. Now lead the AI work: retrieval, vector search and
-                MCP servers.
+                Lead the AI work: retrieval, vector search, embeddings and MCP
+                servers. Own the infrastructure and DevOps on the Datatailr
+                platform: multi-cloud infrastructure-as-code across AWS, Azure,
+                GCP and Hetzner, private networking on Azure, and DAG-based
+                batch orchestration, which took compute spend down about 75%.
+                Also build the query engine, a federated SQL layer over 100K+
+                tables that took query times down about 90%.
               </p>
             </div>
           </li>
