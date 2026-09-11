@@ -453,6 +453,59 @@ p.prose,
 .band--invert .axis__note { color: rgba(234, 237, 235, .45); }
 .band--invert .subhead { color: rgba(234, 237, 235, .45); }
 
+/* Peak ratings lead with the tier, not the number. A rating only means
+   something on its own platform's scale, so 2488 / 2222 / 1790 side by side
+   reads as a descending sequence when it isn't one. */
+.ratings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: rgba(234, 237, 235, .16);
+  border: 1px solid rgba(234, 237, 235, .16);
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.rating {
+  display: block;
+  background: var(--ink);
+  padding: 1.5rem 1.4rem 1.6rem;
+  transition: background .25s var(--ease);
+}
+.rating:hover { background: #171D22; }
+
+.rating__site {
+  display: block;
+  font: 500 .68rem/1 var(--data);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(234, 237, 235, .45);
+}
+.rating__tier {
+  display: block;
+  margin-top: .95rem;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
+  line-height: 1.1;
+  letter-spacing: -.05em;
+}
+.rating__peak {
+  display: block;
+  margin-top: .65rem;
+  font: 400 .8rem/1.4 var(--data);
+  color: rgba(234, 237, 235, .55);
+  font-variant-numeric: tabular-nums;
+}
+.rating__pct {
+  display: block;
+  margin-top: .85rem;
+  font: 500 .67rem/1 var(--data);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--signal-lift);
+}
+.rating:hover .rating__site { color: rgba(234, 237, 235, .7); }
+
 /* Best single-contest finish per judge, as a dot plot on a log rank axis
    running 1st to 1000th. Rank is the rare thing here, so the marker is the
    mark; the connector back to 1st is only there to lead the eye. */
