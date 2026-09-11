@@ -480,29 +480,22 @@ p.prose,
   text-transform: uppercase;
   color: rgba(234, 237, 235, .45);
 }
-.rating__tier {
+.rating__pct {
   display: block;
   margin-top: .95rem;
   font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
-  line-height: 1.1;
-  letter-spacing: -.05em;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 1.1rem + 1.1vw, 1.8rem);
+  line-height: 1;
+  letter-spacing: -.055em;
+  color: var(--signal-lift);
 }
-.rating__peak {
+.rating__meta {
   display: block;
-  margin-top: .65rem;
-  font: 400 .8rem/1.4 var(--data);
+  margin-top: .75rem;
+  font: 400 .8rem/1.5 var(--data);
   color: rgba(234, 237, 235, .55);
   font-variant-numeric: tabular-nums;
-}
-.rating__pct {
-  display: block;
-  margin-top: .85rem;
-  font: 500 .67rem/1 var(--data);
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--signal-lift);
 }
 .rating:hover .rating__site { color: rgba(234, 237, 235, .7); }
 
@@ -584,6 +577,7 @@ p.prose,
 /* India-scoped ranks carry a hollow marker so they are never read straight
    across against the global ones. */
 .rank--india .rank__fill { background: rgba(130, 152, 255, .22); }
+.rank--india .rank__pct { color: var(--signal-lift); }
 .rank--india .rank__fill::after {
   background: transparent;
   border: 2px solid var(--signal-lift);
