@@ -414,6 +414,56 @@ p.prose,
   line-height: 1.4;
 }
 .ledger__org { color: var(--signal); }
+/* Two rungs at Datatailr: the current title on top, what it grew out of
+   below, joined by the same dot-and-stem the charts use. */
+.ladder { padding-left: 1.2rem; }
+.ladder + .ledger__desc { margin-top: .8rem; }
+
+.ladder__step { position: relative; }
+.ladder__step + .ladder__step { margin-top: .55rem; }
+
+.ladder__step::before {
+  content: "";
+  position: absolute;
+  left: -1.2rem;
+  top: .5em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--rule-2);
+}
+.ladder__step--now::before { background: var(--signal); }
+
+/* Stem from this rung's dot down to the next one. */
+.ladder__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(-1.2rem + 3px);
+  top: calc(.5em + 7px);
+  bottom: calc(-.55rem - .5em);
+  width: 1px;
+  background: var(--rule);
+}
+
+.ladder__role {
+  display: inline;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -.04em;
+  line-height: 1.4;
+}
+.ladder__role--past { font-weight: 500; color: var(--graphite); }
+
+.ladder__when {
+  margin-left: .55rem;
+  font: 400 .7rem/1 var(--data);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  white-space: nowrap;
+}
+
 .ledger__desc {
   margin-top: .45rem;
   font-size: .95rem;
