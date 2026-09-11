@@ -511,13 +511,19 @@ p.prose,
 /* Best finishes, plotted where they landed on the scoreboard: the vertical
    axis is finishing position, so a taller column simply means he finished
    higher. Linear, 1st to 200th, so there is no scale to explain. */
-.chart { margin: 0; }
+/* The column labels below the plot are positioned, not in flow, so the space
+   for them is reserved as padding here. Margin would collapse into whatever
+   follows and let the labels run into it. */
+.chart {
+  margin: 0;
+  padding-bottom: 4.2rem;
+}
 
 .chart__plot {
   position: relative;
   height: clamp(190px, 26vw, 250px);
   /* The topmost value label sits above the plot box, so it needs headroom. */
-  margin: 2.5rem 0 3.9rem;
+  margin: 2.5rem 0 0;
 }
 
 .chart__line {
@@ -613,12 +619,6 @@ a.col__name:hover { color: var(--signal-lift); }
   top: calc(100% + 2.5rem);
   font: 400 clamp(.58rem, .48rem + .3vw, .68rem)/1.3 var(--data);
   color: rgba(234, 237, 235, .38);
-}
-
-.chart__cap {
-  font: 400 .8rem/1.6 var(--data);
-  color: rgba(234, 237, 235, .42);
-  max-width: 54ch;
 }
 
 /* One-off results share the ledger's grammar, inverted. */
