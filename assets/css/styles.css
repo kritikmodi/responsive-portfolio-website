@@ -490,6 +490,15 @@ p.prose,
   letter-spacing: -.055em;
   color: var(--signal-lift);
 }
+.rating__pct em {
+  font-style: normal;
+  font-family: var(--data);
+  font-weight: 400;
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(234, 237, 235, .45);
+}
 .rating__meta {
   display: block;
   margin-top: .75rem;
@@ -577,7 +586,6 @@ p.prose,
 /* India-scoped ranks carry a hollow marker so they are never read straight
    across against the global ones. */
 .rank--india .rank__fill { background: rgba(130, 152, 255, .22); }
-.rank--india .rank__pct { color: var(--signal-lift); }
 .rank--india .rank__fill::after {
   background: transparent;
   border: 2px solid var(--signal-lift);
