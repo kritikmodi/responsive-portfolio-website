@@ -453,14 +453,14 @@ p.prose,
 .band--invert .axis__note { color: rgba(234, 237, 235, .45); }
 .band--invert .subhead { color: rgba(234, 237, 235, .45); }
 
-/* Standing on each judge, drawn on a log scale across the tail. A linear
-   percentile axis puts every one of these between 92% and 99.8%, which is
-   four identical near-full bars saying nothing. */
+/* Best single-contest finish per judge, as a dot plot on a log rank axis
+   running 1st to 1000th. Rank is the rare thing here, so the marker is the
+   mark; the connector back to 1st is only there to lead the eye. */
 .ranks { border-top: 1px solid rgba(234, 237, 235, .16); }
 
 .rank {
   display: grid;
-  grid-template-columns: 7.5rem minmax(0, 15rem) minmax(0, 1fr) 5.5rem;
+  grid-template-columns: 7.5rem minmax(0, 16rem) minmax(0, 1fr) 8.5rem;
   gap: .4rem clamp(1rem, 2.5vw, 2rem);
   align-items: center;
   padding-block: 1.25rem;
@@ -481,25 +481,32 @@ p.prose,
   color: rgba(234, 237, 235, .55);
 }
 
-.rank__rail {
-  position: relative;
-  height: 3px;
+.rank__rail { position: relative; height: 10px; }
+.rank__rail::before {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto 0;
+  height: 1px;
+  margin-top: -.5px;
   background: rgba(234, 237, 235, .13);
 }
 .rank__fill {
   position: absolute;
-  inset: 0 auto 0 0;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  margin-top: -.5px;
   width: var(--p, 0%);
-  background: var(--signal-lift);
+  background: rgba(130, 152, 255, .4);
 }
 .rank__fill::after {
   content: "";
   position: absolute;
-  right: -3.5px;
+  right: -5px;
   top: 50%;
-  width: 8px;
-  height: 8px;
-  margin-top: -4px;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
   border-radius: 50%;
   background: var(--signal-lift);
 }
@@ -512,25 +519,37 @@ p.prose,
   text-align: right;
   white-space: nowrap;
 }
-
-/* The axis the rails are read against. */
-.rank--scale {
-  border-bottom: 0;
-  padding-block: .15rem 0;
+.rank__pct em {
+  font-style: normal;
+  font-family: var(--data);
+  font-weight: 400;
+  font-size: .72rem;
+  letter-spacing: 0;
+  color: rgba(234, 237, 235, .45);
 }
+
+/* The axis the markers are read against. */
+.rank--scale { border-bottom: 0; padding-block: .15rem 0; }
 .rank__scale {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  height: 1.5em;
   border-top: 1px solid rgba(234, 237, 235, .13);
-  padding-top: .45rem;
+  padding-top: .5rem;
   font: 400 .64rem/1 var(--data);
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: rgba(234, 237, 235, .32);
 }
-.rank__scale i { font-style: normal; }
-.rank__scale i:nth-child(2) { text-align: center; }
-.rank__scale i:nth-child(3) { text-align: right; }
+.rank__scale i {
+  position: absolute;
+  top: .5rem;
+  font-style: normal;
+  transform: translateX(-50%);
+}
+.rank__scale i:nth-child(1) { left: 0; transform: none; }
+.rank__scale i:nth-child(2) { left: 33.333%; }
+.rank__scale i:nth-child(3) { left: 66.667%; }
+.rank__scale i:nth-child(4) { left: 100%; transform: translateX(-100%); }
 
 /* One-off results share the ledger's grammar, inverted. */
 .results { border-top: 1px solid rgba(234, 237, 235, .16); }
@@ -639,6 +658,9 @@ p.prose,
   background: var(--rule);
   border: 1px solid var(--rule);
 }
+/* One destination should not stretch the full column width. */
+.doors--single { max-width: 34rem; }
+
 .door {
   display: block;
   background: var(--paper);
