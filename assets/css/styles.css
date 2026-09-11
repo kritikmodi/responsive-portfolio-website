@@ -508,136 +508,89 @@ p.prose,
 }
 .rating:hover .rating__site { color: rgba(234, 237, 235, .7); }
 
-/* Best single-contest finish per judge, as a dot plot on a log rank axis
-   running 1st to 1000th. Rank is the rare thing here, so the marker is the
-   mark; the connector back to 1st is only there to lead the eye. */
-.ranks { border-top: 1px solid rgba(234, 237, 235, .16); }
+/* Best finishes. Bars are sorted and scaled so longer simply means a better
+   finish: no axis to decode, and the rank itself sits right next to the bar.
+   Scaled against the best of the five so the track gets used. */
+.finishes { border-top: 1px solid rgba(234, 237, 235, .16); }
 
-.rank {
+.finish {
   display: grid;
-  grid-template-columns: 9.5rem minmax(0, 14rem) minmax(0, 1fr) 8.5rem;
-  gap: .4rem clamp(1rem, 2.5vw, 2rem);
+  grid-template-columns: 13rem minmax(0, 1fr) 6.5rem;
+  column-gap: clamp(1rem, 3vw, 2.25rem);
+  row-gap: .25rem;
   align-items: center;
-  padding-block: 1.25rem;
+  padding-block: 1.15rem;
   border-bottom: 1px solid rgba(234, 237, 235, .1);
 }
 
-.rank__site {
-  font: 500 .72rem/1 var(--data);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  transition: color .2s var(--ease);
-}
-.rank__site:hover { color: var(--signal-lift); }
-
-.rank__meta {
-  font-size: .87rem;
-  line-height: 1.5;
-  color: rgba(234, 237, 235, .55);
-}
-
-.rank__rail { position: relative; height: 10px; }
-.rank__rail::before {
-  content: "";
-  position: absolute;
-  inset: 50% 0 auto 0;
-  height: 1px;
-  margin-top: -.5px;
-  background: rgba(234, 237, 235, .13);
-}
-.rank__fill {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  height: 1px;
-  margin-top: -.5px;
-  width: var(--p, 0%);
-  background: rgba(130, 152, 255, .4);
-}
-.rank__fill::after {
-  content: "";
-  position: absolute;
-  right: -5px;
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  margin-top: -5px;
-  border-radius: 50%;
-  background: var(--signal-lift);
-}
-
-.rank__pct {
+.finish__name {
+  grid-area: 1 / 1;
+  align-self: end;
   font-family: var(--display);
   font-weight: 600;
-  font-size: .92rem;
-  letter-spacing: -.045em;
+  font-size: .95rem;
+  letter-spacing: -.04em;
+  transition: color .2s var(--ease);
+}
+a.finish__name:hover { color: var(--signal-lift); }
+
+.finish__note {
+  grid-area: 2 / 1;
+  align-self: start;
+  font: 400 .74rem/1.4 var(--data);
+  color: rgba(234, 237, 235, .42);
+}
+
+.finish__bar {
+  grid-area: 1 / 2 / 3 / 3;
+  height: 12px;
+  background: rgba(234, 237, 235, .08);
+}
+.finish__bar i {
+  display: block;
+  height: 100%;
+  width: var(--w, 0%);
+  background: var(--signal-lift);
+}
+/* India-scoped finishes are drawn back, so they are not read straight across
+   against the global ones. */
+.finish--india .finish__bar i { background: rgba(130, 152, 255, .38); }
+
+.finish__rank {
+  grid-area: 1 / 3;
+  align-self: end;
   text-align: right;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -.05em;
+  font-variant-numeric: tabular-nums;
+}
+.finish__field {
+  grid-area: 2 / 3;
+  align-self: start;
+  text-align: right;
+  font: 400 .72rem/1.4 var(--data);
+  color: rgba(234, 237, 235, .42);
   white-space: nowrap;
 }
-.rank__pct em {
-  font-style: normal;
-  font-family: var(--data);
-  font-weight: 400;
-  font-size: .72rem;
-  letter-spacing: 0;
-  color: rgba(234, 237, 235, .45);
-}
 
-/* India-scoped ranks carry a hollow marker so they are never read straight
-   across against the global ones. */
-.rank--india .rank__fill { background: rgba(130, 152, 255, .22); }
-.rank--india .rank__fill::after {
-  background: transparent;
-  border: 2px solid var(--signal-lift);
-}
-
-/* The axis the markers are read against. */
-.rank--scale { border-bottom: 0; padding-block: .15rem 0; }
-.rank__scale {
-  position: relative;
-  height: 1.5em;
-  border-top: 1px solid rgba(234, 237, 235, .13);
-  padding-top: .5rem;
-  font: 400 .64rem/1 var(--data);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: rgba(234, 237, 235, .32);
-}
-.rank__scale i {
-  position: absolute;
-  top: .5rem;
-  font-style: normal;
-  transform: translateX(-50%);
-}
-.rank__scale i:nth-child(1) { left: 0; transform: none; }
-
-.rank__legend {
-  grid-column: 1 / 3;
+.finishes__key {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: .4rem;
-  padding-top: .5rem;
-  font: 400 .64rem/1 var(--data);
-  letter-spacing: .1em;
+  gap: .4rem 1.4rem;
+  margin-top: 1.1rem;
+  font: 400 .66rem/1 var(--data);
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: rgba(234, 237, 235, .32);
 }
-.rank__legend .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--signal-lift);
-  flex: none;
-}
-.rank__legend .dot--india {
-  background: transparent;
-  border: 2px solid var(--signal-lift);
-  margin-left: .85rem;
-}
-
-.rank__scale i:nth-child(2) { left: 33.333%; }
-.rank__scale i:nth-child(3) { left: 66.667%; }
-.rank__scale i:nth-child(4) { left: 100%; transform: translateX(-100%); }
+.finishes__key span { display: inline-flex; align-items: center; gap: .45rem; }
+.finishes__key .key { width: 18px; height: 8px; flex: none; }
+.finishes__key .key--global { background: var(--signal-lift); }
+.finishes__key .key--india { background: rgba(130, 152, 255, .38); }
+.finishes__hint { margin-left: auto; }
 
 /* One-off results share the ledger's grammar, inverted. */
 .results { border-top: 1px solid rgba(234, 237, 235, .16); }
@@ -952,16 +905,11 @@ p.prose,
 @media (max-width: 620px) {
   .ledger__row, .queue__item { grid-template-columns: 1fr; gap: .5rem; }
   .result { grid-template-columns: minmax(0, 1fr) auto; }
-  .rank { grid-template-columns: minmax(0, 1fr) auto; gap: .6rem 1rem; }
-  .rank__site { grid-area: 1 / 1; }
-  .rank__pct  { grid-area: 1 / 2; }
-  .rank__meta { grid-area: 2 / 1 / auto / -1; }
-  .rank__rail { grid-area: 3 / 1 / auto / -1; }
-  /* The rails go full width here, so the axis still lines up under them.
-     Keep it, and the legend with it. */
-  .rank--scale { grid-template-columns: 1fr; gap: .5rem; }
-  .rank__legend { grid-column: 1 / -1; flex-wrap: wrap; padding-top: 0; }
-  .rank__scale { grid-column: 1 / -1; }
+  .finish { grid-template-columns: minmax(0, 1fr) auto; }
+  .finish__bar { grid-area: 3 / 1 / 4 / -1; margin-top: .5rem; }
+  .finish__rank { grid-area: 1 / 2; }
+  .finish__field { grid-area: 2 / 2; }
+  .finishes__hint { margin-left: 0; }
   .result__note { grid-column: 1 / -1; }
   .ledger__year, .queue__status { line-height: 1.4; }
   .hero__meta { font-size: .7rem; }
