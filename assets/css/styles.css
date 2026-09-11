@@ -508,89 +508,118 @@ p.prose,
 }
 .rating:hover .rating__site { color: rgba(234, 237, 235, .7); }
 
-/* Best finishes. Bars are sorted and scaled so longer simply means a better
-   finish: no axis to decode, and the rank itself sits right next to the bar.
-   Scaled against the best of the five so the track gets used. */
-.finishes { border-top: 1px solid rgba(234, 237, 235, .16); }
+/* Best finishes, plotted where they landed on the scoreboard: the vertical
+   axis is finishing position, so a taller column simply means he finished
+   higher. Linear, 1st to 200th, so there is no scale to explain. */
+.chart { margin: 0; }
 
-.finish {
-  display: grid;
-  grid-template-columns: 13rem minmax(0, 1fr) 6.5rem;
-  column-gap: clamp(1rem, 3vw, 2.25rem);
-  row-gap: .25rem;
-  align-items: center;
-  padding-block: 1.15rem;
-  border-bottom: 1px solid rgba(234, 237, 235, .1);
+.chart__plot {
+  position: relative;
+  height: clamp(190px, 26vw, 250px);
+  /* The topmost value label sits above the plot box, so it needs headroom. */
+  margin: 2.5rem 0 3.9rem;
 }
 
-.finish__name {
-  grid-area: 1 / 1;
-  align-self: end;
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: .95rem;
-  letter-spacing: -.04em;
-  transition: color .2s var(--ease);
+.chart__line {
+  position: absolute;
+  left: 3.6rem;
+  right: 0;
+  bottom: var(--y);
+  height: 1px;
+  background: rgba(234, 237, 235, .1);
 }
-a.finish__name:hover { color: var(--signal-lift); }
-
-.finish__note {
-  grid-area: 2 / 1;
-  align-self: start;
-  font: 400 .74rem/1.4 var(--data);
-  color: rgba(234, 237, 235, .42);
-}
-
-.finish__bar {
-  grid-area: 1 / 2 / 3 / 3;
-  height: 12px;
-  background: rgba(234, 237, 235, .08);
-}
-.finish__bar i {
-  display: block;
-  height: 100%;
-  width: var(--w, 0%);
-  background: var(--signal-lift);
-}
-/* India-scoped finishes are drawn back, so they are not read straight across
-   against the global ones. */
-.finish--india .finish__bar i { background: rgba(130, 152, 255, .38); }
-
-.finish__rank {
-  grid-area: 1 / 3;
-  align-self: end;
-  text-align: right;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: -.05em;
-  font-variant-numeric: tabular-nums;
-}
-.finish__field {
-  grid-area: 2 / 3;
-  align-self: start;
-  text-align: right;
-  font: 400 .72rem/1.4 var(--data);
-  color: rgba(234, 237, 235, .42);
+.chart__line i {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: .7rem;
+  font: 400 .66rem/1 var(--data);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(234, 237, 235, .3);
   white-space: nowrap;
 }
 
-.finishes__key {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: .4rem 1.4rem;
-  margin-top: 1.1rem;
-  font: 400 .66rem/1 var(--data);
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(234, 237, 235, .32);
+.chart__cols {
+  position: absolute;
+  inset: 0 0 0 3.6rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(.4rem, 1.5vw, 1.5rem);
 }
-.finishes__key span { display: inline-flex; align-items: center; gap: .45rem; }
-.finishes__key .key { width: 18px; height: 8px; flex: none; }
-.finishes__key .key--global { background: var(--signal-lift); }
-.finishes__key .key--india { background: rgba(130, 152, 255, .38); }
-.finishes__hint { margin-left: auto; }
+
+.col { position: relative; }
+
+/* The stem grows from the baseline, so its height is the finishing position. */
+.col__plot { position: absolute; inset: 0; }
+.col__stem {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 2px;
+  height: var(--h);
+  margin-left: -1px;
+  background: rgba(130, 152, 255, .45);
+}
+.col__stem::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 13px;
+  height: 13px;
+  margin: -6.5px 0 0 -6.5px;
+  border-radius: 50%;
+  background: var(--signal-lift);
+}
+.col--india .col__stem { background: rgba(130, 152, 255, .28); }
+.col--india .col__stem::after {
+  background: var(--ink);
+  border: 2px solid var(--signal-lift);
+}
+
+.col__val {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  margin-bottom: .85rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(.95rem, .8rem + .5vw, 1.2rem);
+  letter-spacing: -.05em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Names sit under the baseline, outside the plot box. */
+.col__name,
+.col__sub {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.col__name {
+  top: calc(100% + .95rem);
+  font: 500 clamp(.62rem, .5rem + .35vw, .74rem)/1.3 var(--data);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: color .2s var(--ease);
+}
+a.col__name:hover { color: var(--signal-lift); }
+.col__sub {
+  top: calc(100% + 2.5rem);
+  font: 400 clamp(.58rem, .48rem + .3vw, .68rem)/1.3 var(--data);
+  color: rgba(234, 237, 235, .38);
+}
+
+.chart__cap {
+  font: 400 .8rem/1.6 var(--data);
+  color: rgba(234, 237, 235, .42);
+  max-width: 54ch;
+}
 
 /* One-off results share the ledger's grammar, inverted. */
 .results { border-top: 1px solid rgba(234, 237, 235, .16); }
@@ -905,11 +934,12 @@ a.finish__name:hover { color: var(--signal-lift); }
 @media (max-width: 620px) {
   .ledger__row, .queue__item { grid-template-columns: 1fr; gap: .5rem; }
   .result { grid-template-columns: minmax(0, 1fr) auto; }
-  .finish { grid-template-columns: minmax(0, 1fr) auto; }
-  .finish__bar { grid-area: 3 / 1 / 4 / -1; margin-top: .5rem; }
-  .finish__rank { grid-area: 1 / 2; }
-  .finish__field { grid-area: 2 / 2; }
-  .finishes__hint { margin-left: 0; }
+  /* Five columns in 375px: buy back width from the gutter and the gaps so
+     the longest name still fits on one line. */
+  .chart__line { left: 2.5rem; }
+  .chart__cols { inset: 0 0 0 2.5rem; gap: .15rem; }
+  .col__name { font-size: .54rem; letter-spacing: .02em; }
+  .col__sub { font-size: .52rem; letter-spacing: 0; }
   .result__note { grid-column: 1 / -1; }
   .ledger__year, .queue__status { line-height: 1.4; }
   .hero__meta { font-size: .7rem; }
