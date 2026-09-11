@@ -579,12 +579,6 @@ p.prose,
   border-radius: 50%;
   background: var(--signal-lift);
 }
-.col--india .col__stem { background: rgba(130, 152, 255, .28); }
-.col--india .col__stem::after {
-  background: var(--ink);
-  border: 2px solid var(--signal-lift);
-}
-
 .col__val {
   position: absolute;
   left: 50%;
