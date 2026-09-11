@@ -40,7 +40,8 @@ Then open http://localhost:8000.
 ## Structure
 
 ```
-index.html             # home: hero + schematic, about, work, record, contact
+index.html             # home: hero + schematic, about, work, projects,
+                       #       record, elsewhere, contact
 writing/index.html     # the queue of pieces, with an honest status on each
 photography/index.html # a 35mm contact sheet, still empty
 assets/css/styles.css  # tokens, layout, the schematic

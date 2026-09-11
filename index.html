@@ -39,6 +39,7 @@
         <ul class="menu__list" id="menuList">
           <li><a href="/#about" class="menu__link">about</a></li>
           <li><a href="/#work" class="menu__link">work</a></li>
+          <li><a href="/#projects" class="menu__link">projects</a></li>
           <li><a href="/#record" class="menu__link">record</a></li>
           <li><a href="/writing" class="menu__link">writing</a></li>
           <li><a href="/photography" class="menu__link">photos</a></li>
@@ -353,6 +354,60 @@
         </ol>
 
         <p class="more rise"><a href="/assets/Kritik_Modi_Resume.pdf" target="_blank" rel="noopener">Read the full résumé →</a></p>
+      </div>
+    </section>
+
+    <!-- ============ projects ============ -->
+    <section class="band" id="projects">
+      <div class="wrap">
+        <div class="axis rise">
+          <span class="axis__label">projects</span>
+          <span class="axis__note">open source · 2026</span>
+        </div>
+
+        <p class="prose rise" style="margin-bottom:clamp(2rem,4vw,2.75rem)">
+          A video and a deck are the two assets an AI assistant normally can't
+          touch, since every revision means reopening an editor. Both of these
+          make them code instead, so a rewrite is a script run rather than an
+          afternoon.
+        </p>
+
+        <div class="projects rise">
+          <a class="project" href="https://github.com/kritikmodi/product-video-as-code" target="_blank" rel="noopener">
+            <span class="project__head">
+              <span class="project__name">Product video as code</span>
+              <span class="project__out" aria-hidden="true">↗</span>
+            </span>
+            <span class="project__note">
+              Build product videos from your IDE instead of a video editor. An
+              animated HTML deck, an AI voiceover and real screen recordings,
+              mastered and rendered deterministically to MP4. Audio is generated
+              first and measured, so the picture never drifts out of sync.
+            </span>
+            <span class="project__flow">
+              script.json <b>→</b> tts <b>→</b> measure <b>→</b> render <b>→</b> composite <b>→</b> mp4
+            </span>
+            <span class="project__stack">Python · Playwright · ffmpeg · MIT</span>
+          </a>
+
+          <a class="project" href="https://github.com/kritikmodi/deckloom" target="_blank" rel="noopener">
+            <span class="project__head">
+              <span class="project__name">Deckloom</span>
+              <span class="project__out" aria-hidden="true">↗</span>
+            </span>
+            <span class="project__note">
+              Build decks from code instead of a slide editor. The content is one
+              JSON file, the design is one HTML file, and headless Chrome renders
+              them at PowerPoint's exact page size. The same twelve facts recut as
+              an investor deck, a one-pager or a sales deck, without the four
+              versions disagreeing a month later.
+            </span>
+            <span class="project__flow">
+              content.json <b>→</b> deck.html <b>→</b> chrome <b>→</b> pdf <b>→</b> pptx
+            </span>
+            <span class="project__stack">Python · Playwright · pptx · MIT</span>
+          </a>
+        </div>
       </div>
     </section>
 
