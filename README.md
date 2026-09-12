@@ -8,10 +8,13 @@ framework, no build step, no dependencies.
 The direction is "schematic": the site is laid out like an instrument panel
 rather than a portfolio template.
 
-- **Ground** — a cool vellum grey (`#EAEDEB`) over a faint 26px dot grid, with
+- **Ground** — a warm near-white (`#FCF8F3`) over a faint 26px dot grid, with
   one inverted ink band for the record section.
-- **Signal** — a single electric ultramarine (`#2B45F0`) carries every accent.
-  Nothing else is coloured.
+- **Signal** — a single burnt orange (`#C24B06`) carries every accent. Nothing
+  else is coloured.
+- **Changing the palette** — the five `*-rgb` channel tokens at the top of
+  `styles.css` are the whole thing. Every translucent variant derives from them
+  with `rgb(var(--x-rgb) / alpha)`, so nothing is hardcoded further down.
 - **Type** — Martian Mono for display, including the name, which is set large
   and lowercase at 700 with only light negative tracking; a monospace face
   carries its own sidebearings, so tracking it in hard collides the glyphs.

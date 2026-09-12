@@ -19,16 +19,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- tokens ---------- */
 :root {
-  --paper:       #EAEDEB;
-  --paper-2:     #E1E5E3;
-  --ink:         #11161A;
-  --ink-soft:    #39434A;
-  --graphite:    #6B767C;
-  --rule:        rgba(17, 22, 26, 0.13);
-  --rule-2:      rgba(17, 22, 26, 0.32);
-  --panel:       #EFF1F0;
-  --signal:      #2B45F0;
-  --signal-lift: #8298FF;
+  /* Palette: Marmalade. Channels are kept separate so every translucent
+     variant derives from one place; a new palette is these five lines. */
+  --paper-rgb:       252 248 243;
+  --paper-2-rgb:     244 237 228;
+  --ink-rgb:          26  20  16;
+  --signal-rgb:      194  75   6;
+  --signal-lift-rgb: 255 165  92;
+
+  --paper:       rgb(var(--paper-rgb));
+  --paper-2:     rgb(var(--paper-2-rgb));
+  --panel:       #FFFCF8;
+  --ink:         rgb(var(--ink-rgb));
+  --ink-raised:  #241D17;
+  --ink-soft:    #443A30;
+  --graphite:    #6F6355;
+  --rule:        rgb(var(--ink-rgb) / .13);
+  --rule-2:      rgb(var(--ink-rgb) / .32);
+  --signal:      rgb(var(--signal-rgb));
+  --signal-lift: rgb(var(--signal-lift-rgb));
 
   --display: "Martian Mono", ui-monospace, monospace;
   --body:    "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -39,10 +48,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   --ease: cubic-bezier(.2, .7, .2, 1);
 }
 
+
 /* ---------- base ---------- */
 body {
   background-color: var(--paper);
-  background-image: radial-gradient(circle at 1px 1px, rgba(17, 22, 26, .085) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgb(var(--ink-rgb) / .085) 1px, transparent 0);
   background-size: 26px 26px;
   color: var(--ink);
   font-family: var(--body);
@@ -314,7 +324,7 @@ body {
 .node.is-lit .node__label { fill: var(--signal); }
 
 .edge {
-  stroke: rgba(17, 22, 26, .38);
+  stroke: rgb(var(--ink-rgb) / .38);
   stroke-width: 1.25;
   fill: none;
   transition: stroke .2s var(--ease);
@@ -322,7 +332,7 @@ body {
 .edge.is-lit { stroke: var(--signal); stroke-width: 1.75; }
 
 /* Dashed because these features are still being built. */
-.edge--new { stroke-dasharray: 3 5; stroke: rgba(17, 22, 26, .3); }
+.edge--new { stroke-dasharray: 3 5; stroke: rgb(var(--ink-rgb) / .3); }
 
 .packet { fill: var(--signal); }
 
@@ -499,9 +509,9 @@ p.prose,
   color: var(--paper);
 }
 .band--invert .axis__label { color: var(--signal-lift); }
-.band--invert .axis::after { background: rgba(234, 237, 235, .16); }
-.band--invert .axis__note { color: rgba(234, 237, 235, .45); }
-.band--invert .subhead { color: rgba(234, 237, 235, .45); }
+.band--invert .axis::after { background: rgb(var(--paper-rgb) / .16); }
+.band--invert .axis__note { color: rgb(var(--paper-rgb) / .45); }
+.band--invert .subhead { color: rgb(var(--paper-rgb) / .45); }
 
 /* Peak ratings lead with the tier, not the number. A rating only means
    something on its own platform's scale, so 2488 / 2222 / 1790 side by side
@@ -510,8 +520,8 @@ p.prose,
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1px;
-  background: rgba(234, 237, 235, .16);
-  border: 1px solid rgba(234, 237, 235, .16);
+  background: rgb(var(--paper-rgb) / .16);
+  border: 1px solid rgb(var(--paper-rgb) / .16);
   margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
 }
 
@@ -521,14 +531,14 @@ p.prose,
   padding: 1.5rem 1.4rem 1.6rem;
   transition: background .25s var(--ease);
 }
-.rating:hover { background: #171D22; }
+.rating:hover { background: var(--ink-raised); }
 
 .rating__site {
   display: block;
   font: 500 .68rem/1 var(--data);
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: rgba(234, 237, 235, .45);
+  color: rgb(var(--paper-rgb) / .45);
 }
 .rating__pct {
   display: block;
@@ -547,16 +557,16 @@ p.prose,
   font-size: .7rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(234, 237, 235, .45);
+  color: rgb(var(--paper-rgb) / .45);
 }
 .rating__meta {
   display: block;
   margin-top: .75rem;
   font: 400 .8rem/1.5 var(--data);
-  color: rgba(234, 237, 235, .55);
+  color: rgb(var(--paper-rgb) / .55);
   font-variant-numeric: tabular-nums;
 }
-.rating:hover .rating__site { color: rgba(234, 237, 235, .7); }
+.rating:hover .rating__site { color: rgb(var(--paper-rgb) / .7); }
 
 /* Best finishes, plotted where they landed on the scoreboard: the vertical
    axis is finishing position, so a taller column simply means he finished
@@ -582,7 +592,7 @@ p.prose,
   right: 0;
   bottom: var(--y);
   height: 1px;
-  background: rgba(234, 237, 235, .1);
+  background: rgb(var(--paper-rgb) / .1);
 }
 .chart__line i {
   position: absolute;
@@ -593,7 +603,7 @@ p.prose,
   font: 400 .66rem/1 var(--data);
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: rgba(234, 237, 235, .3);
+  color: rgb(var(--paper-rgb) / .3);
   white-space: nowrap;
 }
 
@@ -616,7 +626,7 @@ p.prose,
   width: 2px;
   height: var(--h);
   margin-left: -1px;
-  background: rgba(130, 152, 255, .45);
+  background: rgb(var(--signal-lift-rgb) / .45);
 }
 .col__stem::after {
   content: "";
@@ -662,11 +672,11 @@ a.col__name:hover { color: var(--signal-lift); }
 .col__sub {
   top: calc(100% + 2.5rem);
   font: 400 clamp(.58rem, .48rem + .3vw, .68rem)/1.3 var(--data);
-  color: rgba(234, 237, 235, .38);
+  color: rgb(var(--paper-rgb) / .38);
 }
 
 /* One-off results share the ledger's grammar, inverted. */
-.results { border-top: 1px solid rgba(234, 237, 235, .16); }
+.results { border-top: 1px solid rgb(var(--paper-rgb) / .16); }
 
 .result {
   display: grid;
@@ -674,7 +684,7 @@ a.col__name:hover { color: var(--signal-lift); }
   gap: .35rem clamp(1rem, 3vw, 2rem);
   align-items: baseline;
   padding-block: 1.15rem;
-  border-bottom: 1px solid rgba(234, 237, 235, .1);
+  border-bottom: 1px solid rgb(var(--paper-rgb) / .1);
 }
 .result__name {
   font-family: var(--display);
@@ -685,7 +695,7 @@ a.col__name:hover { color: var(--signal-lift); }
 .result__note {
   font-size: .9rem;
   line-height: 1.55;
-  color: rgba(234, 237, 235, .6);
+  color: rgb(var(--paper-rgb) / .6);
 }
 .result__mark {
   font: 500 .95rem/1.5 var(--data);
