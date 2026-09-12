@@ -41,6 +41,36 @@
     window.addEventListener("resize", paint);
   }
 
+  /* ---------- section rail ---------- */
+  var rail = document.getElementById("rail");
+  if (rail) {
+    var dots = Array.prototype.slice.call(rail.querySelectorAll(".rail__dot"));
+    var targets = dots.map(function (d) {
+      return document.querySelector(d.getAttribute("href"));
+    });
+    var inverted = Array.prototype.slice.call(document.querySelectorAll(".band--invert"));
+
+    var mark = function () {
+      var line = window.innerHeight * 0.34;
+      var current = 0;
+      targets.forEach(function (el, i) {
+        if (el && el.getBoundingClientRect().top <= line) current = i;
+      });
+      dots.forEach(function (d, i) { d.classList.toggle("is-here", i === current); });
+
+      /* The signal colour is too dark on the inverted band, so flag when the
+         rail sits over one and let CSS swap to the lifted tone. */
+      var mid = window.innerHeight / 2;
+      rail.classList.toggle("rail--on-ink", inverted.some(function (b) {
+        var r = b.getBoundingClientRect();
+        return r.top <= mid && r.bottom >= mid;
+      }));
+    };
+    mark();
+    window.addEventListener("scroll", mark, { passive: true });
+    window.addEventListener("resize", mark);
+  }
+
   /* ---------- local time in Delhi ---------- */
   var clock = document.getElementById("clock");
   if (clock) {
