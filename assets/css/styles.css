@@ -19,21 +19,22 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- tokens ---------- */
 :root {
-  /* Palette: Marmalade. Channels are kept separate so every translucent
-     variant derives from one place; a new palette is these five lines. */
-  --paper-rgb:       252 248 243;
-  --paper-2-rgb:     244 237 228;
-  --ink-rgb:          26  20  16;
-  --signal-rgb:      194  75   6;
-  --signal-lift-rgb: 255 165  92;
+  /* Palette: cool vellum grey, electric ultramarine. Channels are kept
+     separate so every translucent variant derives from one place; a new
+     palette is the nine values below and nothing further down. */
+  --paper-rgb:       234 237 235;
+  --paper-2-rgb:     225 229 227;
+  --ink-rgb:          17  22  26;
+  --signal-rgb:       43  69 240;
+  --signal-lift-rgb: 130 152 255;
 
   --paper:       rgb(var(--paper-rgb));
   --paper-2:     rgb(var(--paper-2-rgb));
-  --panel:       #FFFCF8;
+  --panel:       #EFF1F0;
   --ink:         rgb(var(--ink-rgb));
-  --ink-raised:  #241D17;
-  --ink-soft:    #443A30;
-  --graphite:    #6F6355;
+  --ink-raised:  #171D22;
+  --ink-soft:    #39434A;
+  --graphite:    #6B767C;
   --rule:        rgb(var(--ink-rgb) / .13);
   --rule-2:      rgb(var(--ink-rgb) / .32);
   --signal:      rgb(var(--signal-rgb));
