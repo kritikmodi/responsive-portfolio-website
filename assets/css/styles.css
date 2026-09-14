@@ -569,7 +569,7 @@ p.prose,
 }
 .rating:hover .rating__site { color: rgb(var(--paper-rgb) / .7); }
 
-/* The CodeChef climb. Drawn from the real rating history rather than dropped
+/* The LeetCode climb. Drawn from the real rating history rather than dropped
    in as a screenshot, so it carries the page's own palette and stays sharp.
    The path is SVG on a 0-100 box with preserveAspectRatio none, so it stretches
    to the container; every label is HTML, which keeps type at real sizes instead
@@ -582,7 +582,8 @@ p.prose,
   margin-left: 3.2rem;
 }
 
-/* Star thresholds, so the climb reads as tiers crossed rather than a squiggle. */
+/* Round rating gridlines. LeetCode's badge cutoffs float per contest, so
+   plain numbers are the honest reference here. */
 .climb__line {
   position: absolute;
   left: 0;
