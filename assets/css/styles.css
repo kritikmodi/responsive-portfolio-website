@@ -569,6 +569,109 @@ p.prose,
 }
 .rating:hover .rating__site { color: rgb(var(--paper-rgb) / .7); }
 
+/* The CodeChef climb. Drawn from the real rating history rather than dropped
+   in as a screenshot, so it carries the page's own palette and stays sharp.
+   The path is SVG on a 0-100 box with preserveAspectRatio none, so it stretches
+   to the container; every label is HTML, which keeps type at real sizes instead
+   of shrinking with the drawing. */
+.climb { margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+
+.climb__plot {
+  position: relative;
+  height: clamp(150px, 19vw, 210px);
+  margin-left: 3.2rem;
+}
+
+/* Star thresholds, so the climb reads as tiers crossed rather than a squiggle. */
+.climb__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--y);
+  height: 1px;
+  background: rgb(var(--paper-rgb) / .1);
+}
+.climb__line i {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: .8rem;
+  font: 400 .74rem/1 var(--data);
+  letter-spacing: .06em;
+  color: rgb(var(--paper-rgb) / .48);
+  white-space: nowrap;
+}
+
+.climb__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.climb__svg polyline {
+  fill: none;
+  stroke: var(--signal-lift);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  /* The box is stretched, so keep the stroke from stretching with it. */
+  vector-effect: non-scaling-stroke;
+}
+
+.climb__mark {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%;
+  background: var(--signal-lift);
+}
+.climb__mark b {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: .6rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -.05em;
+  color: var(--paper);
+}
+.climb__mark--start { background: rgb(var(--paper-rgb) / .45); }
+.climb__mark--start b {
+  right: auto;
+  left: 100%;
+  margin: 0 0 0 .6rem;
+  font-size: .9rem;
+  color: rgb(var(--paper-rgb) / .6);
+}
+
+.climb__years {
+  position: relative;
+  height: 1em;
+  margin: .9rem 0 0 3.2rem;
+}
+.climb__years span {
+  position: absolute;
+  left: var(--x);
+  transform: translateX(-50%);
+  font: 400 .72rem/1 var(--data);
+  color: rgb(var(--paper-rgb) / .48);
+}
+.climb__years span:first-child { transform: none; }
+
+@media (max-width: 620px) {
+  .climb__plot { margin-left: 2.5rem; }
+  .climb__years { margin-left: 2.5rem; }
+  .climb__line i { font-size: .66rem; padding-right: .55rem; }
+  .climb__mark b { font-size: .92rem; }
+}
+
 /* Best finishes, plotted where they landed on the scoreboard: the vertical
    axis is finishing position, so a taller column simply means he finished
    higher. Linear, 1st to 200th, so there is no scale to explain. */
