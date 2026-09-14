@@ -611,19 +611,15 @@ p.prose,
   height: 100%;
   overflow: visible;
 }
-.climb__path {
+.climb__svg polyline {
   fill: none;
   stroke: var(--signal-lift);
+  stroke-width: 2;
   stroke-linejoin: round;
   stroke-linecap: round;
   /* The box is stretched, so keep the stroke from stretching with it. */
   vector-effect: non-scaling-stroke;
 }
-/* The palette is one accent, so the three judges are separated by weight and
-   opacity, and each line is named at its own end. */
-.climb__path--lc { stroke-width: 2.2; opacity: 1; }
-.climb__path--cc { stroke-width: 1.8; opacity: .62; }
-.climb__path--cf { stroke-width: 1.5; opacity: .38; }
 
 .climb__mark {
   position: absolute;
@@ -647,46 +643,13 @@ p.prose,
   letter-spacing: -.05em;
   color: var(--paper);
 }
-.climb__mark--cc { background: rgb(var(--signal-lift-rgb) / .62); }
-.climb__mark--cf { background: rgb(var(--signal-lift-rgb) / .45); }
-
-/* The platform name rides with the figure, so a line is identifiable without
-   a legend to cross-reference. */
-.climb__mark b {
-  font: 500 .72rem/1 var(--data);
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgb(var(--paper-rgb) / .6);
-  white-space: nowrap;
-}
-.climb__mark b em {
-  font-style: normal;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: -.05em;
-  text-transform: none;
-  color: var(--paper);
-  margin-left: .35rem;
-}
-/* Codeforces peaked before it finished, so that point is marked on its own. */
-/* Sits above its dot so it clears the Codeforces end label just to its right. */
-.climb__mark--peak b {
+.climb__mark--start { background: rgb(var(--paper-rgb) / .45); }
+.climb__mark--start b {
   right: auto;
-  left: 50%;
-  top: auto;
-  bottom: 100%;
-  transform: translateX(-50%);
-  margin: 0 0 .55rem;
-  letter-spacing: 0;
-}
-.climb__mark--peak b em { margin-left: 0; color: rgb(var(--paper-rgb) / .82); font-size: .95rem; }
-
-.climb__note {
-  margin-top: 1rem;
-  font: 400 .78rem/1.6 var(--data);
-  color: rgb(var(--paper-rgb) / .45);
-  max-width: 62ch;
+  left: 100%;
+  margin: 0 0 0 .6rem;
+  font-size: .9rem;
+  color: rgb(var(--paper-rgb) / .6);
 }
 
 .climb__years {
