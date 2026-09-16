@@ -96,37 +96,30 @@
     window.addEventListener("load", prime);
   }
 
-  /* ---------- rating chart ---------- */
-  /* The reveal observer above unobserves after the first hit, so the line
-     would draw once per page load and never again. This one re-arms: every
-     time the chart comes back into view the line redraws. */
-  var climb = document.querySelector(".climb");
-  if (climb && !reduce) {
-    /* A glint that keeps travelling up the line after the draw-in has finished,
-       so the chart is never fully still. It is a clone of the line rather than
-       a second copy of the points in the markup: one source of truth, and a
-       browser that never runs this still gets the chart itself. */
-    var base = climb.querySelector(".climb__svg");
-    if (base) {
-      var glint = base.cloneNode(true);
-      glint.classList.add("climb__glint");
-      base.insertAdjacentElement("afterend", glint);
-    }
-  }
+  /* ---------- rating charts ---------- */
+  /* Each line builds on a loop, but only while it is actually on screen: the
+     observer starts it on the way in and stops it once the chart has fully
+     left, so charts you are not looking at are not animating. Re-entering
+     restarts the cycle from empty rather than dropping you mid-build.
 
-  if (climb && !reduce && "IntersectionObserver" in window) {
-    var redraw = function () {
-      climb.classList.remove("is-drawing");
-      void climb.offsetWidth; /* flush, so the animation restarts rather than continuing */
-      climb.classList.add("is-drawing");
-    };
-    new IntersectionObserver(function (entries) {
+     The class is what the animation hangs off, so a browser without
+     IntersectionObserver simply shows three finished charts. */
+  var climbs = Array.prototype.slice.call(document.querySelectorAll(".climb"));
+  if (climbs.length && !reduce && "IntersectionObserver" in window) {
+    var climbIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        /* Only on the way in. Dropping the class on the way out would clip the
-           line away while it is still partly on screen. */
-        if (entry.isIntersecting) redraw();
+        var el = entry.target;
+        if (entry.intersectionRatio >= 0.35) {
+          if (el.classList.contains("is-drawing")) return;
+          el.classList.add("is-drawing");
+        } else if (!entry.isIntersecting) {
+          /* Only once it is fully gone. Stopping it while a sliver is still
+             visible would snap the line to finished in front of you. */
+          el.classList.remove("is-drawing");
+        }
       });
-    }, { threshold: 0.4 }).observe(climb);
+    }, { threshold: [0, 0.35] });
+    climbs.forEach(function (el) { climbIO.observe(el); });
   }
 
   /* ---------- the schematic ---------- */

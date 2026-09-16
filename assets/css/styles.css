@@ -604,6 +604,8 @@ p.prose,
   white-space: nowrap;
 }
 
+.climb__draw { position: absolute; inset: 0; }
+
 .climb__svg {
   position: absolute;
   inset: 0;
@@ -621,55 +623,25 @@ p.prose,
   vector-effect: non-scaling-stroke;
 }
 
-/* The climb draws itself left to right whenever it scrolls into view. The
-   line is a stretched 0-100 box with a non-scaling stroke, which makes
-   stroke-dasharray unreliable here, so the reveal is a wipe instead. The
-   resting state is the finished chart, so a script that never runs cannot
-   leave it blank. */
+/* The line builds itself, holds, then wipes off to the right and starts over.
+   It is a stretched 0-100 box with a non-scaling stroke, which makes
+   stroke-dasharray unreliable here, so the draw is a clip window instead.
+   The window sits on .climb__draw, which holds the line AND its end labels, so
+   each label arrives exactly as the line reaches it whatever its position --
+   the gridlines and years stay outside it and hold still, as the frame should.
+   The resting state is the finished chart, so a script that never runs cannot
+   leave it blank, and the whole thing stops under prefers-reduced-motion. */
 @keyframes climbDraw {
-  from { clip-path: inset(0 100% 0 0); }
-  to   { clip-path: inset(0 0 0 0); }
-}
-@keyframes climbMarkIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  0%        { clip-path: inset(-40% 100% -40% -40%); }
+  46%       { clip-path: inset(-40% -40% -40% -40%); }
+  82%       { clip-path: inset(-40% -40% -40% -40%); }
+  100%      { clip-path: inset(-40% -40% -40% 130%); }
 }
 
-/* --ease is front-loaded, which snaps the line out in the first third. A more
-   even curve lets it advance like a climb and settle at the end. */
-.climb.is-drawing .climb__svg { animation: climbDraw 1.7s cubic-bezier(.4, 0, .2, 1) both; }
-
-/* The start dot arrives with the line; the peak lands as the line reaches it. */
-.climb.is-drawing .climb__mark { animation: climbMarkIn .45s var(--ease) both; }
-.climb.is-drawing .climb__mark--start { animation-delay: .2s; }
-.climb.is-drawing .climb__mark:not(.climb__mark--start) { animation-delay: 1.45s; }
-
-/* The glint: the same line again, brighter, shown only through a narrow window
-   that travels the length of the climb and then rests before coming back. It
-   sits under the marks, and it is added by script, so it can only ever be an
-   addition to a chart that already reads on its own. */
-.climb__glint polyline {
-  stroke: var(--paper);
-  stroke-width: 2.5;
-}
-
-@keyframes climbGlint {
-  0%        { clip-path: inset(0 100% 0 -22%); }
-  62%, 100% { clip-path: inset(0 -22% 0 100%); }
-}
-@keyframes climbGlintFade {
-  0%, 3%    { opacity: 0; }
-  12%       { opacity: .85; }
-  52%       { opacity: .85; }
-  62%, 100% { opacity: 0; }
-}
-
-.climb__glint,
-.climb.is-drawing .climb__glint {
-  animation: climbGlint 5.4s linear infinite,
-             climbGlintFade 5.4s linear infinite;
-  /* Held back until the draw-in has landed, so the two never overlap. */
-  animation-delay: 2s;
+/* Linear on purpose: an eased build reads as a swipe, an even one reads as a
+   contest-by-contest replay, which is what the line actually is. */
+.climb.is-drawing .climb__draw {
+  animation: climbDraw 7.5s linear infinite;
 }
 
 .climb__mark {
@@ -701,6 +673,13 @@ p.prose,
   margin: 0 0 0 .6rem;
   font-size: .9rem;
   color: rgb(var(--paper-rgb) / .6);
+  /* Every line leaves its low point climbing, so it runs straight through this
+     label. A halo in the band colour punches it back out. */
+  text-shadow:
+     2px 0 0 var(--ink), -2px 0 0 var(--ink),
+     0 2px 0 var(--ink),  0 -2px 0 var(--ink),
+     1px 1px 0 var(--ink), -1px -1px 0 var(--ink),
+     1px -1px 0 var(--ink), -1px 1px 0 var(--ink);
 }
 
 .climb__years {
@@ -1159,6 +1138,10 @@ a.col__name:hover { color: var(--signal-lift); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal-on .rise { opacity: 1; transform: none; transition: none; }
+  /* The blanket rule below collapses every animation to its last frame, and
+     climbDraw's last frame is an empty chart. Script already withholds the
+     class here; this makes the chart safe even if it somehow lands. */
+  .climb__draw { animation: none !important; clip-path: none !important; }
   *, *::before, *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
