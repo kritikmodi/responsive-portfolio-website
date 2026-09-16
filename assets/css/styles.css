@@ -332,10 +332,43 @@ body {
 }
 .edge.is-lit { stroke: var(--signal); stroke-width: 1.75; }
 
-/* Dashed because these features are still being built. */
+/* Dashed because these features are still being built. The dashes crawl
+   towards the product they feed, which is the state these two edges are
+   actually in: work in progress, moving. */
 .edge--new { stroke-dasharray: 3 5; stroke: rgb(var(--ink-rgb) / .3); }
+/* Both classes, so this outranks the entrance rule on the same element
+   further down rather than depending on source order. */
+.schematic.is-armed.is-live .edge--new { animation: antsCrawl 1.9s linear infinite; }
+@keyframes antsCrawl { to { stroke-dashoffset: -8; } }
 
 .packet { fill: var(--signal); }
+
+/* The three pieces of the job keep a slow ring around them, so the panel has
+   a pulse when nobody is touching it. Lighting a node takes the ring over,
+   which is why it stops on hover instead of competing with the highlight. */
+.node__pulse {
+  fill: none;
+  stroke: var(--signal);
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+}
+.schematic.is-live .node--hub .node__pulse {
+  animation: hubPulse 3.6s var(--ease) infinite;
+  animation-delay: calc(var(--i, 0) * 1.2s);
+}
+.schematic.is-live .node--hub:hover .node__pulse,
+.schematic.is-live .node--hub.is-lit .node__pulse { animation: none; opacity: 0; }
+@keyframes hubPulse {
+  0%      { opacity: 0;   transform: scale(.55); }
+  22%     { opacity: .34; }
+  70%,
+  100%    { opacity: 0;   transform: scale(1.6); }
+}
+
+/* A pinned node keeps its caption up after the pointer leaves, which is the
+   only way to read one on a touchscreen. */
+.node.is-pinned .node__dot { stroke-width: 3; }
 
 /* Entrance. The graph is fully drawn by default; JS only arms the animation,
    so a missed paint or a failed script can never leave it invisible. */
@@ -1088,6 +1121,7 @@ a.col__name:hover { color: var(--signal-lift); }
      climbDraw's last frame is an empty chart. Script already withholds the
      class here; this makes the chart safe even if it somehow lands. */
   .climb__draw { animation: none !important; clip-path: none !important; }
+  .node__pulse { opacity: 0 !important; }
   *, *::before, *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;

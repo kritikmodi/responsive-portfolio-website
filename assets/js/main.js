@@ -160,72 +160,201 @@
       line.style.strokeDasharray = len;
     });
     schema.classList.add("is-armed");
+
+    /* Ring on each of the three big pieces, added here rather than in the
+       markup so the diagram's source stays a plain description of the graph.
+       Its phase is spaced across the cycle so they breathe in turn. */
+    var hubs = nodes.filter(function (n) { return n.classList.contains("node--hub"); });
+    hubs.forEach(function (node, i) {
+      var dot = node.querySelector(".node__dot");
+      var ring = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      ring.setAttribute("class", "node__pulse");
+      ring.setAttribute("cx", dot.getAttribute("cx"));
+      ring.setAttribute("cy", dot.getAttribute("cy"));
+      ring.setAttribute("r", "14");
+      node.insertBefore(ring, dot);
+      node.style.setProperty("--i", i);
+    });
+
+    /* Idle motion only starts once the graph has finished drawing itself,
+       so the entrance is not competing with it. */
+    setTimeout(function () { schema.classList.add("is-live"); }, 1500);
   }
 
-  /* Hovering a layer lights its path and explains what it does. */
+  /* ---- traffic ---------------------------------------------------------
+     Packets run whole routes rather than single hops, so what you read is
+     two pipelines end to end -- infrastructure to strategies, sources to
+     answers -- instead of blips on unrelated segments. The routes are walked
+     out of the edges themselves, so moving a line in the markup moves the
+     traffic with it. */
+  var built = edges.filter(function (e) { return !e.classList.contains("edge--new"); });
+
+  var geom = function (e) {
+    var x1 = +e.getAttribute("x1"), y1 = +e.getAttribute("y1");
+    var x2 = +e.getAttribute("x2"), y2 = +e.getAttribute("y2");
+    return { x1: x1, y1: y1, x2: x2, y2: y2, len: Math.hypot(x2 - x1, y2 - y1) };
+  };
+
+  var routes = (function () {
+    var heads = built.filter(function (e) {
+      return !built.some(function (o) { return o.dataset.to === e.dataset.from; });
+    });
+    return heads.map(function (head) {
+      var chain = [head], at = head.dataset.to, guard = 0;
+      while (guard++ < 12) {
+        var next = null;
+        for (var i = 0; i < built.length; i++) {
+          if (built[i].dataset.from === at && chain.indexOf(built[i]) === -1) { next = built[i]; break; }
+        }
+        if (!next) break;
+        chain.push(next);
+        at = next.dataset.to;
+      }
+      return chain;
+    });
+  })();
+
+  var live = [];
+  /* The circle in the markup is the first one out of the pool, not just a
+     template, so nothing sits in the DOM doing nothing. */
+  var pool = packet ? [packet] : [];
+  var running = false;
+
+  var send = function (chain) {
+    if (!packet || !chain.length || live.length > 5) return;
+    var el = pool.pop();
+    if (!el) {
+      el = packet.cloneNode(false);
+      packet.parentNode.insertBefore(el, packet.nextSibling);
+    }
+    var segs = chain.map(geom);
+    live.push({
+      el: el,
+      segs: segs,
+      dist: 0,
+      total: segs.reduce(function (a, s) { return a + s.len; }, 0)
+    });
+    if (!running) { running = true; requestAnimationFrame(step); }
+  };
+
+  var SPEED = 0.16;   /* px per ms: a readable pace, not a tracer round */
+  var FADE  = 26;     /* px of travel spent fading in and back out */
+  var last = null;
+
+  var step = function (now) {
+    var dt = last === null ? 16 : Math.min(48, now - last);
+    last = now;
+
+    for (var i = live.length - 1; i >= 0; i--) {
+      var p = live[i];
+      p.dist += dt * SPEED;
+      if (p.dist >= p.total) {
+        p.el.setAttribute("opacity", "0");
+        pool.push(p.el);
+        live.splice(i, 1);
+        continue;
+      }
+      var d = p.dist, s = null;
+      for (var j = 0; j < p.segs.length; j++) {
+        if (d <= p.segs[j].len || j === p.segs.length - 1) { s = p.segs[j]; break; }
+        d -= p.segs[j].len;
+      }
+      var t = s.len ? d / s.len : 1;
+      p.el.setAttribute("cx", s.x1 + (s.x2 - s.x1) * t);
+      p.el.setAttribute("cy", s.y1 + (s.y2 - s.y1) * t);
+      p.el.setAttribute("opacity", String(
+        0.9 * Math.min(1, p.dist / FADE) * Math.min(1, (p.total - p.dist) / FADE)
+      ));
+    }
+
+    if (live.length) { requestAnimationFrame(step); }
+    else { running = false; last = null; }
+  };
+
+  /* ---- lighting and pinning -------------------------------------------- */
   var incident = function (name) {
     return edges.filter(function (line) {
       return line.dataset.from === name || line.dataset.to === name;
     });
   };
 
-  var clear = function () {
+  var pinned = null;
+
+  var paint = function (node) {
     nodes.forEach(function (n) { n.classList.remove("is-lit"); });
     edges.forEach(function (e) { e.classList.remove("is-lit"); });
-    if (caption) caption.textContent = restingCaption;
+    if (!node) {
+      if (caption) caption.textContent = restingCaption;
+      return;
+    }
+    node.classList.add("is-lit");
+    incident(node.dataset.node).forEach(function (e) { e.classList.add("is-lit"); });
+    if (caption) caption.textContent = node.dataset.caption;
+  };
+
+  /* Falls back to whatever is pinned, so leaving a node does not wipe a
+     caption the reader deliberately parked. */
+  var clear = function () { paint(pinned); };
+
+  /* Touching a node pushes traffic down what it feeds, so the diagram answers
+     the pointer rather than only changing colour. */
+  var burst = function (name) {
+    if (reduce) return;
+    var out = built.filter(function (e) { return e.dataset.from === name; });
+    if (!out.length) out = built.filter(function (e) { return e.dataset.to === name; });
+    out.forEach(function (e) { send([e]); });
   };
 
   nodes.forEach(function (node) {
     var light = function () {
-      clear();
-      node.classList.add("is-lit");
-      incident(node.dataset.node).forEach(function (e) { e.classList.add("is-lit"); });
-      if (caption) caption.textContent = node.dataset.caption;
+      paint(node);
+      burst(node.dataset.node);
     };
     node.addEventListener("pointerenter", light);
     node.addEventListener("focus", light);
-    node.addEventListener("click", light);
     node.addEventListener("pointerleave", clear);
     node.addEventListener("blur", clear);
+
+    /* A click parks the caption. On a touchscreen that is the only way to
+       read one, since the pointer leaves the moment the finger lifts. */
+    node.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      nodes.forEach(function (n) { n.classList.remove("is-pinned"); });
+      pinned = pinned === node ? null : node;
+      if (pinned) pinned.classList.add("is-pinned");
+      paint(pinned || node);
+    });
   });
 
   svg.addEventListener("pointerleave", clear);
+  document.addEventListener("click", function () {
+    if (!pinned) return;
+    pinned.classList.remove("is-pinned");
+    pinned = null;
+    paint(null);
+  });
 
-  /* A single packet crosses one hop every few seconds — a status light,
-     not a light show. */
-  var built = edges.filter(function (e) { return !e.classList.contains("edge--new"); });
+  /* Idle traffic: one route at a time, in rotation, and only while the panel
+     is actually on screen. The diagram sits in the hero, so without this it
+     would keep firing packets for the whole time you are reading further
+     down the page. */
+  if (!reduce && packet && routes.length) {
+    var turn = 0;
+    var onScreen = !("IntersectionObserver" in window);
 
-  if (!reduce && packet && built.length) {
-    var DUR = 900;
-    var start = null;
-    var hop = null;
-    var waiting = 1800;
+    if (!onScreen) {
+      new IntersectionObserver(function (entries) {
+        onScreen = entries[entries.length - 1].isIntersecting;
+      }, { threshold: 0.15 }).observe(schema);
+    }
 
-    var pick = function () {
-      hop = built[Math.floor(Math.random() * built.length)];
-      start = null;
-    };
-
-    var step = function (now) {
-      if (!hop) {
-        waiting -= 16;
-        if (waiting <= 0) { pick(); waiting = 1400 + Math.random() * 1800; }
-        packet.setAttribute("opacity", "0");
-        requestAnimationFrame(step);
-        return;
-      }
-      if (start === null) start = now;
-      var t = Math.min(1, (now - start) / DUR);
-      var e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-      var x1 = +hop.getAttribute("x1"), y1 = +hop.getAttribute("y1");
-      var x2 = +hop.getAttribute("x2"), y2 = +hop.getAttribute("y2");
-      packet.setAttribute("cx", x1 + (x2 - x1) * e);
-      packet.setAttribute("cy", y1 + (y2 - y1) * e);
-      packet.setAttribute("opacity", String(Math.sin(t * Math.PI) * 0.9));
-      if (t >= 1) hop = null;
-      requestAnimationFrame(step);
-    };
-
-    setTimeout(function () { requestAnimationFrame(step); }, 2400);
+    setTimeout(function () {
+      send(routes[0]);
+      setInterval(function () {
+        if (document.hidden || !onScreen) return;
+        turn = (turn + 1) % routes.length;
+        send(routes[turn]);
+      }, 2600);
+    }, 2000);
   }
 })();
