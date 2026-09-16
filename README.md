@@ -44,8 +44,7 @@ Then open http://localhost:8000.
 
 ```
 index.html             # home: hero + schematic, about, work, projects,
-                       #       record, elsewhere, contact
-photography/index.html # a 35mm contact sheet, still empty
+                       #       record, contact
 assets/css/styles.css  # tokens, layout, the schematic
 assets/js/main.js      # menu, reading progress, clock, reveals, schematic
 assets/Kritik_Modi_Resume.pdf
@@ -53,9 +52,6 @@ assets/Kritik_Modi_Resume.pdf
 
 ## Adding to it
 
-- **Photography** — replace the empty `.cell` frames in
-  `photography/index.html` with real `<img>` tags; the frame numbers can stay
-  as captions.
 - **The schematic** — nodes carry their own copy in `data-caption` and their
   wiring in the edges' `data-from` / `data-to`. Move a node's `cx`/`cy` and the
   lines re-trim themselves at runtime. `node--hub` marks a node as one of the
