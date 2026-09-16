@@ -574,12 +574,31 @@ p.prose,
    The path is SVG on a 0-100 box with preserveAspectRatio none, so it stretches
    to the container; every label is HTML, which keeps type at real sizes instead
    of shrinking with the drawing. */
-.climb { margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+/* Three judges, three plots, one row. Separate plots rather than one set of
+   shared axes, because the three rating scales do not mean the same thing --
+   side by side you compare the shape of each climb, which is the honest
+   comparison, and each plot keeps its own numbers on its own axis. */
+.climbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 3.2vw, 2.5rem);
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+.climbs__cell { margin: 0; }
+.climbs__site {
+  font: 500 .72rem/1 var(--data);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgb(var(--paper-rgb) / .64);
+  margin-bottom: .9rem;
+}
+
+.climb { margin-bottom: 0; }
 
 .climb__plot {
   position: relative;
-  height: clamp(150px, 19vw, 210px);
-  margin-left: 3.2rem;
+  height: clamp(132px, 12vw, 168px);
+  margin-left: 2.9rem;
 }
 
 /* Round rating gridlines. LeetCode's badge cutoffs float per contest, so
@@ -662,9 +681,16 @@ p.prose,
   margin-right: .6rem;
   font-family: var(--display);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: .98rem;
   letter-spacing: -.05em;
   color: var(--paper);
+  /* Each line arrives at its end points still climbing, so it runs through
+     these labels. A halo in the band colour punches them back out. */
+  text-shadow:
+     2px 0 0 var(--ink), -2px 0 0 var(--ink),
+     0 2px 0 var(--ink),  0 -2px 0 var(--ink),
+     1px 1px 0 var(--ink), -1px -1px 0 var(--ink),
+     1px -1px 0 var(--ink), -1px 1px 0 var(--ink);
 }
 .climb__mark--start { background: rgb(var(--paper-rgb) / .45); }
 .climb__mark--start b {
@@ -673,19 +699,12 @@ p.prose,
   margin: 0 0 0 .6rem;
   font-size: .9rem;
   color: rgb(var(--paper-rgb) / .6);
-  /* Every line leaves its low point climbing, so it runs straight through this
-     label. A halo in the band colour punches it back out. */
-  text-shadow:
-     2px 0 0 var(--ink), -2px 0 0 var(--ink),
-     0 2px 0 var(--ink),  0 -2px 0 var(--ink),
-     1px 1px 0 var(--ink), -1px -1px 0 var(--ink),
-     1px -1px 0 var(--ink), -1px 1px 0 var(--ink);
 }
 
 .climb__years {
   position: relative;
   height: 1em;
-  margin: .9rem 0 0 3.2rem;
+  margin: .8rem 0 0 2.9rem;
 }
 .climb__years span {
   position: absolute;
@@ -695,6 +714,13 @@ p.prose,
   color: rgb(var(--paper-rgb) / .48);
 }
 .climb__years span:first-child { transform: none; }
+
+/* Below this the three columns are too narrow for four year labels and a
+   readable axis, so they stack and each plot gets its full width back. */
+@media (max-width: 880px) {
+  .climbs { grid-template-columns: 1fr; gap: clamp(1.75rem, 4vw, 2.5rem); }
+  .climb__plot { height: clamp(150px, 19vw, 200px); }
+}
 
 @media (max-width: 620px) {
   .climb__plot { margin-left: 2.5rem; }
