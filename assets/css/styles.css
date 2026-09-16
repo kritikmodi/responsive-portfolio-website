@@ -621,10 +621,9 @@ p.prose,
   vector-effect: non-scaling-stroke;
 }
 
-/* The climb draws itself once, left to right, when it scrolls into view. The
+/* The climb draws itself left to right whenever it scrolls into view. The
    line is a stretched 0-100 box with a non-scaling stroke, which makes
-   stroke-dasharray unreliable here, so the reveal is a wipe instead. Hooked to
-   the .is-in class the reveal observer already sets: no extra JS, and the
+   stroke-dasharray unreliable here, so the reveal is a wipe instead. The
    resting state is the finished chart, so a script that never runs cannot
    leave it blank. */
 @keyframes climbDraw {
@@ -638,12 +637,40 @@ p.prose,
 
 /* --ease is front-loaded, which snaps the line out in the first third. A more
    even curve lets it advance like a climb and settle at the end. */
-.climb.is-in .climb__svg { animation: climbDraw 1.7s cubic-bezier(.4, 0, .2, 1) both; }
+.climb.is-drawing .climb__svg { animation: climbDraw 1.7s cubic-bezier(.4, 0, .2, 1) both; }
 
 /* The start dot arrives with the line; the peak lands as the line reaches it. */
-.climb.is-in .climb__mark { animation: climbMarkIn .45s var(--ease) both; }
-.climb.is-in .climb__mark--start { animation-delay: .2s; }
-.climb.is-in .climb__mark:not(.climb__mark--start) { animation-delay: 1.45s; }
+.climb.is-drawing .climb__mark { animation: climbMarkIn .45s var(--ease) both; }
+.climb.is-drawing .climb__mark--start { animation-delay: .2s; }
+.climb.is-drawing .climb__mark:not(.climb__mark--start) { animation-delay: 1.45s; }
+
+/* The glint: the same line again, brighter, shown only through a narrow window
+   that travels the length of the climb and then rests before coming back. It
+   sits under the marks, and it is added by script, so it can only ever be an
+   addition to a chart that already reads on its own. */
+.climb__glint polyline {
+  stroke: var(--paper);
+  stroke-width: 2.5;
+}
+
+@keyframes climbGlint {
+  0%        { clip-path: inset(0 100% 0 -22%); }
+  62%, 100% { clip-path: inset(0 -22% 0 100%); }
+}
+@keyframes climbGlintFade {
+  0%, 3%    { opacity: 0; }
+  12%       { opacity: .85; }
+  52%       { opacity: .85; }
+  62%, 100% { opacity: 0; }
+}
+
+.climb__glint,
+.climb.is-drawing .climb__glint {
+  animation: climbGlint 5.4s linear infinite,
+             climbGlintFade 5.4s linear infinite;
+  /* Held back until the draw-in has landed, so the two never overlap. */
+  animation-delay: 2s;
+}
 
 .climb__mark {
   position: absolute;

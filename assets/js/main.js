@@ -96,6 +96,39 @@
     window.addEventListener("load", prime);
   }
 
+  /* ---------- rating chart ---------- */
+  /* The reveal observer above unobserves after the first hit, so the line
+     would draw once per page load and never again. This one re-arms: every
+     time the chart comes back into view the line redraws. */
+  var climb = document.querySelector(".climb");
+  if (climb && !reduce) {
+    /* A glint that keeps travelling up the line after the draw-in has finished,
+       so the chart is never fully still. It is a clone of the line rather than
+       a second copy of the points in the markup: one source of truth, and a
+       browser that never runs this still gets the chart itself. */
+    var base = climb.querySelector(".climb__svg");
+    if (base) {
+      var glint = base.cloneNode(true);
+      glint.classList.add("climb__glint");
+      base.insertAdjacentElement("afterend", glint);
+    }
+  }
+
+  if (climb && !reduce && "IntersectionObserver" in window) {
+    var redraw = function () {
+      climb.classList.remove("is-drawing");
+      void climb.offsetWidth; /* flush, so the animation restarts rather than continuing */
+      climb.classList.add("is-drawing");
+    };
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        /* Only on the way in. Dropping the class on the way out would clip the
+           line away while it is still partly on screen. */
+        if (entry.isIntersecting) redraw();
+      });
+    }, { threshold: 0.4 }).observe(climb);
+  }
+
   /* ---------- the schematic ---------- */
   var schema = document.getElementById("schematic");
   if (!schema) return;
