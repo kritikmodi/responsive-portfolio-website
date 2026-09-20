@@ -1,5 +1,5 @@
 /* ============================================================
-   Kritik Modi — kritikmodi.com
+   Kritik Modi · kritikmodi.com
    No dependencies, no build step.
    ============================================================ */
 (function () {

@@ -1,5 +1,5 @@
 /* ============================================================
-   Kritik Modi — kritikmodi.com
+   Kritik Modi · kritikmodi.com
    "Schematic": an instrument panel for a systems engineer.
    Vellum ground, hairline geometry, one electric signal.
    ============================================================ */
@@ -805,7 +805,7 @@ p.prose,
   position: absolute;
   inset: 0 0 0 3.6rem;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: clamp(.4rem, 1.5vw, 1.5rem);
 }
 
@@ -867,6 +867,52 @@ a.col__name:hover { color: var(--signal-lift); }
   top: calc(100% + 2.7rem);
   font: 400 clamp(.68rem, .56rem + .38vw, .8rem)/1.3 var(--data);
   color: rgb(var(--paper-rgb) / .62);
+}
+
+/* The two world championships stand apart from the judges' chart: they are
+   country ranks in one-shot global contests, so plotting them on the same
+   scoreboard axis would compare things that are not the same measure. */
+.majors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  margin: 0 0 clamp(3rem, 6vw, 4.5rem);
+}
+
+.major {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(.9rem, 2.5vw, 1.4rem);
+  padding: 1.5rem 0 0;
+  border-top: 1px solid rgb(var(--paper-rgb) / .16);
+}
+
+.major__rank {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2rem, 1.3rem + 2.4vw, 3.1rem);
+  line-height: .9;
+  letter-spacing: -.06em;
+  font-variant-numeric: tabular-nums;
+  color: var(--signal-lift);
+}
+
+.major__body {
+  display: grid;
+  gap: .4rem;
+}
+
+.major__name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -.04em;
+}
+
+.major__note {
+  font-size: .92rem;
+  line-height: 1.55;
+  color: rgb(var(--paper-rgb) / .72);
 }
 
 /* One-off results share the ledger's grammar, inverted. */

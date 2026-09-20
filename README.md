@@ -1,6 +1,6 @@
 # kritikmodi.com
 
-My personal site. Hand-built with plain **HTML, CSS and JavaScript** — no
+My personal site. Hand-built with plain **HTML, CSS and JavaScript**: no
 framework, no build step, no dependencies.
 
 ## Design
@@ -8,18 +8,18 @@ framework, no build step, no dependencies.
 The direction is "schematic": the site is laid out like an instrument panel
 rather than a portfolio template.
 
-- **Ground** — a warm near-white (`#FCF8F3`) over a faint 26px dot grid, with
+- **Ground**: a warm near-white (`#FCF8F3`) over a faint 26px dot grid, with
   one inverted ink band for the record section.
-- **Signal** — a single burnt orange (`#C24B06`) carries every accent. Nothing
+- **Signal**: a single burnt orange (`#C24B06`) carries every accent. Nothing
   else is coloured.
-- **Changing the palette** — the five `*-rgb` channel tokens at the top of
+- **Changing the palette**: the five `*-rgb` channel tokens at the top of
   `styles.css` are the whole thing. Every translucent variant derives from them
   with `rgb(var(--x-rgb) / alpha)`, so nothing is hardcoded further down.
-- **Type** — Martian Mono for display, including the name, which is set large
+- **Type**: Martian Mono for display, including the name, which is set large
   and lowercase at 700 with only light negative tracking; a monospace face
   carries its own sidebearings, so tracking it in hard collides the glyphs.
   Instrument Sans for prose, JetBrains Mono for labels and figures.
-- **Signature** — the hero is an interactive diagram of the work rather than of
+- **Signature**: the hero is an interactive diagram of the work rather than of
   one system, because the job is three things, not one stack. The AI work sits
   on top, then the Datatailr platform (infrastructure → platform → strategies),
   then the query engine (sources → engine → answers); the layout follows the
@@ -52,7 +52,7 @@ assets/Kritik_Modi_Resume.pdf
 
 ## Adding to it
 
-- **The schematic** — nodes carry their own copy in `data-caption` and their
+- **The schematic**: nodes carry their own copy in `data-caption` and their
   wiring in the edges' `data-from` / `data-to`. Move a node's `cx`/`cy` and the
   lines re-trim themselves at runtime. `node--hub` marks a node as one of the
   big pieces, `node__figure` is its one-line readout; `edge--new` marks a connection as not built yet, which draws it
