@@ -890,9 +890,9 @@ a.col__name:hover { color: var(--signal-lift); }
 .major__rank {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(2rem, 1.3rem + 2.4vw, 3.1rem);
-  line-height: .9;
-  letter-spacing: -.06em;
+  font-size: clamp(1.4rem, 1.1rem + 1.1vw, 1.8rem);
+  line-height: 1;
+  letter-spacing: -.055em;
   font-variant-numeric: tabular-nums;
   color: var(--signal-lift);
 }
