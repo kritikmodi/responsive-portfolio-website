@@ -937,6 +937,10 @@ a.col__name:hover { color: var(--signal-lift); }
   line-height: 1.55;
   color: rgb(var(--paper-rgb) / .72);
 }
+.result__hl {
+  font-weight: 600;
+  color: var(--signal-lift);
+}
 .result__mark {
   font: 500 .95rem/1.5 var(--data);
   color: var(--signal-lift);
