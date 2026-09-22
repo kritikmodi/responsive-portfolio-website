@@ -631,7 +631,8 @@ p.prose,
 .climb__plot {
   position: relative;
   height: clamp(132px, 12vw, 168px);
-  margin-left: 2.9rem;
+  /* Headroom for the peak label, which sits above the line's last point. */
+  margin: 1.4rem 0 0 2.9rem;
 }
 
 /* Round rating gridlines. LeetCode's badge cutoffs float per contest, so
@@ -708,28 +709,29 @@ p.prose,
 }
 .climb__mark b {
   position: absolute;
-  right: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: .6rem;
   font-family: var(--display);
   font-weight: 700;
   font-size: .98rem;
+  line-height: 1;
   letter-spacing: -.05em;
+  white-space: nowrap;
   color: var(--paper);
-  /* Each line arrives at its end points still climbing, so it runs through
-     these labels. A halo in the band colour punches them back out. */
-  text-shadow:
-     2px 0 0 var(--ink), -2px 0 0 var(--ink),
-     0 2px 0 var(--ink),  0 -2px 0 var(--ink),
-     1px 1px 0 var(--ink), -1px -1px 0 var(--ink),
-     1px -1px 0 var(--ink), -1px 1px 0 var(--ink);
+}
+/* Each label sits on the side of its dot the line never visits. The line
+   reaches its peak from below and to the left, so the peak reads above the
+   dot, right-aligned to it; the line leaves its start upward and to the
+   right, so the start reads to the left, out in the axis margin. */
+.climb__mark:not(.climb__mark--start) b {
+  right: -2px;
+  bottom: 100%;
+  margin-bottom: .45rem;
 }
 .climb__mark--start { background: rgb(var(--paper-rgb) / .45); }
 .climb__mark--start b {
-  right: auto;
-  left: 100%;
-  margin: 0 0 0 .6rem;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: .5rem;
   font-size: .9rem;
   color: rgb(var(--paper-rgb) / .6);
 }
@@ -760,6 +762,7 @@ p.prose,
   .climb__years { margin-left: 2.5rem; }
   .climb__line i { font-size: .66rem; padding-right: .55rem; }
   .climb__mark b { font-size: .92rem; }
+  .climb__mark--start b { font-size: .8rem; margin-right: .4rem; }
 }
 
 /* Rank cards: the two world championships and the best single-contest
