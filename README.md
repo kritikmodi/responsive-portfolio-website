@@ -46,7 +46,7 @@ Then open http://localhost:8000.
 index.html             # home: hero + schematic, about, work, projects,
                        #       record, contact
 assets/css/styles.css  # tokens, layout, the schematic
-assets/js/main.js      # menu, reading progress, clock, reveals, schematic
+assets/js/main.js      # menu, reading progress, reveals, schematic
 assets/Kritik_Modi_Resume.pdf
 ```
 

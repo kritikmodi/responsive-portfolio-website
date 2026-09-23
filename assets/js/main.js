@@ -41,20 +41,6 @@
     window.addEventListener("resize", paint);
   }
 
-  /* ---------- local time in India ---------- */
-  var clock = document.getElementById("clock");
-  if (clock) {
-    var fmt = new Intl.DateTimeFormat("en-GB", {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-      timeZone: "Asia/Kolkata"
-    });
-    var tick = function () { clock.textContent = fmt.format(new Date()); };
-    tick();
-    setInterval(tick, 20000);
-  }
-
   /* ---------- current year ---------- */
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
