@@ -62,4 +62,4 @@ Motion is skipped entirely under `prefers-reduced-motion`, and the diagram's
 resting state is the finished drawing, so nothing depends on JavaScript to be
 visible.
 
-Deployed on Netlify at **https://kritikmodi.com**.
+Live at **https://kritikmodi.com**.
