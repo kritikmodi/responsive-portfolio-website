@@ -41,7 +41,7 @@
     window.addEventListener("resize", paint);
   }
 
-  /* ---------- local time in Delhi ---------- */
+  /* ---------- local time in India ---------- */
   var clock = document.getElementById("clock");
   if (clock) {
     var fmt = new Intl.DateTimeFormat("en-GB", {

@@ -463,6 +463,18 @@ p.prose,
 .ladder { padding-left: 1.2rem; }
 .ladder + .ledger__desc { margin-top: .8rem; }
 
+/* Where the role was, under the title: the two full-time posts say it, the
+   short internships below do not need to. */
+.ledger__place {
+  margin-top: .5rem;
+  font: 400 .7rem/1 var(--data);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+.ladder + .ledger__place { margin-top: .7rem; }
+.ledger__place + .ledger__desc { margin-top: .5rem; }
+
 .ladder__step { position: relative; }
 .ladder__step + .ladder__step { margin-top: .55rem; }
 
