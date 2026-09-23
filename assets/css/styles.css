@@ -278,6 +278,24 @@ body {
   height: auto;
 }
 
+/* Narrow screens cannot hold the whole graph at a readable size, so it pans
+   instead of shrinking. Run the panel to both edges and fade its right side:
+   a cut-off diagram inside a tidy box reads as broken, one that runs off the
+   screen reads as something to push. The fade lifts at the end of the scroll,
+   which is the only honest signal that there is nothing further along. */
+@media (max-width: 760px) {
+  .schematic__frame {
+    margin-inline: calc(var(--gut) * -1);
+    border-inline: 0;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 3.5rem), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 3.5rem), transparent);
+  }
+  .schematic__frame.is-panned-out {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
 .node { cursor: pointer; }
 .node__hit { fill: transparent; }
 .node__dot {

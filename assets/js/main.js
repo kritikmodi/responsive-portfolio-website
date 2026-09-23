@@ -126,6 +126,20 @@
   var schema = document.getElementById("schematic");
   if (!schema) return;
 
+  /* The diagram pans on narrow screens, where the frame fades at its right
+     edge to show there is more. Drop the fade once the pan reaches the end,
+     so the edge does not keep promising something that is not there. */
+  var frame = schema.querySelector(".schematic__frame");
+  if (frame) {
+    var markPan = function () {
+      var atEnd = frame.scrollLeft + frame.clientWidth >= frame.scrollWidth - 2;
+      frame.classList.toggle("is-panned-out", atEnd);
+    };
+    markPan();
+    frame.addEventListener("scroll", markPan, { passive: true });
+    window.addEventListener("resize", markPan);
+  }
+
   var svg = schema.querySelector("svg");
   var caption = document.getElementById("schematicCaption");
   var edges = Array.prototype.slice.call(svg.querySelectorAll(".edge"));
